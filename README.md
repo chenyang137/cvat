@@ -12,6 +12,7 @@
 CVAT 是一个免费的在线交互式视频和图像标注工具，专门用于计算机视觉任务。我们的团队使用它来标注数百万个具有不同属性的对象。许多 UI 和 UX 决策都是基于专业数据标注团队的反馈而制定的。
 
 ![CVAT 标注界面](site/content/en/images/cvat.jpg)
+<img width="3838" height="1838" alt="图片" src="https://github.com/user-attachments/assets/2738c4c4-7ae3-4028-9c1e-ca0c77e02ce2" />
 
 ## 功能特点
 
