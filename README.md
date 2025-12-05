@@ -36,11 +36,21 @@ CVAT 是一个免费的在线交互式视频和图像标注工具，专门用于
 
 ```bash
 git clone https://github.com/chenyang137/cvat.git
+```
+
+```bash
 cd cvat
+```
+
+```bash
 sudo docker build -f Dockerfile.ui -t cvat/ui:2.48.2 .
 ```
 
-在 `dockercompose.yml` 文件中，默认镜像是开发版本。对于服务端，您需要将其替换为 2.49.1 版本。
+设置环境变量
+
+```bash
+CVAT_HOST=localhost
+```
 
 然后启动服务：
 
