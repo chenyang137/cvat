@@ -43,14 +43,16 @@ git clone https://github.com/chenyang137/cvat.git
 cd cvat
 ```
 
+无root权限用户需要使用sudo提权
+
 ```bash
-sudo docker build -f Dockerfile.ui -t cvat/ui:2.48.2 .
+docker build -f Dockerfile.ui -t cvat/ui:2.48.2 .
 ```
 
 设置环境变量
 
 ```bash
-CVAT_HOST=localhost
+export CVAT_HOST=localhost
 ```
 
 然后启动服务：
