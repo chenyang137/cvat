@@ -26,7 +26,7 @@ CVAT 是一个免费的在线交互式视频和图像标注工具，专门用于
 - 协作功能
 - REST API 和 SDK
 
-## 安装说明
+## 汉化版安装说明
 
 ### 先决条件
 
@@ -67,7 +67,7 @@ docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
 ```
 
 
-安装完成后，访问 http://localhost:8080 使用该应用程序。
+安装完成后，访问 http://localhost:8080 使用该应用程序。（有问题提issues，成功运行麻烦点个star～感谢）
 
 ## 文档
 
