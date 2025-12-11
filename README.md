@@ -60,10 +60,14 @@ export CVAT_HOST=localhost
 ```bash
 docker compose up -d
 ```
+设置管理员账号：
 
-安装完成后，访问 http://localhost:8080 使用该应用程序。默认登录凭据为：
-- 用户名：`admin`
-- 密码：`admin`
+```
+docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
+```
+
+
+安装完成后，访问 http://localhost:8080 使用该应用程序。
 
 ## 文档
 
