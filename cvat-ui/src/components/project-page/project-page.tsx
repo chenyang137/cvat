@@ -237,7 +237,7 @@ export default function ProjectPageComponent(): JSX.Element {
             )}
         </BulkWrapper>
     ) : (
-        <Empty description='No tasks found' />
+        <Empty description='未找到任务' />
     );
 
     return (
@@ -274,7 +274,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                     }}
                                     defaultValue={tasksQuery.search ?? ''}
                                     className='cvat-project-page-tasks-search-bar'
-                                    placeholder='Search ...'
+                                    placeholder='搜索 ...'
                                 />
                                 <ResourceSelectionInfo
                                     selectedCount={selectedCount}
@@ -339,7 +339,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                         className='cvat-create-task-button'
                                         onClick={() => history.push(`/tasks/create?projectId=${id}`)}
                                     >
-                                        Create a new task
+                                        创建新任务
                                     </Button>
                                     <Button
                                         type='primary'
@@ -347,7 +347,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                         className='cvat-create-multi-tasks-button'
                                         onClick={() => history.push(`/tasks/create?projectId=${id}&many=true`)}
                                     >
-                                        Create multi tasks
+                                        创建多个任务
                                     </Button>
                                 </CvatDropdownMenuPaper>
                             )}

@@ -27,7 +27,7 @@ function ObjectSwitcher(props: Props): JSX.Element {
     const title = `${currentLabel} ${clientID} [${currentIndex + 1}/${objectsCount}]`;
     return (
         <div className='cvat-attribute-annotation-sidebar-object-switcher'>
-            <CVATTooltip title={`Previous object ${normalizedKeyMap.PREVIOUS_OBJECT}`}>
+            <CVATTooltip title={`上一个对象 ${normalizedKeyMap.PREVIOUS_OBJECT}`}>
                 <Button
                     className='cvat-attribute-annotation-sidebar-object-switcher-left'
                     disabled={objectsCount <= 1}
@@ -41,7 +41,7 @@ function ObjectSwitcher(props: Props): JSX.Element {
                 <Text className='cvat-text'>{` ${clientID} `}</Text>
                 <Text strong>{`[${currentIndex + 1}/${objectsCount}]`}</Text>
             </CVATTooltip>
-            <CVATTooltip title={`Next object ${normalizedKeyMap.NEXT_OBJECT}`}>
+            <CVATTooltip title={`下一个对象 ${normalizedKeyMap.NEXT_OBJECT}`}>
                 <Button
                     className='cvat-attribute-annotation-sidebar-object-switcher-right'
                     disabled={objectsCount <= 1}

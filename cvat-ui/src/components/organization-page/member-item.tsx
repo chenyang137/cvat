@@ -92,11 +92,11 @@ function MemberItem(props: Readonly<Props>): JSX.Element {
                     <Col span={8} className='cvat-organization-member-item-dates'>
                         {invitation ? (
                             <Text type='secondary'>
-                                {`Invited ${dayjs(invitation.createdDate).fromNow()}`}
-                                {invitation.owner && ` by ${invitation.owner.username}`}
+                                {`邀请于 ${dayjs(invitation.createdDate).fromNow()}`}
+                                {invitation.owner && ` 由 ${invitation.owner.username}`}
                             </Text>
                         ) : null}
-                        {joinedDate ? <Text type='secondary'>{`Joined ${dayjs(joinedDate).fromNow()}`}</Text> : <Text type='secondary'>Invitation pending</Text>}
+                        {joinedDate ? <Text type='secondary'>{`加入于 ${dayjs(joinedDate).fromNow()}`}</Text> : <Text type='secondary'>邀请待处理</Text>}
                     </Col>
                     <Col span={3} className='cvat-organization-member-item-role'>
                         <MemberRoleSelector

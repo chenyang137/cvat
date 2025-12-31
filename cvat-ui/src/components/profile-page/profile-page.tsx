@@ -35,12 +35,12 @@ function ProfilePageComponent(): JSX.Element {
         {
             key: 'profile',
             icon: <UserOutlined />,
-            label: 'Profile',
+            label: '个人资料',
         },
         {
             key: 'security',
             icon: <LockOutlined />,
-            label: 'Security',
+            label: '安全',
         },
     ];
 
@@ -74,7 +74,7 @@ function ProfilePageComponent(): JSX.Element {
             <Row justify='center' align='middle'>
                 <Col {...dimensions}>
                     <Title level={1}>
-                        {`Welcome, ${user?.username}`}
+                        {`欢迎, ${user?.username}`}
                     </Title>
                 </Col>
             </Row>

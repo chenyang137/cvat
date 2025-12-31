@@ -9,8 +9,8 @@ export const JobNotFoundComponent = React.memo((): JSX.Element => (
     <Result
         className='cvat-not-found'
         status='404'
-        title='Sorry, but this job was not found'
-        subTitle='Please, be sure information you tried to get exist and you have access'
+        title='抱歉，未找到此任务'
+        subTitle='请确保您尝试访问的信息存在且您有访问权限'
     />
 ));
 
@@ -18,8 +18,8 @@ export const TaskNotFoundComponent = React.memo((): JSX.Element => (
     <Result
         className='cvat-not-found'
         status='404'
-        title='There was something wrong during getting the task'
-        subTitle='Please, be sure, that information you tried to get exist and you are eligible to access it'
+        title='获取任务时出错'
+        subTitle='请确保您尝试获取的信息存在且您有权访问'
     />
 ));
 
@@ -27,8 +27,8 @@ export const ProjectNotFoundComponent = React.memo((): JSX.Element => (
     <Result
         className='cvat-not-found'
         status='404'
-        title='There was something wrong during getting the project'
-        subTitle='Please, be sure, that information you tried to get exist and you are eligible to access it'
+        title='获取项目时出错'
+        subTitle='请确保您尝试获取的信息存在且您有权访问'
     />
 ));
 
@@ -36,7 +36,7 @@ export const CloudStorageNotFoundComponent = React.memo((): JSX.Element => (
     <Result
         className='cvat-not-found'
         status='404'
-        title='Sorry, but the requested cloud storage was not found'
-        subTitle='Please, be sure id you requested exists and you have appropriate permissions'
+        title='抱歉，未找到请求的云存储'
+        subTitle='请确保您请求的ID存在且您有相应权限'
     />
 ));

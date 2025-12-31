@@ -144,16 +144,16 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
     } else {
         menuItems.push(
             ...(actionsApplicable[MenuKeys.RESEND_INVITATION].length > 0 ?
-                [{ key: MenuKeys.RESEND_INVITATION, label: withCount('Resend invitation', MenuKeys.RESEND_INVITATION) }] :
+                [{ key: MenuKeys.RESEND_INVITATION, label: withCount('重新发送邀请', MenuKeys.RESEND_INVITATION) }] :
                 []),
             ...(actionsApplicable[MenuKeys.DELETE_INVITATION].length > 0 ?
-                [{ key: 'divider', type: 'divider' } as ItemType] :
+                [{ key: 'divider', type: 'divider' as const }] :
                 []),
             ...(actionsApplicable[MenuKeys.DELETE_INVITATION].length > 0 ?
-                [{ key: MenuKeys.DELETE_INVITATION, label: withCount('Remove invitation', MenuKeys.DELETE_INVITATION) }] :
+                [{ key: MenuKeys.DELETE_INVITATION, label: withCount('移除邀请', MenuKeys.DELETE_INVITATION) }] :
                 []),
             ...(actionsApplicable[MenuKeys.REMOVE_MEMBER].length > 0 ?
-                [{ key: MenuKeys.REMOVE_MEMBER, label: withCount('Delete', MenuKeys.REMOVE_MEMBER) }] :
+                [{ key: MenuKeys.REMOVE_MEMBER, label: withCount('删除', MenuKeys.REMOVE_MEMBER) }] :
                 []),
         );
     }
@@ -175,9 +175,9 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
                     } else if (action.key === 'remove_member') {
                         Modal.confirm({
                             className: 'cvat-modal-organization-member-remove',
-                            title: `You are removing "${username}" from this organization`,
-                            content: 'The person will not have access to the organization data anymore. Continue?',
-                            okText: 'Yes, remove',
+                            title: `您正在将"${username}"从此组织中移除`,
+                            content: '此人将不再能访问该组织的数据。是否继续？',
+                            okText: '是，移除',
                             okButtonProps: {
                                 danger: true,
                             },

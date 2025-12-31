@@ -69,29 +69,29 @@ function ApiTokenForm({
             initialValues={initialValues}
         >
             <Typography.Title level={5}>
-                {isEditing ? 'Edit API Token' : 'Create API Token'}
+                {isEditing ? '编辑API令牌' : '创建API令牌'}
             </Typography.Title>
             <Form.Item
                 className='cvat-api-token-form-name'
-                label='Token Name'
+                label='令牌名称'
                 name='name'
                 rules={[
-                    { required: true, message: 'Please enter a token name' },
-                    { min: 3, message: 'Token name must be at least 3 characters' },
-                    { max: 50, message: 'Token name must not exceed 50 characters' },
+                    { required: true, message: '请输入令牌名称' },
+                    { min: 3, message: '令牌名称至少需要3个字符' },
+                    { max: 50, message: '令牌名称不能超过50个字符' },
                 ]}
             >
-                <Input placeholder='Enter a descriptive name for this token' allowClear />
+                <Input placeholder='为此令牌输入一个描述性名称' allowClear />
             </Form.Item>
             <Form.Item
                 className='cvat-api-token-form-expiration-date'
-                label='Expiration Date'
+                label='过期日期'
                 name='expirationDate'
-                help='Leave this field empty if you do not want token to expire'
+                help='如果您不希望令牌过期，请将此字段留空'
             >
                 <DatePicker
                     style={{ width: '100%' }}
-                    placeholder='Select expiration date'
+                    placeholder='选择过期日期'
                     disabledDate={(current) => current && current.valueOf() < Date.now()}
                 />
             </Form.Item>
@@ -101,7 +101,7 @@ function ApiTokenForm({
                 valuePropName='checked'
             >
                 <Checkbox>
-                    Read-only
+                    只读
                 </Checkbox>
             </Form.Item>
             <Row gutter={8} justify='end'>
@@ -111,7 +111,7 @@ function ApiTokenForm({
                         onClick={onCancel}
                         disabled={submitting}
                     >
-                        Cancel
+                        取消
                     </Button>
                 </Col>
                 <Col>
@@ -121,7 +121,7 @@ function ApiTokenForm({
                         onClick={handleSubmit}
                         loading={submitting}
                     >
-                        {isEditing ? 'Update' : 'Save'}
+                        {isEditing ? '更新' : '保存'}
                     </Button>
                 </Col>
             </Row>

@@ -49,11 +49,11 @@ function InvitationModal(props: Props): JSX.Element {
                 form={form}
             >
                 <Paragraph>
-                    <Text>Invite CVAT users to collaborate </Text>
+                    <Text>邀请CVAT用户协作</Text>
                 </Paragraph>
                 <Paragraph>
                     <Text type='secondary'>
-                            If the email address is registered on CVAT, the user will be added to the organization
+                            如果邮箱地址已在CVAT注册，该用户将被添加到组织中
                     </Text>
                 </Paragraph>
                 <Form.List name='users'>
@@ -72,7 +72,7 @@ function InvitationModal(props: Props): JSX.Element {
                                                 { type: 'email', message: 'The input is not a valid email' },
                                             ]}
                                         >
-                                            <Input placeholder='Enter an email address' />
+                                            <Input placeholder='输入邮箱地址' />
                                         </Form.Item>
                                     </Col>
                                     <Col span={10} offset={1}>
@@ -84,9 +84,9 @@ function InvitationModal(props: Props): JSX.Element {
                                             rules={[{ required: true, message: 'This field is required' }]}
                                         >
                                             <Select>
-                                                <Select.Option value='worker'>Worker</Select.Option>
-                                                <Select.Option value='supervisor'>Supervisor</Select.Option>
-                                                <Select.Option value='maintainer'>Maintainer</Select.Option>
+                                                <Select.Option value='worker'>工作者</Select.Option>
+                                                <Select.Option value='supervisor'>监督者</Select.Option>
+                                                <Select.Option value='maintainer'>维护者</Select.Option>
                                             </Select>
                                         </Form.Item>
                                     </Col>
@@ -99,7 +99,7 @@ function InvitationModal(props: Props): JSX.Element {
                             ))}
                             <Form.Item>
                                 <Button className='cvat-invite-more-org-members-button' icon={<PlusCircleOutlined />} onClick={() => add()}>
-                                        Invite more
+                                        邀请更多
                                 </Button>
                             </Form.Item>
                         </>

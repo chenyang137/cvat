@@ -142,8 +142,8 @@ function BrushTools(): React.ReactPortal | null {
 
     getCore().config.removeUnderlyingMaskPixels.onEmptyMaskOccurrence = () => {
         notification.warning({
-            message: 'Some objects were deleted',
-            description: 'As a result of removing the underlying pixels, some masks became empty and were subsequently deleted.',
+            message: '一些对象已被删除',
+            description: '作为移除底层像素的结果，一些掩码变为空并随后被删除。',
             className: 'cvat-empty-masks-notification',
             duration: null,
         });
@@ -366,8 +366,8 @@ function BrushTools(): React.ReactPortal | null {
             ) : null}
             { ['brush', 'eraser'].includes(currentTool) ? (
                 <Select value={brushForm} onChange={(value: 'circle' | 'square') => setBrushForm(value)}>
-                    <Select.Option value='circle'>Circle</Select.Option>
-                    <Select.Option value='square'>Square</Select.Option>
+                    <Select.Option value='circle'>圆形</Select.Option>
+                    <Select.Option value='square'>方形</Select.Option>
                 </Select>
             ) : null}
             <Button

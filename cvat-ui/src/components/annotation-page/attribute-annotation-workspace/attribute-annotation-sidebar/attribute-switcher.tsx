@@ -25,7 +25,7 @@ function AttributeSwitcher(props: Props): JSX.Element {
     const title = `${currentAttribute} [${currentIndex + 1}/${attributesCount}]`;
     return (
         <div className='cvat-attribute-annotation-sidebar-attribute-switcher'>
-            <CVATTooltip title={`Previous attribute ${normalizedKeyMap.PREVIOUS_ATTRIBUTE}`}>
+            <CVATTooltip title={`上一个属性 ${normalizedKeyMap.PREVIOUS_ATTRIBUTE}`}>
                 <Button
                     className='cvat-attribute-annotation-sidebar-attribute-switcher-left'
                     disabled={attributesCount <= 1}
@@ -38,7 +38,7 @@ function AttributeSwitcher(props: Props): JSX.Element {
                 <Text className='cvat-text'>{currentAttribute}</Text>
                 <Text strong>{` [${currentIndex + 1}/${attributesCount}]`}</Text>
             </CVATTooltip>
-            <CVATTooltip title={`Next attribute ${normalizedKeyMap.NEXT_ATTRIBUTE}`}>
+            <CVATTooltip title={`下一个属性 ${normalizedKeyMap.NEXT_ATTRIBUTE}`}>
                 <Button
                     className='cvat-attribute-annotation-sidebar-attribute-switcher-right'
                     disabled={attributesCount <= 1}

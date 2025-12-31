@@ -31,18 +31,18 @@ interface WebhookStatus {
 function setUpWebhookStatus(status: number): WebhookStatus {
     if (status?.toString().startsWith('2')) {
         return {
-            message: `Last delivery was successful. Response: ${status}`,
+            message: `上次交付成功。响应: ${status}`,
             className: 'cvat-webhook-status-available',
         };
     }
     if (status?.toString().startsWith('5')) {
         return {
-            message: `Last delivery was not successful. Response: ${status}`,
+            message: `上次交付不成功。响应: ${status}`,
             className: 'cvat-webhook-status-failed',
         };
     }
     return {
-        message: status ? `Response: ${status}` : undefined,
+        message: status ? `响应: ${status}` : undefined,
         className: 'cvat-webhook-status-unavailable',
     };
 }
@@ -118,11 +118,11 @@ function WebhookItem(props: Readonly<WebhookItemProps>): JSX.Element | null {
                         </Paragraph>
                         {username && (
                             <>
-                                <Text type='secondary'>{`Created by ${username} on ${created}`}</Text>
+                                <Text type='secondary'>{`由 ${username} 创建于 ${created}`}</Text>
                                 <br />
                             </>
                         )}
-                        <Text type='secondary'>{`Last updated ${updated}`}</Text>
+                        <Text type='secondary'>{`最后更新 ${updated}`}</Text>
                     </Col>
                     <Col span={6} offset={1}>
                         <Paragraph ellipsis={{
@@ -130,7 +130,7 @@ function WebhookItem(props: Readonly<WebhookItemProps>): JSX.Element | null {
                             rows: 3,
                         }}
                         >
-                            <Text type='secondary' className='cvat-webhook-info-text'>URL:</Text>
+                            <Text type='secondary' className='cvat-webhook-info-text'>目标URL:</Text>
                             {targetURL}
                         </Paragraph>
                     </Col>
@@ -140,7 +140,7 @@ function WebhookItem(props: Readonly<WebhookItemProps>): JSX.Element | null {
                             rows: 3,
                         }}
                         >
-                            <Text type='secondary' className='cvat-webhook-info-text'>Events:</Text>
+                            <Text type='secondary' className='cvat-webhook-info-text'>事件:</Text>
                             {eventsList}
                         </Paragraph>
                     </Col>
@@ -156,7 +156,7 @@ function WebhookItem(props: Readonly<WebhookItemProps>): JSX.Element | null {
                                     ghost
                                     onClick={onPing}
                                 >
-                                    Ping
+                                    测试连接
                                 </Button>
                             </Col>
                         </Row>
@@ -166,7 +166,7 @@ function WebhookItem(props: Readonly<WebhookItemProps>): JSX.Element | null {
                                     webhookInstance={webhookInstance}
                                     triggerElement={(
                                         <div className='cvat-webhooks-page-actions-button cvat-actions-menu-button'>
-                                            <Text className='cvat-text-color'>Actions</Text>
+                                            <Text className='cvat-text-color'>操作</Text>
                                             <MoreOutlined className='cvat-menu-icon' />
                                         </div>
                                     )}

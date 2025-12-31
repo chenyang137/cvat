@@ -114,8 +114,8 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
             content: (
                 <div className='cvat-remove-organization-submit'>
                     <Text type='warning'>
-                        To remove the organization,
-                        enter its short name below
+                        要删除组织，
+                        请在下方输入其短名称
                     </Text>
                     <Input
                         onChange={
@@ -135,7 +135,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                 disabled: true,
                 danger: true,
             },
-            okText: 'Remove',
+            okText: '删除',
         });
     };
 
@@ -170,7 +170,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                         <Row justify='space-between'>
                             <Col>
                                 <Text>
-                                    <Text className='cvat-title'>{`Organization: ${slug} `}</Text>
+                                    <Text className='cvat-title'>{`组织: ${slug} `}</Text>
                                 </Text>
                             </Col>
                             <Col>
@@ -186,15 +186,16 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                                             }, {
                                                 key: MenuActions.REMOVE_ORGANIZATION,
                                                 onClick: onRemove,
-                                                label: 'Remove organization',
-                                            }] : []),
+                                                label: '删除组织',
+                                            }]
+                                            : []),
                                         ],
                                         className: 'cvat-organization-actions-menu',
                                     }}
                                     trigger={['click']}
                                 >
                                     <Button size='middle' className='cvat-organization-page-actions-button'>
-                                        <Text className='cvat-text-color'>Actions</Text>
+                                        <Text className='cvat-text-color'>操作</Text>
                                         <MoreOutlined className='cvat-menu-icon' />
                                     </Button>
                                 </Dropdown>
@@ -247,7 +248,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                                             type='primary'
                                             htmlType='submit'
                                         >
-                                            Submit
+                                            提交
                                         </Button>
                                     </Form.Item>
                                 </Form>
@@ -259,7 +260,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                     <div className='cvat-organization-top-bar-contacts'>
                         <div>
                             <PhoneOutlined />
-                            { !contact.phoneNumber ? <Text type='secondary'>Add phone number</Text> : null }
+                            { !contact.phoneNumber ? <Text type='secondary'>添加电话号码</Text> : null }
                             <Text
                                 type='secondary'
                                 editable={{
@@ -277,7 +278,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                         </div>
                         <div>
                             <MailOutlined />
-                            { !contact.email ? <Text type='secondary'>Add email</Text> : null }
+                            { !contact.email ? <Text type='secondary'>添加邮箱</Text> : null }
                             <Text
                                 type='secondary'
                                 editable={{
@@ -295,7 +296,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                         </div>
                         <div>
                             <EnvironmentOutlined />
-                            { !contact.location ? <Text type='secondary'>Add location</Text> : null }
+                            { !contact.location ? <Text type='secondary'>添加位置</Text> : null }
                             <Text
                                 type='secondary'
                                 editable={{
@@ -311,8 +312,8 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                                 {contact.location}
                             </Text>
                         </div>
-                        <Text type='secondary'>{`Created ${dayjs(createdDate).format('MMMM Do YYYY')}`}</Text>
-                        <Text type='secondary'>{`Updated ${dayjs(updatedDate).fromNow()}`}</Text>
+                        <Text type='secondary'>{`创建于 ${dayjs(createdDate).format('YYYY年M月D日')}`}</Text>
+                        <Text type='secondary'>{`更新于 ${dayjs(updatedDate).fromNow()}`}</Text>
                     </div>
                 </Col>
                 <Col span={12} className='cvat-organization-top-bar-buttons-block'>
@@ -333,19 +334,19 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                                         className: 'cvat-modal-organization-leave-confirm',
                                         content: (
                                             <>
-                                                <Text>Please, confirm leaving the organization</Text>
+                                                <Text>请确认离开组织</Text>
                                                 <Text strong>{` ${organizationInstance.slug}`}</Text>
-                                                <Text>. You will not have access to the organization data anymore</Text>
+                                                <Text>。您将不再能访问该组织的数据</Text>
                                             </>
                                         ),
-                                        okText: 'Leave',
+                                        okText: '离开',
                                         okButtonProps: {
                                             danger: true,
                                         },
                                     });
                                 }}
                             >
-                                Leave organization
+                                离开组织
                             </Button>
                         ) : null}
                         <Button
@@ -354,7 +355,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                             onClick={() => setVisibleInviteModal(true)}
                             icon={<PlusCircleOutlined />}
                         >
-                            Invite members
+                            邀请成员
                         </Button>
                     </Space>
                 </Col>
@@ -368,7 +369,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                         }}
                         defaultValue={query.search ?? ''}
                         className='cvat-organization-page-search-bar'
-                        placeholder='Search ...'
+                        placeholder='搜索 ...'
                     />
                     <ResourceSelectionInfo selectedCount={selectedCount} onSelectAll={onSelectAll} />
                 </Col>
@@ -379,7 +380,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                             setVisibility({ ...defaultVisibility, sorting: visible })
                         )}
                         defaultFields={query.sort?.split(',') || ['-ID']}
-                        sortingFields={['User', 'Role']}
+                        sortingFields={['用户', '角色']}
                         onApplySorting={onApplySorting}
                     />
                     <FilteringComponent

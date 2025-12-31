@@ -10,7 +10,7 @@ function ResourceLink({ resource }: { resource: Project | Task | Job }): JSX.Ele
     if (resource instanceof Project) {
         return (
             <Link to={`/projects/${resource.id}`}>
-                {`Project #${resource.id}`}
+                {`项目 #${resource.id}`}
             </Link>
         );
     }
@@ -18,7 +18,7 @@ function ResourceLink({ resource }: { resource: Project | Task | Job }): JSX.Ele
     if (resource instanceof Task) {
         return (
             <Link to={`/tasks/${resource.id}`}>
-                {`Task #${resource.id}`}
+                {`任务 #${resource.id}`}
             </Link>
         );
     }
@@ -26,7 +26,7 @@ function ResourceLink({ resource }: { resource: Project | Task | Job }): JSX.Ele
     if (resource instanceof Job) {
         return (
             <Link to={`/tasks/${resource.taskId}/jobs/${resource.id}`}>
-                {`Job #${resource.id}`}
+                {`作业 #${resource.id}`}
             </Link>
         );
     }

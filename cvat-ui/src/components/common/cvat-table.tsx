@@ -198,12 +198,12 @@ function CVATTable(props: Props): JSX.Element {
                     <Space align='center'>
                         {Array.isArray(searchDataIndex) && !!searchDataIndex.length && (
                             <CVATTooltip
-                                title={`Search across fields: ${searchDataIndex
+                                title={`搜索字段: ${searchDataIndex
                                     .map((dataIndex) => stringifyDataIndex(dataIndex)).join(', ')}`}
                             >
                                 <Input.Search
                                     className='cvat-table-search-bar'
-                                    placeholder='Search ..'
+                                    placeholder='搜索 ..'
                                     onSearch={setSearchPhrase}
                                     enterButton
                                 />

@@ -210,7 +210,7 @@ function ConsensusManagementPage(): JSX.Element {
                 <div className='cvat-consensus-management-page-error'>
                     <Result
                         status='error'
-                        title='Could not open the page'
+                        title='无法打开页面'
                         subTitle={error.message}
                         extra={backNavigation}
                     />
@@ -233,7 +233,7 @@ function ConsensusManagementPage(): JSX.Element {
         title = (
             <Col className='cvat-consensus-management-header'>
                 <Title level={4} className='cvat-text-color'>
-                    {'Consensus management for '}
+                    {'共识管理 - '}
                     <ResourceLink resource={instance} />
                 </Title>
             </Col>
@@ -244,7 +244,7 @@ function ConsensusManagementPage(): JSX.Element {
         if (consensusSettings) {
             tabsItems.push({
                 key: TabName.settings,
-                label: 'Settings',
+                label: '设置',
                 children: (
                     <ConsensusSettingsTab
                         fetching={fetching}

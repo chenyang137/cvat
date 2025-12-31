@@ -48,9 +48,9 @@ export default function DetailsComponent(props: DetailsComponentProps): JSX.Elem
             <Row justify='space-between' className='cvat-project-description'>
                 <Col>
                     <Text type='secondary'>
-                        {`Project #${project.id} created`}
-                        {project.owner ? ` by ${project.owner.username}` : null}
-                        {` on ${dayjs(project.createdDate).format('MMMM Do YYYY')}`}
+                        {`项目 #${project.id} 创建于`}
+                        {project.owner ? ` 由 ${project.owner.username}` : null}
+                        {` 于 ${dayjs(project.createdDate).format('YYYY年MM月DD日')}`}
                     </Text>
                     <MdGuideControl instanceType='project' id={project.id} />
                     <BugTrackerEditor
@@ -62,7 +62,7 @@ export default function DetailsComponent(props: DetailsComponentProps): JSX.Elem
                     />
                 </Col>
                 <Col>
-                    <Text type='secondary'>Assigned to</Text>
+                    <Text type='secondary'>分配给</Text>
                     <UserSelector
                         value={project.assignee}
                         onSelect={(user) => {

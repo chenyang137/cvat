@@ -82,10 +82,10 @@ function AnnotationMenuComponent(): JSX.Element {
 
     const changeJobState = useCallback((state: JobState) => () => {
         Modal.confirm({
-            title: 'Would you like to update current job state?',
-            content: `Job state will be switched to "${state}"`,
-            okText: 'Continue',
-            cancelText: 'Cancel',
+            title: '您想更新当前作业状态吗？',
+            content: `作业状态将切换为"${state}"`,
+            okText: '继续',
+            cancelText: '取消',
             className: 'cvat-modal-content-change-job-state',
             onOk: () => changeState(state),
         });
@@ -100,39 +100,39 @@ function AnnotationMenuComponent(): JSX.Element {
 
     menuItems.push({
         key: Actions.LOAD_JOB_ANNO,
-        label: 'Upload annotations',
+        label: '上传注释',
         onClick: uploadAnnotations,
     });
 
     menuItems.push({
         key: Actions.EXPORT_JOB_DATASET,
-        label: 'Export job dataset',
+        label: '导出作业数据集',
         onClick: exportDataset,
     });
 
     menuItems.push({
         key: Actions.REMOVE_ANNOTATIONS,
-        label: 'Remove annotations',
+        label: '删除注释',
         onClick: () => {
             let removeFrom: number | undefined;
             let removeUpTo: number | undefined;
             let removeOnlyKeyframes = false;
             Modal.confirm({
-                title: 'Remove Annotations',
+                title: '删除注释',
                 content: (
                     <div>
-                        <Text>You are going to remove the annotations from the client. </Text>
-                        <Text>It will stay on the server till you save the job. Continue?</Text>
+                        <Text>您即将从客户端删除注释。</Text>
+                        <Text>在您保存作业之前，它将保留在服务器上。是否继续？</Text>
                         <br />
                         <br />
                         <Collapse
                             bordered={false}
                             items={[{
                                 key: 1,
-                                label: <Text>Select Range</Text>,
+                                label: <Text>选择范围</Text>,
                                 children: (
                                     <>
-                                        <Text>From: </Text>
+                                        <Text>从: </Text>
                                         <InputNumber
                                             min={0}
                                             max={stopFrame}
@@ -140,7 +140,7 @@ function AnnotationMenuComponent(): JSX.Element {
                                                 removeFrom = value;
                                             }}
                                         />
-                                        <Text>  To: </Text>
+                                        <Text>  到: </Text>
                                         <InputNumber
                                             min={0}
                                             max={stopFrame}
@@ -221,13 +221,13 @@ function AnnotationMenuComponent(): JSX.Element {
 
     menuItems.push({
         key: Actions.FINISH_JOB,
-        label: 'Finish the job',
+        label: '完成作业',
         onClick: () => {
             Modal.confirm({
-                title: 'Would you like to finish the job?',
-                content: 'It will save annotations and set the job state to "completed"',
-                okText: 'Continue',
-                cancelText: 'Cancel',
+                title: '您想完成这个作业吗？',
+                content: '这将保存注释并将作业状态设置为"已完成"',
+                okText: '继续',
+                cancelText: '取消',
                 className: 'cvat-modal-content-finish-job',
                 onOk: finishJob,
             });
@@ -246,7 +246,7 @@ function AnnotationMenuComponent(): JSX.Element {
         >
             <Button type='link' className='cvat-annotation-header-menu-button cvat-annotation-header-button'>
                 <Icon component={MainMenuIcon} />
-                Menu
+                菜单
             </Button>
         </Dropdown>
     );

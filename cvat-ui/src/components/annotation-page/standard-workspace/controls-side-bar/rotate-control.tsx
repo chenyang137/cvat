@@ -27,14 +27,14 @@ function RotateControl(props: Props): JSX.Element {
             placement='right'
             content={(
                 <>
-                    <CVATTooltip title={`Rotate the image anticlockwise ${anticlockwiseShortcut}`} placement='topRight'>
+                    <CVATTooltip title={`逆时针旋转图像 ${anticlockwiseShortcut}`} placement='topRight'>
                         <Icon
                             className='cvat-rotate-canvas-controls-left'
                             onClick={(): void => rotateFrame(Rotation.ANTICLOCKWISE90)}
                             component={RotateIcon}
                         />
                     </CVATTooltip>
-                    <CVATTooltip title={`Rotate the image clockwise ${clockwiseShortcut}`} placement='topRight'>
+                    <CVATTooltip title={`顺时针旋转图像 ${clockwiseShortcut}`} placement='topRight'>
                         <Icon
                             className='cvat-rotate-canvas-controls-right'
                             onClick={(): void => rotateFrame(Rotation.CLOCKWISE90)}

@@ -101,7 +101,7 @@ export default function Location(props: Props): JSX.Element {
                                 type='link'
                                 onClick={handleAddingRegion}
                             >
-                                Add region
+                                添加区域
                                 <PlusCircleOutlined />
                             </Button>
                         </div>

@@ -66,30 +66,30 @@ function StatusMessage(props: Props): JSX.Element {
         >
             {((): JSX.Element => {
                 if (cancelled) {
-                    return statusMessage(message, 'Cancelled');
+                    return statusMessage(message, '已取消');
                 }
 
                 if (status === RQStatus.FINISHED) {
-                    return statusMessage(message, 'Finished');
+                    return statusMessage(message, '已完成');
                 }
 
                 if ([RQStatus.QUEUED].includes(status)) {
-                    return statusMessage(message, 'Queued', <LoadingOutlined />);
+                    return statusMessage(message, '队列中', <LoadingOutlined />);
                 }
 
                 if ([RQStatus.STARTED].includes(status)) {
-                    return statusMessage(message, 'In progress', <LoadingOutlined />);
+                    return statusMessage(message, '进行中', <LoadingOutlined />);
                 }
 
                 if (status === RQStatus.FAILED) {
-                    return statusMessage(message, 'Failed');
+                    return statusMessage(message, '失败');
                 }
 
                 if (status === RQStatus.UNKNOWN) {
-                    return statusMessage(message, 'Unknown status received');
+                    return statusMessage(message, '收到未知状态');
                 }
 
-                return statusMessage(message, 'Unknown status received');
+                return statusMessage(message, '收到未知状态');
             })()}
         </Text>
     );

@@ -77,10 +77,10 @@ function constructTimestamps(request: Request): JSX.Element {
                 return (
                     <>
                         <Row>
-                            <Text type='secondary'>{`Started by ${request.owner.username} on ${started}`}</Text>
+                            <Text type='secondary'>{`由 ${request.owner.username} 开始于 ${started}`}</Text>
                         </Row>
                         <Row>
-                            <Text type='secondary'>{`Expires on ${expired}`}</Text>
+                            <Text type='secondary'>{`过期于 ${expired}`}</Text>
                         </Row>
                     </>
                 );
@@ -88,10 +88,10 @@ function constructTimestamps(request: Request): JSX.Element {
             return (
                 <>
                     <Row>
-                        <Text type='secondary'>{`Started by ${request.owner.username} on ${started}`}</Text>
+                        <Text type='secondary'>{`由 ${request.owner.username} 开始于 ${started}`}</Text>
                     </Row>
                     <Row>
-                        <Text type='secondary'>{`Finished on ${finished}`}</Text>
+                        <Text type='secondary'>{`完成于 ${finished}`}</Text>
                     </Row>
                 </>
             );
@@ -99,11 +99,11 @@ function constructTimestamps(request: Request): JSX.Element {
         case RQStatus.FAILED: {
             return (request.startedDate ? (
                 <Row>
-                    <Text type='secondary'>{`Started by ${request.owner.username} on ${started}`}</Text>
+                    <Text type='secondary'>{`由 ${request.owner.username} 开始于 ${started}`}</Text>
                 </Row>
             ) : (
                 <Row>
-                    <Text type='secondary'>{`Enqueued by ${request.owner.username} on ${created}`}</Text>
+                    <Text type='secondary'>{`由 ${request.owner.username} 排队于 ${created}`}</Text>
                 </Row>
             ));
         }
@@ -111,10 +111,10 @@ function constructTimestamps(request: Request): JSX.Element {
             return (
                 <>
                     <Row>
-                        <Text type='secondary'>{`Enqueued by ${request.owner.username} on ${created}`}</Text>
+                        <Text type='secondary'>{`由 ${request.owner.username} 排队于 ${created}`}</Text>
                     </Row>
                     <Row>
-                        <Text type='secondary'>{`Started on ${started}`}</Text>
+                        <Text type='secondary'>{`开始于 ${started}`}</Text>
                     </Row>
                 </>
             );
@@ -122,7 +122,7 @@ function constructTimestamps(request: Request): JSX.Element {
         default: {
             return (
                 <Row>
-                    <Text type='secondary'>{`Enqueued by ${request.owner.username} on ${created}`}</Text>
+                    <Text type='secondary'>{`由 ${request.owner.username} 排队于 ${created}`}</Text>
                 </Row>
             );
         }
@@ -233,7 +233,7 @@ function RequestCard(props: Readonly<Props>): JSX.Element {
                                         operation?.lightweight ? (
                                             <Row>
                                                 <Col className='cvat-lightweight-label'>
-                                                    <Text type='secondary'>Lightweight backup</Text>
+                                                    <Text type='secondary'>轻量级备份</Text>
                                                 </Col>
                                             </Row>
                                         ) : null

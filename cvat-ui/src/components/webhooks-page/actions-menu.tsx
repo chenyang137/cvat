@@ -53,24 +53,24 @@ export default function WebhookActionsMenu(props: Readonly<WebhookActionsMenuPro
     const menuItems: MenuProps['items'] = [
         {
             key: 'edit',
-            label: 'Edit',
+            label: '编辑',
             onClick: onEdit,
             disabled: isBulk,
         },
         {
             key: 'delete',
-            label: isBulk ? `Delete (${selectedIds.length})` : 'Delete',
+            label: isBulk ? `删除 (${selectedIds.length})` : '删除',
             onClick: isBulk ? () => {
                 Modal.confirm({
-                    title: `Are you sure you want to remove ${selectedIds.length} webhooks?`,
-                    content: 'They will stop notifying the specified URLs about listed events',
+                    title: `您确定要删除 ${selectedIds.length} 个 webhook 吗？`,
+                    content: '它们将停止通知指定的 URL 关于列出的事件',
                     className: 'cvat-modal-confirm-remove-webhook',
                     onOk: () => onDelete(),
                 });
             } : () => {
                 Modal.confirm({
-                    title: 'Are you sure you want to remove the hook?',
-                    content: 'It will stop notificating the specified URL about listed events',
+                    title: '您确定要删除这个 webhook 吗？',
+                    content: '它将停止通知指定的 URL 关于列出的事件',
                     className: 'cvat-modal-confirm-remove-webhook',
                     onOk: onDelete,
                 });

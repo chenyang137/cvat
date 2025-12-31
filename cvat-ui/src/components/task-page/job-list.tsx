@@ -160,7 +160,7 @@ function JobListComponent(props: Readonly<Props>): JSX.Element {
             <div className='cvat-jobs-list-filters-wrapper'>
                 <Row>
                     <Col>
-                        <Text className='cvat-text-color cvat-jobs-header'> Jobs </Text>
+                        <Text className='cvat-text-color cvat-jobs-header'> 作业 </Text>
                         <ResourceSelectionInfo selectedCount={selectedCount} onSelectAll={onSelectAll} />
                     </Col>
                 </Row>
@@ -201,7 +201,7 @@ function JobListComponent(props: Readonly<Props>): JSX.Element {
                         }}
                     />
                     <div className='cvat-job-add-wrapper'>
-                        <Button onClick={onCreateJob} type='primary' className='cvat-create-job' icon={<PlusOutlined />} />
+                        <Button onClick={onCreateJob} type='primary' className='cvat-create-job' icon={<PlusOutlined />}>创建作业</Button>
                     </div>
                 </Row>
             </div>
@@ -236,7 +236,7 @@ function JobListComponent(props: Readonly<Props>): JSX.Element {
                     </Col>
                 </div>
             ) : (
-                <Empty description='No jobs found' />
+                <Empty description='未找到作业' />
             )}
             <Row justify='center' align='middle'>
                 <Col>

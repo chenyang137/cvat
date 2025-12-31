@@ -30,8 +30,8 @@ export default function BugTrackerEditorComponent(props: Props): JSX.Element {
         if (value && !patterns.validateURL.pattern.test(value)) {
             if (!shown) {
                 Modal.error({
-                    title: `Could not update the ${instanceType} ${instance.id}`,
-                    content: 'Issue tracker is expected to be URL',
+                    title: `${instanceType} ${instance.id} 无法更新`,
+                    content: '问题跟踪器应为 URL 格式',
                     onOk: () => {
                         shown = false;
                     },
@@ -51,7 +51,7 @@ export default function BugTrackerEditorComponent(props: Props): JSX.Element {
             <Row className='cvat-issue-tracker'>
                 <Col>
                     <Text strong className='cvat-text-color'>
-                        Issue Tracker
+                        问题跟踪器
                     </Text>
                     <Text editable={{ onChange: onChangeValue }} className='cvat-issue-tracker-value'>
                         {bugTracker}
@@ -63,7 +63,7 @@ export default function BugTrackerEditorComponent(props: Props): JSX.Element {
                         }}
                         className='cvat-open-bug-tracker-button'
                     >
-                        Open the issue
+                        打开问题页面
                     </Button>
                 </Col>
             </Row>
@@ -74,7 +74,7 @@ export default function BugTrackerEditorComponent(props: Props): JSX.Element {
         <Row className='cvat-issue-tracker'>
             <Col>
                 <Text strong className='cvat-text-color'>
-                    Issue Tracker
+                    问题跟踪器
                 </Text>
                 <Text
                     className='cvat-issue-tracker-value'

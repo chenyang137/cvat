@@ -85,8 +85,8 @@ function mapStateToProps(state: CombinedState): StateToProps {
 
 const componentShortcuts = {
     SWITCH_DRAW_MODE_TAG_ANNOTATION: {
-        name: 'Create a tag',
-        description: 'Add a new tag, corresponding to the selected label.',
+        name: '创建标签',
+        description: '添加一个新标签，对应于所选标签。',
         sequences: ['n'],
         scope: ShortcutScope.TAG_ANNOTATION_WORKSPACE,
     },
@@ -256,11 +256,11 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                     setSidebarCollapsed(!sidebarCollapsed);
                 }}
             >
-                {sidebarCollapsed ? <MenuFoldOutlined title='Show' /> : <MenuUnfoldOutlined title='Hide' />}
+                {sidebarCollapsed ? <MenuFoldOutlined title='显示' /> : <MenuUnfoldOutlined title='隐藏' />}
             </span>
             <Row justify='center' className='cvat-tag-annotation-sidebar-empty'>
                 <Col>
-                    <Text strong>Can&apos;t place tag on this frame.</Text>
+                    <Text strong>无法在此帧上放置标签。</Text>
                 </Col>
             </Row>
         </Layout.Sider>
@@ -275,11 +275,11 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                         setSidebarCollapsed(!sidebarCollapsed);
                     }}
                 >
-                    {sidebarCollapsed ? <MenuFoldOutlined title='Show' /> : <MenuUnfoldOutlined title='Hide' />}
+                    {sidebarCollapsed ? <MenuFoldOutlined title='显示' /> : <MenuUnfoldOutlined title='隐藏' />}
                 </span>
                 <Row justify='start' className='cvat-tag-annotation-sidebar-tag-label'>
                     <Col>
-                        <Text strong>Tag label:</Text>
+                        <Text strong>标签标签：</Text>
                     </Col>
                 </Row>
                 <Row justify='start' className='cvat-tag-annotation-sidebar-label-select'>
@@ -306,7 +306,7 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                                 setSkipFrame(event.target.checked);
                             }}
                         >
-                            Automatically go to the next frame
+                            自动跳转到下一帧
                         </Checkbox>
                     </Col>
                 </Row>
@@ -318,8 +318,8 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                 <Row justify='center' className='cvat-tag-annotation-sidebar-shortcut-help'>
                     <Col>
                         <Text>
-                            Use configured shortcuts to add a new tag.
-                            If a tag with such label is already exists on the frame, it will be removed.
+                            使用配置的快捷键添加新标签。
+                            如果该标签已存在于帧上，则将其移除。
                         </Text>
                     </Col>
                 </Row>
@@ -329,3 +329,5 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TagAnnotationSidebar);
+
+

@@ -16,7 +16,7 @@ export const config: Partial<Config> = {
             valueSources: ['value'],
         },
         provider_type: {
-            label: 'Provider type',
+            label: '提供商类型',
             type: 'select',
             operators: ['select_equals'],
             valueSources: ['value'],
@@ -24,44 +24,44 @@ export const config: Partial<Config> = {
                 listValues: [
                     { value: 'AWS_S3_BUCKET', title: 'AWS S3' },
                     { value: 'AZURE_CONTAINER', title: 'Azure' },
-                    { value: 'GOOGLE_CLOUD_STORAGE', title: 'Google cloud' },
+                    { value: 'GOOGLE_CLOUD_STORAGE', title: 'Google云' },
                 ],
             },
         },
         credentials_type: {
-            label: 'Credentials type',
+            label: '凭证类型',
             type: 'select',
             operators: ['select_equals'],
             valueSources: ['value'],
             fieldSettings: {
                 listValues: [
-                    { value: 'KEY_SECRET_KEY_PAIR', title: 'Key & secret key' },
-                    { value: 'ACCOUNT_NAME_TOKEN_PAIR', title: 'Account name & token' },
-                    { value: 'ANONYMOUS_ACCESS', title: 'Anonymous access' },
-                    { value: 'KEY_FILE_PATH', title: 'Key file' },
+                    { value: 'KEY_SECRET_KEY_PAIR', title: '密钥和私密密钥' },
+                    { value: 'ACCOUNT_NAME_TOKEN_PAIR', title: '账户名和令牌' },
+                    { value: 'ANONYMOUS_ACCESS', title: '匿名访问' },
+                    { value: 'KEY_FILE_PATH', title: '密钥文件' },
                 ],
             },
         },
         resource: {
-            label: 'Resource name',
+            label: '资源名称',
             type: 'text',
             valueSources: ['value'],
             operators: ['like'],
         },
         name: {
-            label: 'Name',
+            label: '名称',
             type: 'text',
             valueSources: ['value'],
             operators: ['like'],
         },
         description: {
-            label: 'Description',
+            label: '描述',
             type: 'text',
             valueSources: ['value'],
             operators: ['like'],
         },
         owner: {
-            label: 'Owner',
+            label: '所有者',
             type: 'select',
             valueSources: ['value'],
             operators: ['select_equals'],
@@ -72,7 +72,7 @@ export const config: Partial<Config> = {
             },
         },
         updated_date: {
-            label: 'Last updated',
+            label: '最后更新',
             type: 'datetime',
             operators: ['between', 'greater', 'greater_or_equal', 'less', 'less_or_equal'],
         },
@@ -83,8 +83,8 @@ export const localStorageRecentCapacity = 10;
 export const localStorageRecentKeyword = 'recentlyAppliedCloudStoragesFilters';
 
 export const predefinedFilterValues = {
-    'Owned by me': '{"and":[{"==":[{"var":"owner"},"<username>"]}]}',
-    'AWS storages': '{"and":[{"==":[{"var":"provider_type"},"AWS_S3_BUCKET"]}]}',
-    'Azure storages': '{"and":[{"==":[{"var":"provider_type"},"AZURE_CONTAINER"]}]}',
-    'Google cloud storages': '{"and":[{"==":[{"var":"provider_type"},"GOOGLE_CLOUD_STORAGE"]}]}',
+    '我拥有的': '{"and":[{"==":[{"var":"owner"},"<username>"]}]}',
+    'AWS存储': '{"and":[{"==":[{"var":"provider_type"},"AWS_S3_BUCKET"]}]}',
+    'Azure存储': '{"and":[{"==":[{"var":"provider_type"},"AZURE_CONTAINER"]}]}',
+    'Google云存储': '{"and":[{"==":[{"var":"provider_type"},"GOOGLE_CLOUD_STORAGE"]}]}',
 };

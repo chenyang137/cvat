@@ -285,9 +285,9 @@ ThunkAction {
         }
 
         const taskInstance = new cvat.classes.Task(description);
-        taskInstance.clientFiles = data.files.local;
-        taskInstance.serverFiles = data.files.share.concat(data.files.cloudStorage);
-        taskInstance.remoteFiles = data.files.remote;
+        taskInstance.clientFiles = (data.files.local || []);
+        taskInstance.serverFiles = (data.files.share || []).concat(data.files.cloudStorage || []);
+        taskInstance.remoteFiles = (data.files.remote || []);
         try {
             const savedTask = await taskInstance.save(extras, {
                 updateStatusCallback(updateData: Request | UpdateStatusData) {
@@ -296,14 +296,14 @@ ThunkAction {
                     let helperMessage = '';
                     if (!message) {
                         if ([RQStatus.QUEUED, RQStatus.STARTED].includes(status)) {
-                            message = 'CVAT queued the task to import';
-                            helperMessage = 'You may close the window.';
+                            message = 'CVAT已将任务加入队列导入';
+                            helperMessage = '您可以关闭此窗口。';
                         } else if (status === RQStatus.FAILED) {
-                            message = 'Images processing failed';
+                            message = '图像处理失败';
                         } else if (status === RQStatus.FINISHED) {
-                            message = 'Task creation finished';
+                            message = '任务创建完成';
                         } else {
-                            message = 'Unknown status received';
+                            message = '收到未知状态';
                         }
                     }
                     onProgress?.(`${message}${progress ? ` ${Math.floor(progress * 100)}%` : ''}. ${helperMessage}`);

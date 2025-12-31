@@ -62,7 +62,7 @@ const ViewFabric = (itemLayout: ItemLayout): JSX.Element => {
             component = <TopViewComponent />;
             break;
         default:
-            component = <div> Undefined view </div>;
+            component = <div> 未定义视图 </div>;
     }
 
     return component;
@@ -306,7 +306,7 @@ function CanvasLayout({ type }: { type?: DimensionType }): JSX.Element {
             )}
             { type === DimensionType.DIMENSION_3D && <CanvasWrapper3DComponent /> }
             <div className='cvat-grid-layout-common-setups'>
-                <CVATTooltip title='Fit views'>
+                <CVATTooltip title='适应视图'>
                     <PicCenterOutlined
                         onClick={() => {
                             setLayoutConfig(fitLayout(type as DimensionType, layoutConfig));
@@ -314,7 +314,7 @@ function CanvasLayout({ type }: { type?: DimensionType }): JSX.Element {
                         }}
                     />
                 </CVATTooltip>
-                <CVATTooltip title='Add context image'>
+                <CVATTooltip title='添加上下文图像'>
                     <PlusOutlined
                         style={{
                             pointerEvents: !relatedFiles ? 'none' : undefined,
@@ -353,7 +353,7 @@ function CanvasLayout({ type }: { type?: DimensionType }): JSX.Element {
                         }}
                     />
                 </CVATTooltip>
-                <CVATTooltip title='Reload layout'>
+                <CVATTooltip title='重新加载布局'>
                     <ReloadOutlined onClick={() => {
                         setLayoutConfig([...getLayout()]);
                         window.dispatchEvent(new Event('resize'));

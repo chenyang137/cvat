@@ -25,8 +25,8 @@ interface Props {
 
 const componentShortcuts = {
     OPEN_REVIEW_ISSUE: {
-        name: 'Open an issue',
-        description: 'Create a new issues in the review workspace',
+        name: '创建问题',
+        description: '在审查工作区中创建新问题',
         sequences: ['n'],
         scope: ShortcutScope.REVIEW_WORKSPACE_CONTROLS,
     },
@@ -68,7 +68,7 @@ function CreateIssueControl(props: Props): JSX.Element {
                     keyMap={subKeyMap(componentShortcuts, keyMap)}
                     handlers={handlers}
                 />
-                <CVATTooltip title='Open an issue' placement='right'>
+                <CVATTooltip title='创建问题' placement='right'>
                     <Icon
                         component={RectangleIcon}
                         className={

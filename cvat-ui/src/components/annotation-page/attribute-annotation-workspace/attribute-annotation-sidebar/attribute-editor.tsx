@@ -36,8 +36,8 @@ const makeKey = (index: number): string => `AAM_SET_ATTR_VALUE_${index}`;
 
 for (const idx of Array.from({ length: 10 }, (_, i) => i)) {
     componentShortcuts[makeKey(idx)] = {
-        name: `Set ${idx + 1} value to the current attribute`,
-        description: `Change current value for the attribute to the ${idx + 1} value in the list`,
+        name: `将第${idx + 1}个值设置为当前属性`,
+        description: `将属性的当前值更改为列表中的第${idx + 1}个值`,
         sequences: [`${idx}`],
         nonActive: true,
         scope: ShortcutScope.ATTRIBUTE_ANNOTATION_WORKSPACE,
@@ -80,7 +80,7 @@ function renderInputElement(parameters: InputElementParameters): JSX.Element {
 
     const renderCheckbox = (): JSX.Element => (
         <>
-            <Text strong>Checkbox: </Text>
+            <Text strong>复选框: </Text>
             <div className='attribute-annotation-sidebar-attr-elem-wrapper'>
                 <Checkbox
                     onChange={(event: CheckboxChangeEvent): void => setAttributeValue(event.target.checked ? 'true' : 'false')}
@@ -92,7 +92,7 @@ function renderInputElement(parameters: InputElementParameters): JSX.Element {
 
     const renderSelect = (): JSX.Element => (
         <>
-            <Text strong>Values: </Text>
+            <Text strong>选择值: </Text>
             <div className='attribute-annotation-sidebar-attr-elem-wrapper'>
                 <Select
                     value={localAttrValue}
@@ -113,7 +113,7 @@ function renderInputElement(parameters: InputElementParameters): JSX.Element {
 
     const renderRadio = (): JSX.Element => (
         <>
-            <Text strong>Values: </Text>
+            <Text strong>选择值: </Text>
             <div className='attribute-annotation-sidebar-attr-elem-wrapper'>
                 <Radio.Group
                     value={localAttrValue}
@@ -144,7 +144,7 @@ function renderInputElement(parameters: InputElementParameters): JSX.Element {
         const [min, max, step] = values;
         return (
             <>
-                <Text strong>Number: </Text>
+                <Text strong>数字: </Text>
                 <div className='attribute-annotation-sidebar-attr-elem-wrapper'>
                     <InputNumber
                         autoFocus
@@ -167,7 +167,7 @@ function renderInputElement(parameters: InputElementParameters): JSX.Element {
 
     const renderText = (): JSX.Element => (
         <>
-            <Text strong>Text: </Text>
+            <Text strong>文本: </Text>
             <div className='attribute-annotation-sidebar-attr-elem-wrapper'>
                 <Input.TextArea
                     autoFocus
@@ -244,8 +244,8 @@ function AttrValuesList(props: ListProps): JSX.Element | null {
                 updatedComponentShortcuts[key] = {
                     ...updatedComponentShortcuts[key],
                     nonActive: false,
-                    name: `Assign attribute value ${value}`,
-                    description: `Change current value for the attribute to ${value}`,
+                    name: `分配属性值 ${value}`,
+                    description: `将属性的当前值更改为 ${value}`,
                 };
             });
 
@@ -333,15 +333,15 @@ function AttrValuesList(props: ListProps): JSX.Element | null {
         return (
             <div className='attribute-annotation-sidebar-attr-list-wrapper'>
                 <div>
-                    <Text strong>From:</Text>
+                    <Text strong>从:</Text>
                     <Text>{` ${values[0]}`}</Text>
                 </div>
                 <div>
-                    <Text strong>To:</Text>
+                    <Text strong>到:</Text>
                     <Text>{` ${values[1]}`}</Text>
                 </div>
                 <div>
-                    <Text strong>Step:</Text>
+                    <Text strong>步长:</Text>
                     <Text>{` ${values[2]}`}</Text>
                 </div>
             </div>

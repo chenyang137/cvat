@@ -83,14 +83,14 @@ function ApiTokensCard(): JSX.Element {
 
     const onRevokeToken = useCallback((token: ApiToken): void => {
         Modal.confirm({
-            title: 'Revoke API Token',
-            content: `Are you sure you want to revoke the token "${token.name}"? This action cannot be undone.`,
-            okText: 'Revoke',
+            title: '撤销API令牌',
+            content: `您确定要撤销令牌"${token.name}"吗？此操作无法撤销。`,
+            okText: '撤销',
             okButtonProps: {
                 type: 'primary',
                 danger: true,
             },
-            cancelText: 'Cancel',
+            cancelText: '取消',
             onOk: () => {
                 dispatch(revokeApiTokenAsync(token, () => {
                     dispatch(getApiTokensAsync());
@@ -126,14 +126,14 @@ function ApiTokensCard(): JSX.Element {
 
     const apiTokenColumns: ColumnType<RowData>[] = [
         {
-            title: 'Name',
+            title: '名称',
             dataIndex: 'name',
             key: 'name',
             width: 250,
             sorter: (a: RowData, b: RowData) => a.name.localeCompare(b.name),
         },
         {
-            title: 'Permissions',
+            title: '权限',
             dataIndex: 'readOnly',
             key: 'readOnly',
             align: 'center' as const,
@@ -142,25 +142,25 @@ function ApiTokensCard(): JSX.Element {
                 return a.readOnly ? -1 : 1;
             },
             filters: [
-                { text: 'Read Only', value: true },
-                { text: 'Read/Write', value: false },
+                { text: '只读', value: true },
+                { text: '读/写', value: false },
             ],
             onFilter: (value: boolean | Key, record: RowData) => record.readOnly === value,
             render: (readOnly: boolean) => (
                 <Tag color={readOnly ? 'blue' : 'orange'}>
-                    {readOnly ? 'Read Only' : 'Read/Write'}
+                    {readOnly ? '只读' : '读/写'}
                 </Tag>
             ),
         },
         {
-            title: 'Created',
+            title: '创建时间',
             dataIndex: 'createdDate',
             key: 'createdDate',
             sorter: (a: RowData, b: RowData) => new Date(a.createdDate).getTime() - new Date(b.createdDate).getTime(),
             render: (date: string) => new Date(date).toLocaleDateString(),
         },
         {
-            title: 'Expires',
+            title: '过期时间',
             dataIndex: 'expiryDate',
             key: 'expiryDate',
             sorter: (a: RowData, b: RowData) => {
@@ -170,11 +170,11 @@ function ApiTokensCard(): JSX.Element {
                 return new Date(a.expiryDate).getTime() - new Date(b.expiryDate).getTime();
             },
             render: (date: string | null) => (
-                date ? new Date(date).toLocaleDateString() : <Text underline>Never</Text>
+                date ? new Date(date).toLocaleDateString() : <Text underline>从不</Text>
             ),
         },
         {
-            title: 'Last Used',
+            title: '最后使用',
             dataIndex: 'lastUsedDate',
             key: 'lastUsedDate',
             sorter: (a: RowData, b: RowData) => {
@@ -183,10 +183,10 @@ function ApiTokensCard(): JSX.Element {
                 if (!b.lastUsedDate) return -1;
                 return new Date(a.lastUsedDate).getTime() - new Date(b.lastUsedDate).getTime();
             },
-            render: (date: string | null) => (date ? new Date(date).toLocaleDateString() : 'Never'),
+            render: (date: string | null) => (date ? new Date(date).toLocaleDateString() : '从不'),
         },
         {
-            title: 'Actions',
+            title: '操作',
             key: 'actions',
             align: 'center' as const,
             width: 60,
@@ -196,13 +196,13 @@ function ApiTokensCard(): JSX.Element {
                         items: [
                             {
                                 key: 'edit',
-                                label: 'Edit',
+                                label: '编辑',
                                 onClick: () => onEditToken(row.token),
                             },
                             { type: 'divider' },
                             {
                                 key: 'revoke',
-                                label: 'Revoke',
+                                label: '撤销',
                                 onClick: () => onRevokeToken(row.token),
                             },
                         ],
@@ -221,27 +221,27 @@ function ApiTokensCard(): JSX.Element {
                 title={(
                     <Row className='cvat-security-api-tokens-card-title' justify='space-between'>
                         <Col>
-                            <Title level={5}>Personal Access Tokens (PATs)</Title>
+                            <Title level={5}>个人访问令牌(PATs)</Title>
                             <CVATTooltip
                                 title={(
                                     <Row className='cvat-api-tokens-tooltip-inner'>
                                         <Row>
                                             <Col>
                                                 <Text>
-                                                    Personal Access Tokens (PATs) are text strings that
-                                                    can be used for authentication instead of a username/email
-                                                    and password. They allow interaction with the CVAT server
-                                                    API via various clients, including custom scripts, the CVAT
-                                                    Python SDK, and the CVAT CLI.
+                                                    个人访问令牌(PATs)是文本字符串，
+                                                    可用于身份验证，代替用户名/邮箱
+                                                    和密码。它们允许通过各种客户端与CVAT服务器
+                                                    API进行交互，包括自定义脚本、CVAT
+                                                    Python SDK和CVAT CLI。
                                                 </Text>
                                             </Col>
                                         </Row>
                                         <Row>
                                             <Col>
                                                 <Text>
-                                                    For additional security, each token can have an expiration
-                                                    date and restricted permissions. Users can create or revoke
-                                                    tokens at any time.
+                                                    为了提高安全性，每个令牌都可以设置过期
+                                                    日期和受限权限。用户可以随时创建或撤销
+                                                    令牌。
                                                 </Text>
                                             </Col>
                                         </Row>
@@ -274,7 +274,7 @@ function ApiTokensCard(): JSX.Element {
                     />
                 ) : (
                     <CVATTable
-                        tableTitle={<Title level={5}>Existing Tokens</Title>}
+                        tableTitle={<Title level={5}>现有令牌</Title>}
                         className='cvat-api-tokens-table'
                         csvExport={{ filename: 'access_tokens.csv' }}
                         columns={apiTokenColumns}

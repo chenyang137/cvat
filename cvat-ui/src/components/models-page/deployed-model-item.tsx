@@ -82,7 +82,7 @@ export default function DeployedModelItem(props: Readonly<Props>): JSX.Element {
         <>
             <Modal
                 className='cvat-model-info-modal'
-                title='Model'
+                title='模型'
                 open={isModalShown}
                 onCancel={onCloseModel}
                 footer={null}

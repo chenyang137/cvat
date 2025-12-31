@@ -772,10 +772,10 @@ export enum ActiveControl {
 }
 
 export enum StatesOrdering {
-    ID_DESCENT = 'ID - descent',
-    ID_ASCENT = 'ID - ascent',
-    UPDATED = 'Updated time',
-    Z_ORDER = 'Z Order',
+    ID_DESCENT = 'ID - 降序',
+    ID_ASCENT = 'ID - 升序',
+    UPDATED = '更新时间',
+    Z_ORDER = 'Z序',
 }
 
 export enum ContextMenuType {
@@ -923,20 +923,20 @@ export interface AnnotationState {
 }
 
 export enum Workspace {
-    STANDARD3D = 'Standard 3D',
-    STANDARD = 'Standard',
-    ATTRIBUTES = 'Attribute annotation',
-    SINGLE_SHAPE = 'Single shape',
-    TAGS = 'Tag annotation',
-    REVIEW = 'Review',
+    STANDARD3D = '标准3D',
+    STANDARD = '标准',
+    ATTRIBUTES = '属性标注',
+    SINGLE_SHAPE = '单形状',
+    TAGS = '标签标注',
+    REVIEW = '审查',
 }
 
 export enum GridColor {
-    White = 'White',
-    Black = 'Black',
-    Red = 'Red',
-    Green = 'Green',
-    Blue = 'Blue',
+    White = '白色',
+    Black = '黑色',
+    Red = '红色',
+    Green = '绿色',
+    Blue = '蓝色',
 }
 
 export enum FrameSpeed {
@@ -949,9 +949,9 @@ export enum FrameSpeed {
 }
 
 export enum ColorBy {
-    INSTANCE = 'Instance',
-    GROUP = 'Group',
-    LABEL = 'Label',
+    INSTANCE = '实例',
+    GROUP = '组',
+    LABEL = '标签',
 }
 
 export interface PlayerSettingsState {
@@ -1017,14 +1017,14 @@ export interface ShortcutsState {
 }
 
 export enum ReviewStatus {
-    ACCEPTED = 'accepted',
-    REJECTED = 'rejected',
-    REVIEW_FURTHER = 'review_further',
+    ACCEPTED = '已接受',
+    REJECTED = '已拒绝',
+    REVIEW_FURTHER = '继续审查',
 }
 
 export enum NewIssueSource {
-    ISSUE_TOOL = 'tool',
-    QUICK_ISSUE = 'quick_issue',
+    ISSUE_TOOL = '工具问题',
+    QUICK_ISSUE = '快速问题',
 }
 
 export interface ReviewState {

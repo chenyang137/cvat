@@ -374,9 +374,9 @@ function ImportDatasetModal(props: StateToProps): JSX.Element {
                 accept='.zip,.json,.xml'
                 beforeUpload={(_file: RcFile): boolean => {
                     if (!selectedLoader) {
-                        message.warning('Please select a format first', 3);
+                        message.warning('请先选择一种格式', 3);
                     } else if (isDataset() && !['application/zip', 'application/x-zip-compressed'].includes(_file.type)) {
-                        message.error('Only ZIP archive is supported for import a dataset');
+                        message.error('数据集导入仅支持ZIP归档文件');
                     } else if (isAnnotation() &&
                                 !selectedLoader.format.toLowerCase().split(', ').includes(_file.name.split('.')[_file.name.split('.').length - 1])) {
                         message.error(
@@ -482,8 +482,8 @@ function ImportDatasetModal(props: StateToProps): JSX.Element {
 
     const confirmUpload = (): void => {
         confirm({
-            title: 'Current annotation will be lost',
-            content: `You are going to upload new annotations to ${instanceType}. Continue?`,
+            title: '当前注释将丢失',
+            content: `您将要上传新的注释到${instanceType}。是否继续？`,
             className: `cvat-modal-content-load-${instanceType.split(' ')[0]}-annotation`,
             onOk: () => {
                 onUpload();
@@ -492,7 +492,7 @@ function ImportDatasetModal(props: StateToProps): JSX.Element {
                 type: 'primary',
                 danger: true,
             },
-            okText: 'Update',
+            okText: '更新',
         });
     };
 

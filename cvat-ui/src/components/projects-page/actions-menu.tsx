@@ -162,11 +162,11 @@ function ProjectActionsComponent(props: Readonly<Props>): JSX.Element {
         const projectsToDelete = currentProjects.filter((project) => selectedIds.includes(project.id));
         Modal.confirm({
             title: isBulkMode ?
-                `Delete ${projectsToDelete.length} selected projects` :
-                `The project ${projectInstance.id} will be deleted`,
+                `删除 ${projectsToDelete.length} 个选定的项目` :
+                `项目 ${projectInstance.id} 将被删除`,
             content: isBulkMode ?
-                'All related data (images, annotations) for all selected projects will be lost. Continue?' :
-                'All related data (images, annotations) will be lost. Continue?',
+                '所有选定项目的所有相关数据（图像、注释）都将丢失。继续吗？' :
+                '所有相关数据（图像、注释）都将丢失。继续吗？',
             className: 'cvat-modal-confirm-remove-project',
             onOk: () => {
                 dispatch(makeBulkOperationAsync(
@@ -174,14 +174,14 @@ function ProjectActionsComponent(props: Readonly<Props>): JSX.Element {
                     async (project) => {
                         await dispatch(deleteProjectAsync(project));
                     },
-                    (project, idx, total) => `Deleting project #${project.id} (${idx + 1}/${total})`,
+                    (project, idx, total) => `正在删除项目 #${project.id} (${idx + 1}/${total})`,
                 ));
             },
             okButtonProps: {
                 type: 'primary',
                 danger: true,
             },
-            okText: isBulkMode ? 'Delete selected' : 'Delete',
+            okText: isBulkMode ? '删除选定' : '删除',
         });
     }, [projectInstance, currentProjects, selectedIds, isBulkMode]);
     let menuItems;

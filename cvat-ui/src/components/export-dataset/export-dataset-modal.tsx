@@ -188,12 +188,12 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                     ),
                 ));
                 closeModal();
-                const resource = values.saveImages ? 'Dataset' : 'Annotations';
+                const resource = values.saveImages ? '数据集' : '注释';
                 const description =
-                    `Bulk ${resource.toLowerCase()} export was started. ` +
-                    'You can check progress and download the file [here](/requests).';
+                    `批量${resource}导出已开始。` +
+                    '您可以在[此处](/requests)查看进度并下载文件。';
                 Notification.info({
-                    message: `Bulk ${resource.toLowerCase()} export started`,
+                    message: `批量${resource}导出已开始`,
                     description: (
                         <CVATMarkdown history={history}>{description}</CVATMarkdown>
                     ),
@@ -216,11 +216,11 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                 ),
             );
             closeModal();
-            const resource = values.saveImages ? 'Dataset' : 'Annotations';
-            const description = `${resource} export was started for ${instanceType}. ` +
-            'You can check progress and download the file [here](/requests).';
+            const resource = values.saveImages ? '数据集' : '注释';
+            const description = `${resource}导出已开始。` +
+            '您可以在[此处](/requests)查看进度并下载文件。';
             Notification.info({
-                message: `${resource} export started`,
+                message: `${resource}导出已开始`,
                 description: (
                     <CVATMarkdown history={history}>{description}</CVATMarkdown>
                 ),
@@ -258,10 +258,10 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
             title={
                 isBulkMode ? (
                     <Text strong>
-                        {`Export ${selectedInstances.length} ${instanceType}s as datasets`}
+                        {`导出 ${selectedInstances.length} 个${instanceType}s 为数据集`}
                     </Text>
                 ) : (
-                    <Text strong>{`Export ${instanceType} as a dataset`}</Text>
+                    <Text strong>{`将${instanceType}导出为数据集`}</Text>
                 )
             }
             open={!!instance}
@@ -282,7 +282,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                     label={<Text strong>Export format</Text>}
                     rules={[{ required: true, message: 'Format must be selected' }]}
                 >
-                    <Select virtual={false} placeholder='Select dataset format' className='cvat-modal-export-select'>
+                    <Select virtual={false} placeholder='选择数据集格式' className='cvat-modal-export-select'>
                         {sortedDumpers
                             .filter(
                                 (dumper: Dumper): boolean => dumper.dimension === instance?.dimension ||
@@ -310,7 +310,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                     >
                         <Switch className='cvat-modal-export-save-images' />
                     </Form.Item>
-                    <Text strong>Save images</Text>
+                    <Text strong>保存图像</Text>
                 </Space>
                 {isBulkMode ? (
                     <Form.Item label={<Text strong>Name template</Text>} required>
@@ -329,16 +329,16 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                                     />
                                 )}
                             >
-                                When forming the dataset name, a template is used.
+                                创建数据集名称时会使用模板。
                                 {' '}
                                 <QuestionCircleOutlined />
                             </Tooltip>
                         </Text>
                     </Form.Item>
                 ) : (
-                    <Form.Item label={<Text strong>Custom name</Text>} name='customName'>
+                    <Form.Item label={<Text strong>自定义名称</Text>} name='customName'>
                         <Input
-                            placeholder='Custom name for a dataset'
+                            placeholder='数据集的自定义名称'
                             suffix='.zip'
                             className='cvat-modal-export-filename-input'
                         />
@@ -346,10 +346,10 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                 )}
                 <TargetStorageField
                     instanceId={instance ? instance.id : null}
-                    switchDescription='Use default settings'
+                    switchDescription='使用默认设置'
                     switchHelpMessage={helpMessage}
                     useDefaultStorage={isBulkMode ? false : useDefaultTargetStorage}
-                    storageDescription='Specify target storage for export dataset'
+                    storageDescription='指定导出数据集的目标存储'
                     locationValue={targetStorage.location}
                     onChangeUseDefaultStorage={isBulkMode ? undefined : (value: boolean) => {
                         setUseDefaultTargetStorage(value);

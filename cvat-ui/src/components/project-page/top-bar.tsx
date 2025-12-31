@@ -33,7 +33,7 @@ export default function ProjectTopBar(props: DetailsComponentProps): JSX.Element
                     size='large'
                 >
                     <LeftOutlined />
-                    Back to projects
+                    返回项目列表
                 </Button>
             </Col>
             <Col className='cvat-project-top-bar-actions'>
@@ -42,7 +42,7 @@ export default function ProjectTopBar(props: DetailsComponentProps): JSX.Element
                     onUpdateProject={onUpdateProject}
                     triggerElement={(
                         <Button size='middle' className='cvat-project-page-actions-button'>
-                            <Text className='cvat-text-color'>Actions</Text>
+                            <Text className='cvat-text-color'>操作</Text>
                             <MoreOutlined className='cvat-menu-icon' />
                         </Button>
                     )}

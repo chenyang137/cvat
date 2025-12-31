@@ -65,7 +65,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
     items.push([(
         <Row key='player-step' align='bottom' className='cvat-player-settings-step cvat-player-setting'>
             <Col>
-                <Text className='cvat-text-color'> Player step </Text>
+                <Text className='cvat-text-color'> 播放器步长 </Text>
                 <InputNumber
                     min={minFrameStep}
                     max={maxFrameStep}
@@ -79,9 +79,9 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
             </Col>
             <Col offset={1}>
                 <Text type='secondary'>
-                    Number of frames skipped when selecting
+                    选择时跳过的帧数
                     <Icon component={BackJumpIcon} />
-                    or
+                    或
                     <Icon component={ForwardJumpIcon} />
                 </Text>
             </Col>
@@ -91,7 +91,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
     items.push([(
         <Row key='player-speed' align='middle' className='cvat-player-settings-speed cvat-player-setting'>
             <Col>
-                <Text className='cvat-text-color'> Player speed </Text>
+                <Text className='cvat-text-color'> 播放器速度 </Text>
                 <Select
                     className='cvat-player-settings-speed-select'
                     value={frameSpeed}
@@ -104,34 +104,34 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         value={FrameSpeed.Fastest}
                         className='cvat-player-settings-speed-fastest'
                     >
-                        Fastest
+                        最快
                     </Select.Option>
                     <Select.Option key='fast' value={FrameSpeed.Fast} className='cvat-player-settings-speed-fast'>
-                        Fast
+                        快
                     </Select.Option>
                     <Select.Option
                         key='usual'
                         value={FrameSpeed.Usual}
                         className='cvat-player-settings-speed-usual'
                     >
-                        Usual
+                        正常
                     </Select.Option>
                     <Select.Option key='slow' value={FrameSpeed.Slow} className='cvat-player-settings-speed-slow'>
-                        Slow
+                        慢
                     </Select.Option>
                     <Select.Option
                         key='slower'
                         value={FrameSpeed.Slower}
                         className='cvat-player-settings-speed-slower'
                     >
-                        Slower
+                        更慢
                     </Select.Option>
                     <Select.Option
                         key='slowest'
                         value={FrameSpeed.Slowest}
                         className='cvat-player-settings-speed-slowest'
                     >
-                        Slowest
+                        最慢
                     </Select.Option>
                 </Select>
             </Col>
@@ -156,7 +156,7 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                         className='cvat-select-canvas-background-color-button'
                         type='default'
                     >
-                        Select canvas background color
+                        选择画布背景颜色
                     </Button>
                 </Popover>
             </Col>
@@ -175,11 +175,11 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                                 onSwitchResetZoom(event.target.checked);
                             }}
                         >
-                            Reset zoom
+                            重置缩放
                         </Checkbox>
                     </Col>
                     <Col span={24}>
-                        <Text type='secondary'> Fit image after changing frame </Text>
+                        <Text type='secondary'> 更改帧后适应图像 </Text>
                     </Col>
                 </Row>
             </Col>
@@ -193,11 +193,11 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                                 onSwitchRotateAll(event.target.checked);
                             }}
                         >
-                            Rotate all images
+                            旋转所有图像
                         </Checkbox>
                     </Col>
                     <Col span={24}>
-                        <Text type='secondary'> Rotate all images simultaneously </Text>
+                        <Text type='secondary'> 同时旋转所有图像 </Text>
                     </Col>
                 </Row>
             </Col>
@@ -216,11 +216,11 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                                 onSwitchSmoothImage(event.target.checked);
                             }}
                         >
-                            Smooth image
+                            平滑图像
                         </Checkbox>
                     </Col>
                     <Col span={24}>
-                        <Text type='secondary'> Smooth image when zoom-in it </Text>
+                        <Text type='secondary'> 放大时平滑图像 </Text>
                     </Col>
                 </Row>
             </Col>
@@ -233,11 +233,11 @@ export default function PlayerSettingsComponent(props: Props): JSX.Element {
                             onSwitchShowingDeletedFrames(event.target.checked);
                         }}
                     >
-                        Show deleted frames
+                        显示已删除的帧
                     </Checkbox>
                 </Row>
                 <Row>
-                    <Text type='secondary'>You will be able to navigate and restore deleted frames</Text>
+                    <Text type='secondary'>您将能够导航和恢复已删除的帧</Text>
                 </Row>
             </Col>
         </Row>

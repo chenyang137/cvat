@@ -58,9 +58,9 @@ function JobCardComponent(props: Readonly<Props>): JSX.Element {
 
     let tag = null;
     if (job.type === JobType.GROUND_TRUTH) {
-        tag = 'Ground truth';
+        tag = '真实值';
     } else if (job.type === JobType.ANNOTATION && job.consensusReplicas > 0) {
-        tag = 'Consensus';
+        tag = '共识';
     }
 
     const cardClassName = `cvat-job-page-list-item${selected ? ' cvat-item-selected' : ''}`;
@@ -96,12 +96,12 @@ function JobCardComponent(props: Readonly<Props>): JSX.Element {
                     onClick={onClick}
                 >
                     <Descriptions column={1} size='small'>
-                        <Descriptions.Item label='Stage and state'>{`${job.stage} ${job.state}`}</Descriptions.Item>
-                        <Descriptions.Item label='Frames'>{job.stopFrame - job.startFrame + 1}</Descriptions.Item>
+                        <Descriptions.Item label='阶段和状态'>{`${job.stage} ${job.state}`}</Descriptions.Item>
+                        <Descriptions.Item label='帧数'>{job.stopFrame - job.startFrame + 1}</Descriptions.Item>
                         {job.assignee ? (
-                            <Descriptions.Item label='Assignee'>{job.assignee.username}</Descriptions.Item>
+                            <Descriptions.Item label='负责人'>{job.assignee.username}</Descriptions.Item>
                         ) : (
-                            <Descriptions.Item label='Assignee'> </Descriptions.Item>
+                            <Descriptions.Item label='负责人'> </Descriptions.Item>
                         )}
                     </Descriptions>
                     <JobActionsComponent
