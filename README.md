@@ -51,10 +51,16 @@ cd cvat
 docker build -f Dockerfile.ui -t cvat/ui:v2.64.0 .
 ```
 
-设置环境变量
+Linux、Mac设置环境变量
 
 ```bash
 export CVAT_HOST=localhost
+```
+
+windows设置环境变量
+
+```bash
+set CVAT_HOST=localhost
 ```
 
 然后启动服务：
@@ -62,6 +68,7 @@ export CVAT_HOST=localhost
 ```bash
 docker compose up -d
 ```
+
 设置管理员账号：
 
 ```
