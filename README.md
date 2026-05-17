@@ -47,8 +47,16 @@ cd cvat
 
 无root权限用户需要使用sudo提权
 
+自行构建
+
 ```bash
 docker build -f Dockerfile.ui -t cvat/ui:v2.64.0 .
+```
+
+使用发行版
+
+```bash
+docker load -i cvat_ui_v2.64.0.tar
 ```
 
 Linux、Mac设置环境变量
