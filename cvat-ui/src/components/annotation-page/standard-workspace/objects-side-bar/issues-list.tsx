@@ -190,7 +190,7 @@ export default function LabelsListComponent(): JSX.Element {
                                 <Row justify='space-between'>
                                     <Col>
                                         <Text strong>
-                                            {`#${frameIssue.id} • Issue`}
+                                            {`#${frameIssue.id} • 问题`}
                                         </Text>
                                     </Col>
                                     <Col offset={1}>

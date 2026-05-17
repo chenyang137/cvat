@@ -31,6 +31,16 @@ function translateAction(action: string): string {
         'Changed attributes': '已更改属性',
         'Propagated objects': '已传播对象',
         'Simplified polygon': '已简化多边形',
+        'Changed hidden': '已更改隐藏状态',
+        'Changed occluded': '已更改遮挡状态',
+        'Changed locked': '已更改锁定状态',
+        'Changed pinned': '已更改固定状态',
+        'Changed outside': '已更改外部状态',
+        'Changed color': '已更改颜色',
+        'Changed description': '已更改描述',
+        'Tracked objects': '已追踪对象',
+        'Switched orientation': '已切换方向',
+        'Reset cuboid perspective': '已重置长方体透视',
     };
     return map[action] || action;
 }

@@ -262,7 +262,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                         {`Export ${selectedInstances.length} ${instanceType}s as datasets`}
                     </Text>
                 ) : (
-                    <Text strong>{`Export ${instanceType} as a dataset`}</Text>
+                    <Text strong>{`将${instanceType === 'task' ? '任务' : instanceType === 'project' ? '项目' : instanceType === 'job' ? '作业' : instanceType}导出为数据集`}</Text>
                 )
             }
             open={!!instance}

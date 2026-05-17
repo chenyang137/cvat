@@ -38,7 +38,7 @@ const columns: CSVColumn<Job>[] = [
 const JobsCSVExportButton = createCSVExportButton<Job, JobsQuery>({
     resourceName: 'jobs',
     className: 'cvat-jobs-export-csv-button',
-    tooltipTitle: 'Export jobs to CSV',
+    tooltipTitle: '将作业导出为CSV',
     columns,
     uniqueKey: 'id',
     fetchPage: async (query) => {

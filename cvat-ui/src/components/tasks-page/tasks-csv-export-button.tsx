@@ -36,7 +36,7 @@ const columns: CSVColumn<Task>[] = [
 const TasksCSVExportButton = createCSVExportButton<Task, TasksQuery>({
     resourceName: 'tasks',
     className: 'cvat-tasks-export-csv-button',
-    tooltipTitle: 'Export tasks to CSV',
+    tooltipTitle: '将任务导出为CSV',
     columns,
     uniqueKey: 'id',
     fetchPage: async (query) => {
