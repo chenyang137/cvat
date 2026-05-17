@@ -48,7 +48,7 @@ cd cvat
 无root权限用户需要使用sudo提权
 
 ```bash
-docker build -f Dockerfile.ui -t cvat/ui:2.64.0 .
+docker build -f Dockerfile.ui -t cvat/ui:v2.64.0 .
 ```
 
 设置环境变量
