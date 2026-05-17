@@ -13,6 +13,27 @@ import Text from 'antd/lib/typography/Text';
 import { UndoIcon, RedoIcon } from 'icons';
 import { ActiveControl, ToolsBlockerState } from 'reducers';
 import { registerComponentShortcuts } from 'actions/shortcuts-actions';
+
+function translateAction(action: string): string {
+    const map: Record<string, string> = {
+        'Created objects': '已创建对象',
+        'Removed objects': '已删除对象',
+        'Changed objects': '已更改对象',
+        'Moved objects': '已移动对象',
+        'Merged objects': '已合并对象',
+        'Split track': '已分割轨迹',
+        'Grouped objects': '已组合对象',
+        'Ungrouped objects': '已取消组合对象',
+        'Cropped objects': '已裁剪对象',
+        'Rotated objects': '已旋转对象',
+        'Resized objects': '已调整大小',
+        'Changed label': '已更改标签',
+        'Changed attributes': '已更改属性',
+        'Propagated objects': '已传播对象',
+        'Simplified polygon': '已简化多边形',
+    };
+    return map[action] || action;
+}
 import AnnotationMenuComponent from 'components/annotation-page/top-bar/annotation-menu';
 import CVATTooltip from 'components/common/cvat-tooltip';
 import { ShortcutScope } from 'utils/enums';
@@ -121,7 +142,7 @@ function LeftGroup(props: Props): JSX.Element {
             <Col className='cvat-annotation-header-left-group'>
                 <AnnotationMenuComponent />
                 <SaveAnnotationsButton />
-                <CVATTooltip overlay={`Undo: ${undoAction} ${undoShortcut}`}>
+                <CVATTooltip overlay={`撤销：${translateAction(undoAction)} ${undoShortcut}`}>
                     <Button
                         style={{ pointerEvents: undoAction ? 'initial' : 'none', opacity: undoAction ? 1 : 0.5 }}
                         type='link'
@@ -132,7 +153,7 @@ function LeftGroup(props: Props): JSX.Element {
                         <span>撤销</span>
                     </Button>
                 </CVATTooltip>
-                <CVATTooltip overlay={`Redo: ${redoAction} ${redoShortcut}`}>
+                <CVATTooltip overlay={`重做：${translateAction(redoAction)} ${redoShortcut}`}>
                     <Button
                         style={{ pointerEvents: redoAction ? 'initial' : 'none', opacity: redoAction ? 1 : 0.5 }}
                         type='link'

@@ -17,6 +17,17 @@ import { clamp } from 'utils/math';
 import LabelSelector from 'components/label-selector/label-selector';
 import CVATTooltip from 'components/common/cvat-tooltip';
 
+const shapeTypeLabels: Record<string, string> = {
+    [ShapeType.RECTANGLE]: '矩形',
+    [ShapeType.POLYGON]: '多边形',
+    [ShapeType.POLYLINE]: '折线',
+    [ShapeType.POINTS]: '点',
+    [ShapeType.ELLIPSE]: '椭圆',
+    [ShapeType.CUBOID]: '长方体',
+    [ShapeType.SKELETON]: '骨架',
+    [ShapeType.MASK]: '掩码',
+};
+
 interface Props {
     shapeType: ShapeType;
     labels: any[];
@@ -68,7 +79,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
         <div className='cvat-draw-shape-popover-content'>
             <Row justify='start'>
                 <Col>
-                    <Text className='cvat-text-color' strong>{`Draw new ${shapeType}`}</Text>
+                    <Text className='cvat-text-color' strong>{`绘制新${shapeTypeLabels[shapeType] || shapeType}`}</Text>
                 </Col>
             </Row>
             <Row justify='start'>
@@ -140,7 +151,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                 <>
                     <Row justify='space-around' align='middle'>
                         <Col span={14}>
-                            <Text className='cvat-text-color'> Number of points: </Text>
+                            <Text className='cvat-text-color'> 点数量： </Text>
                         </Col>
                         <Col span={10}>
                             <InputNumber

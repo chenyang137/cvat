@@ -144,7 +144,7 @@ function SwitchLock(props: Props): JSX.Element {
         locked, switchLockShortcut, lock, unlock,
     } = props;
     return (
-        <CVATTooltip title={`Switch lock property ${switchLockShortcut}`}>
+        <CVATTooltip title={`切换锁定属性 ${switchLockShortcut}`}>
             {locked ? (
                 <LockFilled {...classes.lock.enabled} onClick={unlock} />
             ) : (
@@ -161,7 +161,7 @@ function SwitchOccluded(props: Props): JSX.Element {
 
     const style = locked ? disabledStyle : {};
     return (
-        <CVATTooltip title={`Switch occluded property ${switchOccludedShortcut}`}>
+        <CVATTooltip title={`切换遮挡属性 ${switchOccludedShortcut}`}>
             {occluded ? (
                 <TeamOutlined
                     {...classes.occluded.enabled}
@@ -186,7 +186,7 @@ function SwitchPinned(props: Props): JSX.Element {
 
     const style = locked ? disabledStyle : {};
     return (
-        <CVATTooltip title={`Switch pinned property ${switchPinnedShortcut}`}>
+        <CVATTooltip title={`切换固定属性 ${switchPinnedShortcut}`}>
             {pinned ? (
                 <PushpinFilled
                     {...classes.pinned.enabled}
@@ -211,7 +211,7 @@ function SwitchHidden(props: Props): JSX.Element {
 
     const style = hiddenDisabled || locked ? disabledStyle : {};
     return (
-        <CVATTooltip title={`Switch hidden property ${switchHiddenShortcut}`}>
+        <CVATTooltip title={`切换隐藏属性 ${switchHiddenShortcut}`}>
             {hidden ? (
                 <EyeInvisibleFilled
                     {...classes.hidden.enabled}

@@ -971,7 +971,7 @@ export enum FrameSpeed {
 
 export enum ColorBy {
     INSTANCE = '实例',
-    GROUP = 'Group',
+    GROUP = '组',
     LABEL = '标签',
 }
 

@@ -37,8 +37,8 @@ const makeKey = (index: number): string => `AAM_SET_ATTR_VALUE_${index}`;
 
 for (const idx of Array.from({ length: 10 }, (_, i) => i)) {
     componentShortcuts[makeKey(idx)] = {
-        name: `Set ${idx + 1} value to the current attribute`,
-        description: `Change current value for the attribute to the ${idx + 1} value in the list`,
+        name: `将第 ${idx + 1} 个值设为当前属性`,
+        description: `将属性的当前值更改为列表中的第 ${idx + 1} 个值`,
         sequences: [`${idx}`],
         nonActive: true,
         scope: ShortcutScope.ATTRIBUTE_ANNOTATION_WORKSPACE,
@@ -245,8 +245,8 @@ function AttrValuesList(props: ListProps): JSX.Element | null {
                 updatedComponentShortcuts[key] = {
                     ...updatedComponentShortcuts[key],
                     nonActive: false,
-                    name: `Assign attribute value ${value}`,
-                    description: `Change current value for the attribute to ${value}`,
+                    name: `指定属性值 ${value}`,
+                    description: `将属性的当前值更改为 ${value}`,
                 };
             });
 

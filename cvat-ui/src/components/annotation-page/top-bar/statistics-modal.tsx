@@ -248,7 +248,7 @@ function StatisticsModalComponent(props: StateToProps & DispatchToProps): JSX.El
             key: 'label',
         },
         {
-            title: makeShapesTracksTitle('Cuboids'),
+            title: makeShapesTracksTitle('长方体'),
             dataIndex: 'cuboid',
             key: 'cuboid',
         },

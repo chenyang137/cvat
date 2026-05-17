@@ -86,10 +86,25 @@ function ObjectItemComponent(props: Props): JSX.Element {
         jobInstance,
     } = props;
 
+    const shapeTypeLabels: Record<string, string> = {
+        [ShapeType.RECTANGLE]: '矩形',
+        [ShapeType.POLYGON]: '多边形',
+        [ShapeType.POLYLINE]: '折线',
+        [ShapeType.POINTS]: '点',
+        [ShapeType.ELLIPSE]: '椭圆',
+        [ShapeType.CUBOID]: '长方体',
+        [ShapeType.SKELETON]: '骨架',
+        [ShapeType.MASK]: '掩码',
+    };
+    const objectTypeLabels: Record<string, string> = {
+        [ObjectType.SHAPE]: '形状',
+        [ObjectType.TRACK]: '轨迹',
+        [ObjectType.TAG]: '标签',
+    };
     const type =
         objectType === ObjectType.TAG ?
-            ObjectType.TAG.toUpperCase() :
-            `${shapeType.toUpperCase()} ${objectType.toUpperCase()}`;
+            objectTypeLabels[ObjectType.TAG] :
+            `${shapeTypeLabels[shapeType] || shapeType} ${objectTypeLabels[objectType] || objectType}`;
 
     const className = !activated ?
         'cvat-objects-sidebar-state-item' :

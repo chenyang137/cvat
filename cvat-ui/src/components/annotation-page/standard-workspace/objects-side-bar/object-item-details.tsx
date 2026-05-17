@@ -132,7 +132,7 @@ function ItemAttributesComponent(props: Props): JSX.Element | null {
                     key: 'details',
                     label: (
                         <Row style={{ width: '100%' }} align='middle' justify='space-between'>
-                            <Text style={{ fontSize: 10 }} type='secondary'>DETAILS</Text>
+                            <Text style={{ fontSize: 10 }} type='secondary'>详情</Text>
                             {scoreVotesElement}
                         </Row>
                     ),
