@@ -54,22 +54,22 @@ function constructName(operation: Request['operation']): string | null {
     } = operation;
 
     if (target === 'project' && projectID) {
-        return `Project #${projectID}`;
+        return `项目 #${projectID}`;
     }
     if (target === 'task' && taskID) {
-        return `Task #${taskID}`;
+        return `任务 #${taskID}`;
     }
     if (target === 'job' && jobID) {
-        return `Job #${jobID}`;
+        return `作业 #${jobID}`;
     }
     return null;
 }
 
 function constructTimestamps(request: Request): JSX.Element {
-    const started = dayjs(request.startedDate).format('MMM Do YY, H:mm');
-    const finished = dayjs(request.finishedDate).format('MMM Do YY, H:mm');
-    const created = dayjs(request.createdDate).format('MMM Do YY, H:mm');
-    const expired = dayjs(request.expiryDate).format('MMM Do YY, H:mm');
+    const started = dayjs(request.startedDate).format('YY年M月D日 H:mm');
+    const finished = dayjs(request.finishedDate).format('YY年M月D日 H:mm');
+    const created = dayjs(request.createdDate).format('YY年M月D日 H:mm');
+    const expired = dayjs(request.expiryDate).format('YY年M月D日 H:mm');
     const { operation: { type }, url } = request;
 
     switch (request.status) {
@@ -227,7 +227,7 @@ function RequestCard(props: Readonly<Props>): JSX.Element {
                             {operation?.lightweight && (
                                 <Row>
                                     <Col className='cvat-lightweight-label'>
-                                        <Text type='secondary'>Lightweight backup</Text>
+                                        <Text type='secondary'>轻量备份</Text>
                                     </Col>
                                 </Row>
                             )}

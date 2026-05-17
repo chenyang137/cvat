@@ -72,17 +72,17 @@ function MoveTaskModal({
 
     const submitMove = async (): Promise<void> => {
         if (!taskInstance) {
-            throw new Error('Task to move is not specified');
+            throw new Error('未指定要移动的任务');
         }
 
         if (!projectId) {
-            notification.error({ message: 'Please, select a project' });
+            notification.error({ message: '请选择项目' });
             return;
         }
 
         if (Object.values(labelMap).some((map) => map.newLabelName === null)) {
             notification.error({
-                message: 'Please, specify mapping for all the labels',
+                message: '请为所有标签指定映射',
             });
             return;
         }
@@ -110,7 +110,7 @@ function MoveTaskModal({
                     setIsUpdating(false);
                 }
             }).catch((error: Error) => notification.error({
-                message: 'Could not update the task',
+                message: '无法更新任务',
                 className: 'cvat-notification-notice-update-task-failed',
                 description: error.toString(),
             }));
@@ -130,7 +130,7 @@ function MoveTaskModal({
                     }
                 })
                 .catch((error: Error) => notification.error({
-                    message: 'Could not fetch task from the server',
+                    message: '无法从服务器获取任务',
                     description: error.toString(),
                 })).finally(() => {
                     if (mounted.current) {
@@ -183,9 +183,9 @@ function MoveTaskModal({
             okButtonProps={{ disabled: isUpdating }}
             title={(
                 <span>
-                    {`Move task ${taskInstance?.id} to project`}
+                    {`移动任务 ${taskInstance?.id} 到项目`}
                     {/* TODO: replace placeholder */}
-                    <CVATTooltip title='Some moving process description here'>
+                    <CVATTooltip title='将任务移动到另一个项目'>
                         <QuestionCircleOutlined className='ant-typography-secondary' />
                     </CVATTooltip>
                 </span>
@@ -203,7 +203,7 @@ function MoveTaskModal({
                     />
                 </Col>
             </Row>
-            <Divider orientation='left'>Label mapping</Divider>
+            <Divider orientation='left'>标签映射</Divider>
             {!!Object.keys(labelMap).length &&
                 !isUpdating &&
                 taskInstance?.labels.map((label: any) => (

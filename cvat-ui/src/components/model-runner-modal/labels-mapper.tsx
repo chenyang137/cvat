@@ -150,8 +150,8 @@ function LabelsMapperComponent(props: Props): JSX.Element {
             rightData={taskLabels}
             allowManyToOne
             defaultMapping={computeLabelsAutoMapping(modelLabels, taskLabels)}
-            deleteMappingLabel='Remove mapped label'
-            infoMappingLabel='Specify mapping between labels'
+            deleteMappingLabel='移除已映射的标签'
+            infoMappingLabel='指定标签之间的映射关系'
             containerClassName='cvat-runner-label-mapper'
             rowClassName='cvat-runner-label-mapping-row'
             getObjectName={(object: LabelInterface) => object.name}
@@ -194,8 +194,8 @@ function LabelsMapperComponent(props: Props): JSX.Element {
                                 ) as [AttributeInterface, AttributeInterface][]}
                                 rowClassName='cvat-runner-attribute-mapping-row'
                                 containerClassName='cvat-runner-attribute-mapper'
-                                deleteMappingLabel='Remove mapped attribute'
-                                infoMappingLabel='Specify mapping between label attributes'
+                                deleteMappingLabel='移除已映射的属性'
+                                infoMappingLabel='指定标签属性之间的映射关系'
                                 getObjectName={(object: AttributeInterface) => object.name}
                                 getObjectColor={() => taskLabel.color}
                                 filterObjects={(
@@ -233,8 +233,8 @@ function LabelsMapperComponent(props: Props): JSX.Element {
                                 )}
                                 rowClassName='cvat-runner-label-mapping-row'
                                 containerClassName='cvat-runner-label-mapper'
-                                deleteMappingLabel='Remove mapped label'
-                                infoMappingLabel='Specify mapping between skeleton sublabels'
+                                deleteMappingLabel='移除已映射的标签'
+                                infoMappingLabel='指定骨架子标签之间的映射关系'
                                 getObjectName={(object: LabelInterface) => object.name}
                                 getObjectColor={(object: LabelInterface) => object.color}
                                 filterObjects={(
@@ -261,8 +261,8 @@ function LabelsMapperComponent(props: Props): JSX.Element {
                                                     ) as [AttributeInterface, AttributeInterface][]}
                                                     rowClassName='cvat-runner-attribute-mapping-row'
                                                     containerClassName='cvat-runner-attribute-mapper'
-                                                    deleteMappingLabel='Remove mapped attribute'
-                                                    infoMappingLabel='Specify mapping between sublabel attributes'
+                                                    deleteMappingLabel='移除已映射的属性'
+                                                    infoMappingLabel='指定子标签属性之间的映射关系'
                                                     getObjectName={(object: AttributeInterface) => object.name}
                                                     getObjectColor={() => taskSublabel.color}
                                                     filterObjects={(

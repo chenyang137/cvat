@@ -73,7 +73,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
             </Row>
             <Row justify='start'>
                 <Col>
-                    <Text className='cvat-text-color'>Label</Text>
+                    <Text className='cvat-text-color'>标签</Text>
                 </Col>
             </Row>
             <Row justify='center'>
@@ -165,7 +165,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                         <CVATTooltip title={simplifyTooltip}>
                             <Row justify='space-around' align='middle'>
                                 <Col span={14}>
-                                    <Text className='cvat-text-color'> Simplify </Text>
+                                    <Text className='cvat-text-color'> 简化 </Text>
                                 </Col>
                                 <Col span={10}>
                                     <Switch
@@ -182,16 +182,16 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
             ) : null}
             <Row justify='space-around'>
                 <Col span={24}>
-                    <CVATTooltip title={`Press ${repeatShapeShortcut} to draw again`}>
-                        <Button className={`cvat-draw-${shapeType}-shape-button`} onClick={onDrawShape}>Shape</Button>
+                    <CVATTooltip title={`按 ${repeatShapeShortcut} 再次绘制`}>
+                        <Button className={`cvat-draw-${shapeType}-shape-button`} onClick={onDrawShape}>形状</Button>
                     </CVATTooltip>
                     {shapeType !== ShapeType.MASK && (
-                        <CVATTooltip title={`Press ${repeatShapeShortcut} to draw again`}>
+                        <CVATTooltip title={`按 ${repeatShapeShortcut} 再次绘制`}>
                             <Button
                                 className={`cvat-draw-${shapeType}-track-button`}
                                 onClick={onDrawTrack}
                             >
-                                Track
+                                轨迹
                             </Button>
                         </CVATTooltip>
                     )}

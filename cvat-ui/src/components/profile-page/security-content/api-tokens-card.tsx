@@ -84,15 +84,15 @@ function ApiTokensCard(): JSX.Element {
 
     const onRevokeToken = useCallback((token: ApiToken): void => {
         Modal.confirm({
-            title: 'Revoke API Token',
-            content: `Are you sure you want to revoke the token "${token.name}"? This action cannot be undone.`,
-            okText: 'Revoke',
+            title: '撤销 API 令牌',
+            content: `确定要撤销令牌"${token.name}"吗？此操作无法撤销。`,
+            okText: '撤销',
             okButtonProps: {
                 type: 'primary',
                 danger: true,
                 className: 'cvat-api-token-revoke-button',
             },
-            cancelText: 'Cancel',
+            cancelText: '取消',
             onOk: () => {
                 dispatch(revokeApiTokenAsync(token, () => {
                     dispatch(getApiTokensAsync());
@@ -129,7 +129,7 @@ function ApiTokensCard(): JSX.Element {
 
     const apiTokenColumns: ColumnType<RowData>[] = [
         {
-            title: 'Name',
+            title: '名称',
             dataIndex: 'name',
             key: 'name',
             width: 250,
@@ -137,7 +137,7 @@ function ApiTokensCard(): JSX.Element {
             className: 'cvat-api-token-name',
         },
         {
-            title: 'Permissions',
+            title: '权限',
             dataIndex: 'readOnly',
             key: 'readOnly',
             align: 'center' as const,
@@ -158,7 +158,7 @@ function ApiTokensCard(): JSX.Element {
             className: 'cvat-api-token-permissions',
         },
         {
-            title: 'Created',
+            title: '创建时间',
             dataIndex: 'createdDate',
             key: 'createdDate',
             sorter: (a: RowData, b: RowData) => new Date(a.createdDate).getTime() - new Date(b.createdDate).getTime(),
@@ -166,7 +166,7 @@ function ApiTokensCard(): JSX.Element {
             className: 'cvat-api-token-created-date',
         },
         {
-            title: 'Expires',
+            title: '过期时间',
             dataIndex: 'expiryDate',
             key: 'expiryDate',
             sorter: (a: RowData, b: RowData) => {
@@ -181,7 +181,7 @@ function ApiTokensCard(): JSX.Element {
             className: 'cvat-api-token-expire-date',
         },
         {
-            title: 'Last Used',
+            title: '最后使用',
             dataIndex: 'lastUsedDate',
             key: 'lastUsedDate',
             sorter: (a: RowData, b: RowData) => {
@@ -194,7 +194,7 @@ function ApiTokensCard(): JSX.Element {
             className: 'cvat-api-token-last-used',
         },
         {
-            title: 'Actions',
+            title: '操作',
             key: 'actions',
             align: 'center' as const,
             width: 60,
@@ -204,13 +204,13 @@ function ApiTokensCard(): JSX.Element {
                         items: [
                             {
                                 key: 'edit',
-                                label: 'Edit',
+                                label: '编辑',
                                 onClick: () => onEditToken(row.token),
                             },
                             { type: 'divider' },
                             {
                                 key: 'revoke',
-                                label: 'Revoke',
+                                label: '撤销',
                                 onClick: () => onRevokeToken(row.token),
                             },
                         ],

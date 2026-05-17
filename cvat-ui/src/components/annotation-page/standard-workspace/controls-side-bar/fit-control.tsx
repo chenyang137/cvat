@@ -17,7 +17,7 @@ function FitControl(props: Props): JSX.Element {
     const { canvasInstance } = props;
 
     return (
-        <CVATTooltip title='Fit the image [Double Click]' placement='right'>
+        <CVATTooltip title='适配图像 [双击]' placement='right'>
             <Icon className='cvat-fit-control' component={FitIcon} onClick={(): void => canvasInstance.fit()} />
         </CVATTooltip>
     );

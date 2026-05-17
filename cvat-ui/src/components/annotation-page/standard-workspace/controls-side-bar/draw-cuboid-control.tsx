@@ -49,7 +49,7 @@ function DrawCuboidControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.CUBOID} />}
         >
-            <CVATTooltip title='Draw a cuboid' placement='right'>
+            <CVATTooltip title='绘制长方体' placement='right'>
                 <Icon {...dynamicIconProps} component={CubeIcon} />
             </CVATTooltip>
         </CustomPopover>

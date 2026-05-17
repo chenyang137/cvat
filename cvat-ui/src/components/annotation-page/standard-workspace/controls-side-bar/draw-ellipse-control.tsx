@@ -47,7 +47,7 @@ function DrawEllipseControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.ELLIPSE} />}
         >
-            <CVATTooltip title='Draw an ellipse' placement='right'>
+            <CVATTooltip title='绘制椭圆' placement='right'>
                 <Icon {...dynamicIconProps} component={EllipseIcon} />
             </CVATTooltip>
         </CustomPopover>

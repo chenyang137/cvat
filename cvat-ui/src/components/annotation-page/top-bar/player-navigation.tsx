@@ -57,21 +57,21 @@ interface Props {
 
 const componentShortcuts = {
     DELETE_FRAME: {
-        name: 'Delete frame',
-        description: 'Delete frame',
+        name: '删除帧',
+        description: '删除帧',
         sequences: ['alt+del'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
     FOCUS_INPUT_FRAME: {
-        name: 'Focus input frame',
-        description: 'Focus on the element to change the current frame',
+        name: '聚焦帧输入',
+        description: '聚焦该元素以更改当前帧',
         sequences: ['`'],
         displayedSequences: ['~'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
     SEARCH_FRAME_BY_NAME: {
-        name: 'Search frame by name',
-        description: 'Open search frame by name dialog',
+        name: '按名称搜索帧',
+        description: '打开按名称搜索帧的对话框',
         sequences: [],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
@@ -124,10 +124,10 @@ function PlayerNavigation(props: Props): JSX.Element {
         if (!playing) {
             switchNavigationBlocked(true);
             Modal.confirm({
-                title: `Do you want to delete frame #${frameNumber}?`,
-                content: 'The frame will not be visible in navigation and exported datasets, but it still can be restored with all the annotations.',
+                title: `确定要删除帧 #${frameNumber} 吗？`,
+                content: '该帧在导航和导出的数据集中将不可见，但仍可连同所有标注一起恢复。',
                 className: 'cvat-modal-delete-frame',
-                okText: 'Delete',
+                okText: '删除',
                 okType: 'danger',
                 onOk: () => {
                     switchNavigationBlocked(false);
@@ -189,7 +189,7 @@ function PlayerNavigation(props: Props): JSX.Element {
             />
         </CVATTooltip>
     ) : (
-        <CVATTooltip title='Restore the frame'>
+        <CVATTooltip title='恢复帧'>
             <Icon
                 style={deleteFrameIconStyle}
                 className='cvat-player-restore-frame'
@@ -244,10 +244,10 @@ function PlayerNavigation(props: Props): JSX.Element {
                         </CVATTooltip>
                     </Col>
                     <Col className='cvat-player-frame-actions' offset={1}>
-                        <CVATTooltip title='Copy frame filename'>
+                        <CVATTooltip title='复制帧文件名'>
                             <CopyOutlined className='cvat-player-copy-frame-name-icon' onClick={onCopyFilenameIconClick} />
                         </CVATTooltip>
-                        <CVATTooltip title='Create frame URL'>
+                        <CVATTooltip title='创建帧 URL'>
                             <LinkOutlined className='cvat-player-frame-url-icon' onClick={onURLIconClick} />
                         </CVATTooltip>
                         { deleteFrameIcon }

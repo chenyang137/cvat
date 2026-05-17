@@ -47,7 +47,7 @@ function DrawPolygonControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.POLYGON} />}
         >
-            <CVATTooltip title='Draw a polygon' placement='right'>
+            <CVATTooltip title='绘制多边形' placement='right'>
                 <Icon {...dynamicIconProps} component={PolygonIcon} />
             </CVATTooltip>
         </CustomPopover>

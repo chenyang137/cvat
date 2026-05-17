@@ -4,6 +4,8 @@
 // SPDX-License-Identifier: MIT
 
 import React from 'react';
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/locale/zh_CN';
 import { createRoot } from 'react-dom/client';
 import { connect, Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -152,11 +154,13 @@ const ReduxAppWrapper = connect(mapStateToProps, mapDispatchToProps)(CVATApplica
 const root = createRoot(document.getElementById('root') as HTMLDivElement);
 root.render((
     <Provider store={cvatStore}>
-        <BrowserRouter>
-            <PluginsEntrypoint />
-            <ReduxAppWrapper />
-        </BrowserRouter>
-        <LayoutGrid />
+        <ConfigProvider locale={zhCN}>
+            <BrowserRouter>
+                <PluginsEntrypoint />
+                <ReduxAppWrapper />
+            </BrowserRouter>
+            <LayoutGrid />
+        </ConfigProvider>
     </Provider>
 ));
 

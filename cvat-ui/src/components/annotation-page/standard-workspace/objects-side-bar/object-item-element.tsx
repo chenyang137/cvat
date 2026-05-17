@@ -61,7 +61,7 @@ function ObjectItemElementComponent(props: OwnProps): JSX.Element {
                 style={{ fontSize: 10 }}
                 className='cvat-objects-sidebar-state-item-object-type-text'
             >
-                {`${element.label.name} [${element.shapeType.toUpperCase()}]`}
+                {`${element.label.name} [${element.objectType === 'track' ? '轨迹' : '形状'}]`}
             </Text>
             <ObjectButtonsContainer clientID={element.clientID} />
             {!!element.label.attributes.length && (

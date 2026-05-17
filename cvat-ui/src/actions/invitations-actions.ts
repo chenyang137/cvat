@@ -71,7 +71,7 @@ export function getInvitationsAsync(query: Partial<InvitationsQuery>, showNotifi
             if (error instanceof Error) {
                 dispatch(invitationActions.getInvitationsFailed(error.message));
             } else {
-                dispatch(invitationActions.getInvitationsFailed('Unknown error'));
+                dispatch(invitationActions.getInvitationsFailed('未知错误'));
             }
         }
     };

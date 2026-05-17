@@ -45,7 +45,7 @@ function DrawSkeletonControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.SKELETON} />}
         >
-            <CVATTooltip title='Draw a skeleton' placement='right'>
+            <CVATTooltip title='绘制骨架' placement='right'>
                 <Icon {...dynamicIconProps} component={SkeletonIcon} />
             </CVATTooltip>
         </CustomPopover>

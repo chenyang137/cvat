@@ -13,6 +13,12 @@ interface JobStateSelectorProps {
 }
 
 export function JobStateSelector({ value, onSelect }: Readonly<JobStateSelectorProps>): JSX.Element {
+    const stateLabels: Record<string, string> = {
+        [JobState.NEW]: '新建',
+        [JobState.IN_PROGRESS]: '进行中',
+        [JobState.REJECTED]: '已拒绝',
+        [JobState.COMPLETED]: '已完成',
+    };
     return (
         <Select
             className='cvat-job-item-state'
@@ -20,12 +26,12 @@ export function JobStateSelector({ value, onSelect }: Readonly<JobStateSelectorP
             value={value}
             onChange={onSelect}
             onKeyDown={handleDropdownKeyDown}
-            placeholder='Select a state'
+            placeholder='选择状态'
         >
-            <Select.Option value={JobState.NEW}>{JobState.NEW}</Select.Option>
-            <Select.Option value={JobState.IN_PROGRESS}>{JobState.IN_PROGRESS}</Select.Option>
-            <Select.Option value={JobState.REJECTED}>{JobState.REJECTED}</Select.Option>
-            <Select.Option value={JobState.COMPLETED}>{JobState.COMPLETED}</Select.Option>
+            <Select.Option value={JobState.NEW}>{stateLabels[JobState.NEW]}</Select.Option>
+            <Select.Option value={JobState.IN_PROGRESS}>{stateLabels[JobState.IN_PROGRESS]}</Select.Option>
+            <Select.Option value={JobState.REJECTED}>{stateLabels[JobState.REJECTED]}</Select.Option>
+            <Select.Option value={JobState.COMPLETED}>{stateLabels[JobState.COMPLETED]}</Select.Option>
         </Select>
     );
 }
@@ -36,6 +42,11 @@ interface JobStageSelectorProps {
 }
 
 export function JobStageSelector({ value, onSelect }: Readonly<JobStageSelectorProps>): JSX.Element {
+    const stageLabels: Record<string, string> = {
+        [JobStage.ANNOTATION]: '标注',
+        [JobStage.VALIDATION]: '审核',
+        [JobStage.ACCEPTANCE]: '验收',
+    };
     return (
         <Select
             className='cvat-job-item-stage'
@@ -43,16 +54,16 @@ export function JobStageSelector({ value, onSelect }: Readonly<JobStageSelectorP
             value={value}
             onChange={onSelect}
             onKeyDown={handleDropdownKeyDown}
-            placeholder='Select a stage'
+            placeholder='选择阶段'
         >
             <Select.Option value={JobStage.ANNOTATION}>
-                {JobStage.ANNOTATION}
+                {stageLabels[JobStage.ANNOTATION]}
             </Select.Option>
             <Select.Option value={JobStage.VALIDATION}>
-                {JobStage.VALIDATION}
+                {stageLabels[JobStage.VALIDATION]}
             </Select.Option>
             <Select.Option value={JobStage.ACCEPTANCE}>
-                {JobStage.ACCEPTANCE}
+                {stageLabels[JobStage.ACCEPTANCE]}
             </Select.Option>
         </Select>
     );

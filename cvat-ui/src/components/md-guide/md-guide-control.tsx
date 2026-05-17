@@ -22,14 +22,16 @@ function MdGuideControl(props: Props): JSX.Element {
     return (
         <Row justify='start' className='cvat-md-guide-control-wrapper'>
             <Col span={24}>
-                <Text strong className='cvat-text-color'>{`${instanceType[0].toUpperCase()}${instanceType.slice(1)} description`}</Text>
+                <Text strong className='cvat-text-color'>
+                    {instanceType === 'project' ? '项目描述' : instanceType === 'task' ? '任务描述' : '作业描述'}
+                </Text>
                 <br />
                 <Button
                     onClick={() => {
                         history.push(`/${instanceType}s/${id}/guide`);
                     }}
                 >
-                    Edit
+                    编辑
                 </Button>
             </Col>
         </Row>

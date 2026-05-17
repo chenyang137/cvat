@@ -59,11 +59,11 @@ function NameConfigurationForm(
             <Form.Item
                 name='name'
                 hasFeedback
-                label='Name'
+                label='名称'
                 rules={[
                     {
                         required: true,
-                        message: 'Please, specify a name',
+                        message: '请指定名称',
                     },
                 ]}
             >
@@ -85,7 +85,7 @@ function AdvancedConfigurationForm(props: AdvancedConfigurationProps): JSX.Eleme
         <Form layout='vertical' ref={formRef} initialValues={initialValues}>
             <Form.Item
                 name='bug_tracker'
-                label='Issue tracker'
+                label='问题追踪器'
                 extra='Attach issue tracker where the project is described'
                 hasFeedback
                 rules={[
@@ -106,7 +106,7 @@ function AdvancedConfigurationForm(props: AdvancedConfigurationProps): JSX.Eleme
                 <Col span={11}>
                     <SourceStorageField
                         instanceId={null}
-                        storageDescription='Specify source storage for import resources like annotation, backups'
+                        storageDescription='指定用于导入标注、备份等资源的源存储'
                         locationValue={sourceStorageLocation}
                         onChangeLocationValue={onChangeSourceStorageLocation}
                     />
@@ -114,7 +114,7 @@ function AdvancedConfigurationForm(props: AdvancedConfigurationProps): JSX.Eleme
                 <Col span={11} offset={1}>
                     <TargetStorageField
                         instanceId={null}
-                        storageDescription='Specify target storage for export resources like annotation, backups'
+                        storageDescription='指定用于导出标注、备份等资源的目标存储'
                         locationValue={targetStorageLocation}
                         onChangeLocationValue={onChangeTargetStorageLocation}
                     />
@@ -187,7 +187,7 @@ export default function CreateProjectContent(): JSX.Element {
         if (res) {
             resetForm();
             notification.info({
-                message: 'The project has been created',
+                message: '项目已创建',
                 className: 'cvat-notification-create-project-success',
             });
             focusForm();
@@ -217,7 +217,7 @@ export default function CreateProjectContent(): JSX.Element {
                     className='cvat-advanced-configuration-wrapper'
                     items={[{
                         key: '1',
-                        label: <Text className='cvat-title'>Advanced configuration</Text>,
+                        label: <Text className='cvat-title'>高级配置</Text>,
                         children: (
                             <AdvancedConfigurationForm
                                 formRef={advancedFormRef}
@@ -238,12 +238,12 @@ export default function CreateProjectContent(): JSX.Element {
                 <Row justify='end' gutter={8}>
                     <Col>
                         <Button className='cvat-submit-open-project-button' type='primary' onClick={onSubmitAndOpen}>
-                            Submit & Open
+                            提交并打开
                         </Button>
                     </Col>
                     <Col>
                         <Button className='cvat-submit-continue-project-button' type='primary' onClick={onSubmitAndContinue}>
-                            Submit & Continue
+                            提交并继续
                         </Button>
                     </Col>
                 </Row>

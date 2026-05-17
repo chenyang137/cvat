@@ -202,7 +202,7 @@ function RemoteBrowser(props: Props): JSX.Element {
             } catch (error: any) {
                 if (isRelevant()) {
                     notification.error({
-                        message: 'Storage content fetching failed',
+                        message: '存储内容获取失败',
                         description: error.toString(),
                     });
                 }
@@ -295,7 +295,7 @@ function RemoteBrowser(props: Props): JSX.Element {
 
     const columns = [
         {
-            title: 'Name',
+            title: '名称',
             dataIndex: 'name',
             key: 'name',
             render: (name: string, node: Node) => {
@@ -329,11 +329,11 @@ function RemoteBrowser(props: Props): JSX.Element {
             <>
                 <Empty />
                 <Paragraph className='cvat-remote-browser-empty'>
-                    Please, be sure you had
+                    请确保您已
                     <Text strong>
-                        <a href={SHARE_MOUNT_GUIDE_URL}> mounted </a>
+                        <a href={SHARE_MOUNT_GUIDE_URL}> 挂载 </a>
                     </Text>
-                    share before you built CVAT and the shared storage contains files
+                    在构建 CVAT 前共享，且共享存储包含文件
                 </Paragraph>
             </>
         );
@@ -368,7 +368,7 @@ function RemoteBrowser(props: Props): JSX.Element {
                             </CVATTooltip>
                         )}
                         disabled={isFetching}
-                        placeholder='Search by prefix'
+                        placeholder='按前缀搜索'
                         value={curSearchString}
                         onBlur={() => resetDataSource()}
                         onPressEnter={() => resetDataSource()}
@@ -378,7 +378,7 @@ function RemoteBrowser(props: Props): JSX.Element {
                     />
                 </Col>
                 <Col>
-                    <CVATTooltip title='Refresh'>
+                    <CVATTooltip title='刷新'>
                         <Button
                             disabled={isFetching}
                             onClick={() => {

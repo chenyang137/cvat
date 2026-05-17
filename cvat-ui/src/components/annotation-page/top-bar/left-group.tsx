@@ -40,20 +40,20 @@ interface Props {
 
 const componentShortcuts = {
     UNDO: {
-        name: 'Undo action',
-        description: 'Cancel the latest action related with objects',
+        name: '撤销',
+        description: '撤销与对象相关的最新操作',
         sequences: ['ctrl+z'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
     REDO: {
-        name: 'Redo action',
-        description: 'Cancel undo action',
+        name: '重做',
+        description: '撤销重做操作',
         sequences: ['ctrl+shift+z', 'ctrl+y'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
     SWITCH_TOOLS_BLOCKER_STATE: {
-        name: 'Switch algorithm blocker',
-        description: 'Postpone running the algorithm for interaction tools',
+        name: '切换算法阻断器',
+        description: '推迟运行交互工具的算法',
         sequences: ['tab'],
         scope: ShortcutScope.STANDARD_WORKSPACE,
     },
@@ -114,7 +114,7 @@ function LeftGroup(props: Props): JSX.Element {
                     closable={false}
                     footer={[]}
                 >
-                    <Text>CVAT is saving your annotations, please wait </Text>
+                    <Text>CVAT 正在保存您的标注，请稍候 </Text>
                     <LoadingOutlined />
                 </Modal>
             )}
@@ -129,7 +129,7 @@ function LeftGroup(props: Props): JSX.Element {
                         onClick={onUndoClick}
                     >
                         <Icon component={UndoIcon} />
-                        <span>Undo</span>
+                        <span>撤销</span>
                     </Button>
                 </CVATTooltip>
                 <CVATTooltip overlay={`Redo: ${redoAction} ${redoShortcut}`}>
@@ -140,14 +140,14 @@ function LeftGroup(props: Props): JSX.Element {
                         onClick={onRedoClick}
                     >
                         <Icon component={RedoIcon} />
-                        Redo
+                        重做
                     </Button>
                 </CVATTooltip>
                 {includesDoneButton ? (
                     <CVATTooltip overlay={`Press "${drawShortcut}" to finish`}>
                         <Button type='link' className='cvat-annotation-header-done-button cvat-annotation-header-button' onClick={onFinishDraw}>
                             <CheckCircleOutlined />
-                            Done
+                            完成
                         </Button>
                     </CVATTooltip>
                 ) : null}

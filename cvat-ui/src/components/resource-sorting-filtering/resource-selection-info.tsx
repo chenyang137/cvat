@@ -32,7 +32,7 @@ export function ResourceSelectionInfo(
                 size='small'
                 type='link'
             >
-                Select all
+                全选
             </Button>
         );
     } else if (selectedCount > 0) {
@@ -44,7 +44,7 @@ export function ResourceSelectionInfo(
                 size='small'
                 type='link'
             >
-                Deselect
+                取消选择
             </Button>
         );
     }

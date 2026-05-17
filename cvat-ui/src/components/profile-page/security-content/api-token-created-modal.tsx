@@ -38,7 +38,7 @@ function ApiTokenCreatedModal({
 
     return (
         <Modal
-            title='Your token is ready'
+            title='您的令牌已就绪'
             open={visible}
             onCancel={onClose}
             footer={[
@@ -78,7 +78,7 @@ function ApiTokenCreatedModal({
                             onClick={handleCopyToClipboard}
                             className='cvat-api-token-copy-button'
                         >
-                            {copied ? 'Copied!' : 'Copy'}
+                            {copied ? 'Copied!' : '复制'}
                         </Button>
                     </Space.Compact>
                 </div>

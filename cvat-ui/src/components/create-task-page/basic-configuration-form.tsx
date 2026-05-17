@@ -55,7 +55,7 @@ export default class BasicConfigurationForm extends React.PureComponent<Props> {
             return this.formRef.current.validateFields();
         }
 
-        return Promise.reject(new Error('Form ref is empty'));
+        return Promise.reject(new Error('表单引用为空'));
     }
 
     public resetFields(): void {
@@ -79,11 +79,11 @@ export default class BasicConfigurationForm extends React.PureComponent<Props> {
                     className={many ? 'cvat-task-name-field-has-tooltip' : ''}
                     hasFeedback
                     name='name'
-                    label={<span>Name</span>}
+                    label={<span>名称</span>}
                     rules={[
                         {
                             required: true,
-                            message: 'Task name cannot be empty',
+                            message: '任务名称不能为空',
                         },
                     ]}
                     initialValue={this.initialName}

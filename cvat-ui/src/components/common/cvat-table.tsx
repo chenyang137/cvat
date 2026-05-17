@@ -182,7 +182,7 @@ function CVATTable(props: Props): JSX.Element {
                             >
                                 <Input.Search
                                     className='cvat-table-search-bar'
-                                    placeholder='Search ..'
+                                    placeholder='搜索...'
                                     onSearch={setSearchPhrase}
                                     enterButton
                                 />

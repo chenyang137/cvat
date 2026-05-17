@@ -47,7 +47,7 @@ function DrawMaskControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.MASK} />}
         >
-            <CVATTooltip title='Draw a mask' placement='right'>
+            <CVATTooltip title='绘制掩码' placement='right'>
                 <Icon {...dynamicIconProps} component={BrushIcon} />
             </CVATTooltip>
         </CustomPopover>

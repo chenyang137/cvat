@@ -47,7 +47,7 @@ function DrawRectangleControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.RECTANGLE} />}
         >
-            <CVATTooltip title='Draw a rectangle' placement='right'>
+            <CVATTooltip title='绘制矩形' placement='right'>
                 <Icon {...dynamicIconProps} component={RectangleIcon} />
             </CVATTooltip>
         </CustomPopover>

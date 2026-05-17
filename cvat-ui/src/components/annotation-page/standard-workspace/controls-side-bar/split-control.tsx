@@ -32,7 +32,7 @@ function SplitControl(props: Props): JSX.Element {
         <Icon className='cvat-split-track-control cvat-disabled-canvas-control' component={SplitIcon} />
     ) : (
         <CVATTooltip
-            title={`Split a track ${
+            title={`分割轨迹 ${
                 canvasInstance instanceof Canvas3d ?
                     normalizedKeyMap.SWITCH_SPLIT_MODE_STANDARD_3D_CONTROLS :
                     normalizedKeyMap.SWITCH_SPLIT_MODE_STANDARD_CONTROLS

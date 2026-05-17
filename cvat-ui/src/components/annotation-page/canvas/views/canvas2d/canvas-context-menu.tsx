@@ -75,7 +75,7 @@ function ReviewContextMenu({
             </Menu.Item>
             {latestComments.length ? (
                 <Menu.SubMenu
-                    title='Quick issue ...'
+                    title='快速提问...'
                     className='cvat-context-menu-item'
                     key={ReviewContextMenuKeys.QUICK_ISSUE_FROM_LATEST}
                 >

@@ -112,7 +112,7 @@ function DetectorRunner(props: Props): JSX.Element {
         if (model) {
             setModelLabels(model.labels);
             if (!model.labels.length && model.kind !== ModelKind.REID) {
-                notification.warning({ message: 'This model does not have specified labels' });
+                notification.warning({ message: '此模型未指定标签' });
             }
         } else {
             setModelLabels([]);
@@ -125,7 +125,7 @@ function DetectorRunner(props: Props): JSX.Element {
                 <Col span={4}>Model:</Col>
                 <Col span={20}>
                     <Select
-                        placeholder={dimension === DimensionType.DIMENSION_2D ? 'Select a model' : 'No models available'}
+                        placeholder={dimension === DimensionType.DIMENSION_2D ? '选择模型' : '没有可用模型'}
                         disabled={dimension !== DimensionType.DIMENSION_2D}
                         style={{ width: '100%' }}
                         onChange={(_modelID: string): void => {
@@ -146,10 +146,10 @@ function DetectorRunner(props: Props): JSX.Element {
                 <div>
                     <div className='cvat-detector-runner-mapping-header'>
                         <div>
-                            <Text strong>Setup mapping between labels and attributes</Text>
+                            <Text strong>设置标签和属性映射</Text>
                         </div>
                         <div>
-                            <Tag>Model Spec</Tag>
+                            <Tag>模型规格</Tag>
                             <ArrowRightOutlined />
                             <Tag>CVAT Spec</Tag>
                         </div>
@@ -170,7 +170,7 @@ function DetectorRunner(props: Props): JSX.Element {
                             setConvertMasksToPolygons(checked);
                         }}
                     />
-                    <Text>Convert masks to polygons</Text>
+                    <Text>将掩码转换为多边形</Text>
                 </div>
             )}
             {isDetector && withCleanup && (
@@ -179,7 +179,7 @@ function DetectorRunner(props: Props): JSX.Element {
                         checked={cleanup}
                         onChange={(checked: boolean): void => setCleanup(checked)}
                     />
-                    <Text>Clean previous annotations</Text>
+                    <Text>清除之前的标注</Text>
                 </div>
             )}
             {isDetector && (
@@ -197,8 +197,8 @@ function DetectorRunner(props: Props): JSX.Element {
                             />
                         </Col>
                         <Col>
-                            <Text>Threshold</Text>
-                            <CVATTooltip title='Minimum confidence threshold for detections. Leave empty to use the default value specified in the model settings'>
+                            <Text>阈值</Text>
+                            <CVATTooltip title='检测的最小置信度阈值。留空则使用模型设置中指定的默认值'>
                                 <QuestionCircleOutlined className='cvat-info-circle-icon' />
                             </CVATTooltip>
                         </Col>
@@ -209,10 +209,10 @@ function DetectorRunner(props: Props): JSX.Element {
                 <div>
                     <Row align='middle' justify='start'>
                         <Col>
-                            <Text>Threshold</Text>
+                            <Text>阈值</Text>
                         </Col>
                         <Col offset={1}>
-                            <CVATTooltip title='Minimum similarity value for shapes that can be merged'>
+                            <CVATTooltip title='可合并形状之间的最小相似度值'>
                                 <InputNumber
                                     min={0.01}
                                     step={0.01}
@@ -229,12 +229,12 @@ function DetectorRunner(props: Props): JSX.Element {
                     </Row>
                     <Row align='middle' justify='start'>
                         <Col>
-                            <Text>Maximum distance</Text>
+                            <Text>最大距离</Text>
                         </Col>
                         <Col offset={1}>
-                            <CVATTooltip title='Maximum distance between shapes that can be merged'>
+                            <CVATTooltip title='可以合并的形状之间的最大距离'>
                                 <InputNumber
-                                    placeholder='Threshold'
+                                    placeholder='阈值'
                                     min={1}
                                     value={distance}
                                     onChange={(value: number | undefined | string | null) => {

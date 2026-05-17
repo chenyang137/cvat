@@ -96,7 +96,7 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
         actionType: MenuKeys.REMOVE_MEMBER | MenuKeys.DELETE_INVITATION,
     ): void => {
         const membershipsToRemove = actionsApplicable[actionType];
-        const actionLabel = actionType === MenuKeys.DELETE_INVITATION ? 'Deleting invitation for' : 'Removing member';
+        const actionLabel = actionType === MenuKeys.DELETE_INVITATION ? '正在删除邀请' : '正在移除成员';
 
         dispatch(makeBulkOperationAsync(
             membershipsToRemove,
@@ -123,7 +123,7 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
         {
             key: MenuKeys.EDIT_ROLE,
             label: (
-                <CVATMenuEditLabel>{withCount('Role', MenuKeys.EDIT_ROLE)}</CVATMenuEditLabel>
+                <CVATMenuEditLabel>{withCount('角色', MenuKeys.EDIT_ROLE)}</CVATMenuEditLabel>
             ),
             disabled: role === 'owner' && actionsApplicable[MenuKeys.EDIT_ROLE].length < 1,
         },
@@ -154,7 +154,7 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
                 [{ key: MenuKeys.DELETE_INVITATION, label: withCount('Remove invitation', MenuKeys.DELETE_INVITATION) }] :
                 []),
             ...(actionsApplicable[MenuKeys.REMOVE_MEMBER].length > 0 ?
-                [{ key: MenuKeys.REMOVE_MEMBER, label: withCount('Delete', MenuKeys.REMOVE_MEMBER) }] :
+                [{ key: MenuKeys.REMOVE_MEMBER, label: withCount('删除', MenuKeys.REMOVE_MEMBER) }] :
                 []),
         );
     }
@@ -176,9 +176,9 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
                     } else if (action.key === 'remove_member') {
                         Modal.confirm({
                             className: 'cvat-modal-organization-member-remove',
-                            title: `You are removing "${username}" from this organization`,
-                            content: 'The person will not have access to the organization data anymore. Continue?',
-                            okText: 'Yes, remove',
+                            title: `您正在将"${username}"从组织中移除`,
+                            content: '此人将不再有权访问组织数据。继续吗？',
+                            okText: '是的，移除',
                             okButtonProps: {
                                 danger: true,
                             },

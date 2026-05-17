@@ -86,8 +86,8 @@ function JobActionsComponent(
     const onMergeConsensusJob = useCallback(() => {
         if (jobInstance.replicasCount > 0) {
             Modal.confirm({
-                title: 'The consensus job will be merged',
-                content: 'Existing annotations in the parent job will be updated. Continue?',
+                title: '共识作业将被合并',
+                content: '父作业中的现有标注将被更新。继续吗？',
                 className: 'cvat-modal-confirm-consensus-merge-job',
                 onOk: () => {
                     dispatch(mergeConsensusJobsAsync(jobInstance));
@@ -96,7 +96,7 @@ function JobActionsComponent(
                     type: 'primary',
                     danger: true,
                 },
-                okText: 'Merge',
+                okText: '合并',
             });
         }
     }, [jobInstance]);
@@ -104,11 +104,11 @@ function JobActionsComponent(
     const onDeleteJob = useCallback(() => {
         Modal.confirm({
             title: isBulkMode ?
-                `Delete ${jobsToAct.length} selected jobs` :
-                `The job ${jobInstance.id} will be deleted`,
+                `删除 ${jobsToAct.length} 个选中的作业` :
+                `作业 ${jobInstance.id} 将被删除`,
             content: isBulkMode ?
-                'All related data (annotations) for all selected jobs will be lost. Continue?' :
-                'All related data (annotations) will be lost. Continue?',
+                '所有选中作业的相关数据（标注）将丢失。继续吗？' :
+                '所有相关数据（标注）将丢失。继续吗？',
             className: 'cvat-modal-confirm-delete-job',
             onOk: () => {
                 setTimeout(() => {
@@ -127,7 +127,7 @@ function JobActionsComponent(
                 type: 'primary',
                 danger: true,
             },
-            okText: isBulkMode ? 'Delete selected' : 'Delete',
+            okText: isBulkMode ? '删除所选' : '删除',
         });
     }, [jobInstance, isBulkMode, jobsToAct, dispatch]);
 

@@ -49,7 +49,7 @@ function AnnotationGuidePage(): JSX.Element {
                 setGuide(guideInstance);
             }).catch((error: unknown) => {
                 notification.error({
-                    message: `Could not receive guide for the ${instanceType} ${id}`,
+                    message: `无法获取${instanceType} ${id}的指南`,
                     description: error instanceof Error ? error.message : '',
                 });
             }).finally(() => {
@@ -64,10 +64,10 @@ function AnnotationGuidePage(): JSX.Element {
             guide.save().then((result: AnnotationGuide) => {
                 setValue(result.markdown);
                 setGuide(result);
-                notification.info({ message: 'Annotation guide was saved successfully' });
+                notification.info({ message: '标注指南保存成功' });
             }).catch((error: unknown) => {
                 notification.error({
-                    message: 'Could not save guide on the server',
+                    message: '无法在服务器上保存指南',
                     description: error instanceof Error ? error.message : '',
                 });
             }).finally(() => {
@@ -114,7 +114,7 @@ function AnnotationGuidePage(): JSX.Element {
                         setValue(computeNewValue());
                     } catch (error: any) {
                         notification.error({
-                            message: 'Could not create a server asset',
+                            message: '无法创建服务器资源',
                             description: error.toString(),
                         });
                     } finally {
@@ -176,7 +176,7 @@ function AnnotationGuidePage(): JSX.Element {
                         disabled={fetching || !guide?.id}
                         onClick={() => submit(value)}
                     >
-                        Submit
+                        提交
                     </Button>
                 </Space>
             </Col>

@@ -65,7 +65,7 @@ function ImportBackupModal(): JSX.Element {
                 return e?.fileList[0];
             }}
             name='dragger'
-            rules={[{ required: true, message: 'The file is required' }]}
+            rules={[{ required: true, message: '必须选择文件' }]}
         >
             <Upload.Dragger
                 listType='text'
@@ -85,7 +85,7 @@ function ImportBackupModal(): JSX.Element {
                 <p className='ant-upload-drag-icon'>
                     <InboxOutlined />
                 </p>
-                <p className='ant-upload-text'>Click or drag file to this area</p>
+                <p className='ant-upload-text'>点击或拖拽文件到此区域</p>
             </Upload.Dragger>
         </Form.Item>
     );
@@ -94,7 +94,7 @@ function ImportBackupModal(): JSX.Element {
         if (value) {
             const extension = value.toLowerCase().split('.')[1];
             if (extension !== 'zip') {
-                return Promise.reject(new Error('Only ZIP archive is supported'));
+                return Promise.reject(new Error('仅支持ZIP压缩文件'));
             }
         }
 
@@ -103,12 +103,12 @@ function ImportBackupModal(): JSX.Element {
 
     const renderCustomName = (): JSX.Element => (
         <Form.Item
-            label={<Text strong>File name</Text>}
+            label={<Text strong>文件名</Text>}
             name='fileName'
-            rules={[{ validator: validateFileName }, { required: true, message: 'Please, specify a name' }]}
+            rules={[{ validator: validateFileName }, { required: true, message: '请指定名称' }]}
         >
             <Input
-                placeholder='Backup file name'
+                placeholder='备份文件名'
                 className='cvat-modal-import-filename-input'
             />
         </Form.Item>
@@ -127,7 +127,7 @@ function ImportBackupModal(): JSX.Element {
         (values: FormValues): void => {
             if (file === null && !values.fileName) {
                 Notification.error({
-                    message: 'No backup file specified',
+                    message: '未指定备份文件',
                 });
                 return;
             }
@@ -145,7 +145,7 @@ function ImportBackupModal(): JSX.Element {
             );
 
             Notification.info({
-                message: `The ${instanceType} creating from the backup has been started`,
+                message: `从备份创建${instanceType}已开始`,
                 className: 'cvat-notification-notice-import-backup-start',
             });
             closeModal();
@@ -157,7 +157,7 @@ function ImportBackupModal(): JSX.Element {
         <Modal
             title={(
                 <Text strong>
-                    {`Create ${instanceType} from backup`}
+                    {`从备份创建${instanceType === 'project' ? '项目' : '任务'}`}
                 </Text>
             )}
             open={modalVisible}
@@ -166,7 +166,7 @@ function ImportBackupModal(): JSX.Element {
             className='cvat-modal-import-backup'
         >
             <Form
-                name={`Create ${instanceType} from backup file`}
+                name={`从备份文件创建${instanceType === 'project' ? '项目' : '任务'}`}
                 form={form}
                 onFinish={handleImport}
                 layout='vertical'

@@ -59,7 +59,7 @@ export default function TopBarComponent(props: Readonly<VisibleTopBarProps>): JS
                                 }}
                                 defaultValue={query.search ?? ''}
                                 className='cvat-webhooks-page-search-bar'
-                                placeholder='Search ...'
+                                placeholder='搜索...'
                             />
                             <ResourceSelectionInfo selectedCount={selectedCount} onSelectAll={onSelectAll} />
                         </div>
@@ -70,7 +70,7 @@ export default function TopBarComponent(props: Readonly<VisibleTopBarProps>): JS
                                     setVisibility({ ...defaultVisibility, sorting: visible })
                                 )}
                                 defaultFields={query.sort?.split(',') || ['-ID']}
-                                sortingFields={['ID', 'Target URL', 'Owner', 'Description', 'Type', 'Updated date']}
+                                sortingFields={['ID', '目标 URL', '拥有者', '描述', '类型', '更新日期']}
                                 onApplySorting={onApplySorting}
                             />
                             <FilteringComponent

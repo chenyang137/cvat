@@ -277,26 +277,26 @@ function mapStateToProps(state: CombinedState): StateToProps {
 
 const componentShortcuts = {
     SWITCH_AUTOMATIC_BORDERING: {
-        name: 'Toggle snap to contour',
-        description: 'Toggle automatic snap to contour for polygons and polylines during drawing/editing',
+        name: '切换吸附到轮廓',
+        description: '在绘制/编辑期间切换多边形和折线的自动吸附到轮廓',
         sequences: [],
         scope: ShortcutScope.STANDARD_WORKSPACE,
     },
     SWITCH_SNAP_TO_POINT: {
-        name: 'Toggle snap to point',
-        description: 'Toggle automatic snapping to nearby points',
+        name: '切换吸附到点',
+        description: '切换到附近点的自动吸附',
         sequences: [],
         scope: ShortcutScope.STANDARD_WORKSPACE,
     },
     NEXT_OBJECT: {
-        name: 'Next object',
-        description: 'Go to the next object and center it on the canvas',
+        name: '下一个对象',
+        description: '转到下一个对象并将其居中显示在画布上',
         sequences: ['tab'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
     PREVIOUS_OBJECT: {
-        name: 'Previous object',
-        description: 'Go to the previous object and center it on the canvas',
+        name: '上一个对象',
+        description: '转到上一个对象并将其居中显示在画布上',
         sequences: ['shift+tab'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
@@ -677,7 +677,7 @@ class CanvasWrapperComponent extends React.PureComponent<Props> {
     private onCanvasWarningOccurrence = (event: any): void => {
         const { message, domain } = event.detail;
         notification.warning({
-            message: domain ? `${domain}` : 'Warning',
+            message: domain ? `${domain}` : '警告',
             description: message,
             duration: 5,
             className: 'cvat-notification-warning-canvas',
@@ -1042,7 +1042,7 @@ class CanvasWrapperComponent extends React.PureComponent<Props> {
                                 } catch (error: any) {
                                     notification.error({
                                         description: error.toString(),
-                                        message: 'Image processing error occurred',
+                                        message: '图像处理错误',
                                         className: 'cvat-notification-notice-image-processing-error',
                                     });
                                 }

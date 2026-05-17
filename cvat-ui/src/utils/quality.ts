@@ -56,9 +56,9 @@ export function tablePaginationPageSize(pageHeight: number): number {
 export function validationModeText(task: Task): string | null {
     let result: string | null = null;
     if (task.validationMode === 'gt') {
-        result = 'Ground truth';
+        result = '真值';
     } else if (task.validationMode === 'gt_pool') {
-        result = 'Honeypots';
+        result = '蜜罐';
     }
     return result;
 }

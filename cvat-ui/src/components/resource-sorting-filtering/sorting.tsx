@@ -205,7 +205,7 @@ function SortingModalComponent(props: Props): JSX.Element {
                 type='default'
                 onClick={() => onVisibleChange(!visible)}
             >
-                Sort by
+                排序方式
                 <OrderedListOutlined />
             </Button>
         </Popover>

@@ -52,7 +52,7 @@ export default function ResourceFilterHOC(
         try {
             savedItems = JSON.parse(localStorage.getItem(localStorageRecentKeyword) || '[]');
             if (!Array.isArray(savedItems) || savedItems.some((item: any) => typeof item !== 'string')) {
-                throw new Error('Wrong filters value stored');
+                throw new Error('存储的筛选值有误');
             }
         } catch (_: any) {
             // nothing to do
@@ -271,7 +271,7 @@ export default function ResourceFilterHOC(
                                 type='default'
                                 onClick={() => onPredefinedVisibleChange(!predefinedVisible)}
                             >
-                                Quick filters
+                                快速筛选
                                 { appliedFilter.predefined ?
                                     <FilterFilled /> :
                                     <FilterOutlined />}
@@ -332,7 +332,7 @@ export default function ResourceFilterHOC(
                                             () => onRecentVisibleChange(!recentVisible)
                                         }
                                     >
-                                        Recent
+                                        最近使用
                                         <DownOutlined />
                                     </Button>
                                 </Popover>
@@ -360,7 +360,7 @@ export default function ResourceFilterHOC(
                                         });
                                     }}
                                 >
-                                    Reset
+                                    重置
                                 </Button>
                                 <Button
                                     className='cvat-apply-filters-button'
@@ -379,7 +379,7 @@ export default function ResourceFilterHOC(
                                         });
                                     }}
                                 >
-                                    Apply
+                                    应用
                                 </Button>
                             </Space>
                         </div>
@@ -391,7 +391,7 @@ export default function ResourceFilterHOC(
                         type='default'
                         onClick={() => onBuilderVisibleChange(!builderVisible)}
                     >
-                        Filter
+                        筛选
                         { appliedFilter.built || appliedFilter.recent ?
                             <FilterFilled /> :
                             <FilterOutlined />}
@@ -404,7 +404,7 @@ export default function ResourceFilterHOC(
                     type='link'
                     onClick={() => { setAppliedFilter({ ...defaultAppliedFilter }); }}
                 >
-                    Clear filters
+                    清除筛选
                 </Button>
             </div>
         );

@@ -8,7 +8,7 @@ import asyncFetchUsers from 'components/resource-sorting-filtering/request-users
 export const config: Partial<Config> = {
     fields: {
         state: {
-            label: 'State',
+            label: '状态',
             type: 'select',
             operators: ['select_any_in', 'select_equals'], // ['select_equals', 'select_not_equals', 'select_any_in', 'select_not_any_in']
             valueSources: ['value'],
@@ -22,7 +22,7 @@ export const config: Partial<Config> = {
             },
         },
         stage: {
-            label: 'Stage',
+            label: '阶段',
             type: 'select',
             operators: ['select_any_in', 'select_equals'],
             valueSources: ['value'],
@@ -35,7 +35,7 @@ export const config: Partial<Config> = {
             },
         },
         dimension: {
-            label: 'Dimension',
+            label: '维度',
             type: 'select',
             operators: ['select_equals'],
             valueSources: ['value'],
@@ -47,7 +47,7 @@ export const config: Partial<Config> = {
             },
         },
         assignee: {
-            label: 'Assignee',
+            label: '被指派人',
             type: 'select',
             valueSources: ['value'],
             operators: ['select_equals'],
@@ -58,20 +58,20 @@ export const config: Partial<Config> = {
             },
         },
         updatedDate: {
-            label: 'Last updated',
+            label: '最后更新',
             type: 'datetime',
             operators: ['between', 'greater', 'greater_or_equal', 'less', 'less_or_equal'],
         },
         type: {
-            label: 'Type',
+            label: '类型',
             type: 'select',
             operators: ['select_equals'],
             valueSources: ['value'],
             fieldSettings: {
                 listValues: [
-                    { value: 'annotation', title: 'Annotation' },
-                    { value: 'ground_truth', title: 'Ground truth' },
-                    { value: 'consensus_replica', title: 'Consensus replica' },
+                    { value: 'annotation', title: '标注' },
+                    { value: 'ground_truth', title: '真值' },
+                    { value: 'consensus_replica', title: '共识副本' },
                 ],
             },
         },
@@ -83,7 +83,7 @@ export const config: Partial<Config> = {
             valueSources: ['value'],
         },
         parent_job_id: {
-            label: 'Parent ID',
+            label: '父级 ID',
             type: 'number',
             operators: ['is_empty', 'is_not_empty', 'equal', 'between', 'greater', 'greater_or_equal', 'less', 'less_or_equal'],
             fieldSettings: { min: 0 },
@@ -95,7 +95,7 @@ export const config: Partial<Config> = {
 export const localStorageRecentCapacity = 10;
 export const localStorageRecentKeyword = 'recentlyAppliedJobsFilters';
 export const predefinedFilterValues = {
-    'Assigned to me': '{"and":[{"==":[{"var":"assignee"},"<username>"]}]}',
-    'Not completed': '{"!":{"or":[{"==":[{"var":"state"},"completed"]},{"==":[{"var":"stage"},"acceptance"]}]}}',
+    '指派给我': '{"and":[{"==":[{"var":"assignee"},"<username>"]}]}',
+    '未完成': '{"!":{"or":[{"==":[{"var":"state"},"completed"]},{"==":[{"var":"stage"},"acceptance"]}]}}',
     'Not a replica': '{"and":[{"!":{"var":"parent_job_id"}}]}',
 };

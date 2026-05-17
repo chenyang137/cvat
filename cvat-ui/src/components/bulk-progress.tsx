@@ -39,7 +39,7 @@ export default function BulkProgress(): JSX.Element | null {
             <>
                 {remainingItemsCount > 0 ? (
                     <>
-                        Some items failed to process. You can retry the operation for the remaining
+                        部分项目处理失败。您可以重试剩余操作
                         {` ${remainingItemsCount} items.`}
                     </>
                 ) : (
@@ -56,7 +56,7 @@ export default function BulkProgress(): JSX.Element | null {
                                 handleRetry();
                             }}
                         >
-                            Retry
+                            重试
                         </Button>
                     </>
                 )}
@@ -87,7 +87,7 @@ export default function BulkProgress(): JSX.Element | null {
                 onClick={() => dispatch(bulkActions.cancelBulkAction())}
                 type='primary'
             >
-                Cancel
+                取消
             </Button>
         </div>
     );

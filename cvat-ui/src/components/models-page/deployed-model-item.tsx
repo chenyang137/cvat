@@ -57,8 +57,8 @@ function DeployedModelItem(props: Readonly<Props>): JSX.Element {
 
     const created = dayjs(model.createdDate).fromNow();
     const modelDescription = !systemModel ?
-        <Text type='secondary'>{`Added ${created}`}</Text> :
-        <Text type='secondary'>System model</Text>;
+        <Text type='secondary'>{`添加于 ${created}`}</Text> :
+        <Text type='secondary'>系统模型</Text>;
 
     const topBarItems: [JSX.Element, number][] = [];
 
@@ -111,7 +111,7 @@ function DeployedModelItem(props: Readonly<Props>): JSX.Element {
                         <Row onClick={onOpenModel} className='cvat-models-item-text-description'>
                             {model.owner && (
                                 <>
-                                    <Text type='secondary'>{`Created by ${model.owner}`}</Text>
+                                    <Text type='secondary'>{`创建者：${model.owner}`}</Text>
                                     <br />
                                 </>
                             )}
@@ -139,7 +139,7 @@ function DeployedModelItem(props: Readonly<Props>): JSX.Element {
         <>
             <Modal
                 className='cvat-model-info-modal'
-                title='Model'
+                title='模型'
                 open={isModalShown}
                 onCancel={onCloseModel}
                 footer={null}
@@ -177,10 +177,10 @@ function DeployedModelItem(props: Readonly<Props>): JSX.Element {
                     <Col span={15}>
                         <Row>
                             <Col span={8}>
-                                <Text strong>Provider</Text>
+                                <Text strong>服务商</Text>
                             </Col>
                             <Col>
-                                <Text strong>Type</Text>
+                                <Text strong>类型</Text>
                             </Col>
                         </Row>
                         <Row>
@@ -196,7 +196,7 @@ function DeployedModelItem(props: Readonly<Props>): JSX.Element {
                         <Col>
                             <Row>
                                 <Col>
-                                    <Text strong>Owner</Text>
+                                    <Text strong>拥有者</Text>
                                 </Col>
                             </Row>
                             <Row>

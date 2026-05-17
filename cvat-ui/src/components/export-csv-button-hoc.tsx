@@ -76,7 +76,7 @@ function createCSVExportButton<T, Q>(
                 resourceName: config.resourceName,
                 onSuccess: (totalCount: number, exportedFilename: string) => {
                     notification.success({
-                        message: 'Export completed',
+                        message: '导出完成',
                         description: (
                             `Successfully exported ${totalCount} ${config.resourceName} to ${exportedFilename}`
                         ),
@@ -84,8 +84,8 @@ function createCSVExportButton<T, Q>(
                 },
                 onError: (error: Error) => {
                     notification.error({
-                        message: 'CSV export failed',
-                        description: error.message || 'An unknown error occurred during export',
+                        message: 'CSV 导出失败',
+                        description: error.message || '导出过程中发生未知错误',
                     });
                 },
             }));

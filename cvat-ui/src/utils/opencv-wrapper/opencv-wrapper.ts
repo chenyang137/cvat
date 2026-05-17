@@ -132,7 +132,7 @@ export class OpenCVWrapper {
                 OpenCVConstructor();
             } catch (error: unknown) {
                 delete (window as any).Module;
-                reject(new Error(`Initialization error: ${error instanceof Error ? error.message : 'unknown'}`));
+                reject(new Error(`初始化错误：${error instanceof Error ? error.message : '未知'}`));
             }
         });
 
@@ -251,7 +251,7 @@ export class OpenCVWrapper {
             trackerMIL: {
                 model: () => this.getCVInterface().tracking.trackerMIL.model(),
                 name: 'TrackerMIL',
-                description: 'Lightweight client-side algorithm, useful to track simple objects',
+                description: '轻量级客户端算法，适用于跟踪简单对象',
                 kind: 'opencv_tracker_mil',
             },
         };

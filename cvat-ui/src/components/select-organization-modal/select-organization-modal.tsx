@@ -25,7 +25,7 @@ function SelectOrganizationModal(): JSX.Element {
 
     return (
         <Modal
-            title='Select an organization'
+            title='选择组织'
             open={visible}
             footer={null}
             onCancel={() => dispatch(organizationActions.closeSelectOrganizationModal())}

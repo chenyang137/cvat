@@ -106,19 +106,19 @@ class GlobalErrorBoundary extends React.PureComponent<Props, State> {
                 <div className='cvat-global-boundary'>
                     <Result
                         status='error'
-                        title='Oops, something went wrong'
-                        subTitle='More likely there are some issues with the tool'
+                        title='糟糕，出了点问题'
+                        subTitle='可能是工具出现了一些问题'
                     >
                         <div>
                             <Paragraph>
-                                <Paragraph strong>What has happened?</Paragraph>
-                                <Paragraph>Program error has just occurred</Paragraph>
+                                <Paragraph strong>发生了什么？</Paragraph>
+                                <Paragraph>程序错误刚刚发生</Paragraph>
                                 <Collapse
                                     accordion
                                     defaultActiveKey={['errorMessage']}
                                     items={[{
                                         key: 'errorMessage',
-                                        label: 'Exception details',
+                                        label: '异常详情',
                                         children: (
                                             <Text type='danger'>
                                                 <TextArea
@@ -133,25 +133,25 @@ class GlobalErrorBoundary extends React.PureComponent<Props, State> {
                             </Paragraph>
 
                             <Paragraph>
-                                <Text strong>What should I do?</Text>
+                                <Text strong>我该怎么办？</Text>
                             </Paragraph>
                             <ul>
                                 <li>
                                     Notify an administrator or submit the issue directly on
                                     <a href={config.GITHUB_URL}> GitHub. </a>
-                                    Please, provide also:
+                                    请同时提供：
                                     <ul>
-                                        <li>Full error message above</li>
-                                        <li>Steps to reproduce the issue</li>
-                                        <li>Your operating system and browser version</li>
-                                        <li>CVAT version</li>
+                                        <li>上方的完整错误信息</li>
+                                        <li>重现问题的步骤</li>
+                                        <li>您的操作系统和浏览器版本</li>
+                                        <li>CVAT 版本</li>
                                         <ul>
                                             <li>
-                                                <Text strong>Server: </Text>
+                                                <Text strong>服务器： </Text>
                                                 {serverVersion}
                                             </li>
                                             <li>
-                                                <Text strong>UI: </Text>
+                                                <Text strong>界面： </Text>
                                                 {uiVersion}
                                             </li>
                                         </ul>
@@ -170,7 +170,7 @@ class GlobalErrorBoundary extends React.PureComponent<Props, State> {
                                 ) : (
                                     <li>
                                         {/* eslint-disable-next-line */}
-                                        <a onClick={() => window.location.reload()}>Update </a>
+                                        <a onClick={() => window.location.reload()}>更新 </a>
                                         the page
                                     </li>
                                 )}

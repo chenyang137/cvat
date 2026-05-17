@@ -35,8 +35,8 @@ function UpdateWebhookPage(): JSX.Element {
                 }
             }).catch((error: unknown) => {
                 notification.error({
-                    message: 'Failed to fetch the webhook',
-                    description: error instanceof Error ? error.message : 'Unknown error',
+                    message: '无法获取 Webhook',
+                    description: error instanceof Error ? error.message : '未知错误',
                 });
             });
         } else {

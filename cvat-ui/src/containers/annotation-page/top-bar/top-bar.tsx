@@ -290,7 +290,7 @@ class AnnotationTopBarContainer extends React.PureComponent<Props> {
                 location.pathname !== `/tasks/${taskID}/jobs/${jobID}` &&
                 !forceExit
             ) {
-                return 'You have unsaved changes, please confirm leaving this page.';
+                return '您有未保存的更改，请确认是否离开此页面。';
             }
 
             if (forceExit) {
@@ -669,7 +669,7 @@ class AnnotationTopBarContainer extends React.PureComponent<Props> {
 
         writeLatestFrame(jobInstance.id, frameNumber);
         if (jobInstance.annotations.hasUnsavedChanges() && !forceExit) {
-            const confirmationMessage = 'You have unsaved changes, please confirm leaving this page.';
+            const confirmationMessage = '您有未保存的更改，请确认是否离开此页面。';
             // eslint-disable-next-line no-param-reassign
             event.returnValue = confirmationMessage;
             return confirmationMessage;

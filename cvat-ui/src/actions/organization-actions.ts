@@ -147,7 +147,7 @@ export function activateOrganizationAsync(): ThunkAction {
                 if (error instanceof Error) {
                     dispatch(organizationActions.activateOrganizationFailed(curSlug, error.toString()));
                 } else {
-                    dispatch(organizationActions.activateOrganizationFailed(curSlug, 'Unknown error'));
+                    dispatch(organizationActions.activateOrganizationFailed(curSlug, '未知错误'));
                 }
             }
         } else {
@@ -213,7 +213,7 @@ export function inviteOrganizationMembersAsync(
         try {
             for (let i = 0; i < members.length; i++) {
                 const { email, role } = members[i];
-                organization
+                组织
                     .invite(email, role)
                     .then(() => {
                         dispatch(organizationActions.inviteOrganizationMemberSuccess(email));

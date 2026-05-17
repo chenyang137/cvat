@@ -27,7 +27,7 @@ export enum WebhookContentType {
 }
 
 export enum WebhookSourceType {
-    ORGANIZATION = 'organization',
+    ORGANIZATION = '组织',
     PROJECT = 'project',
 }
 
@@ -120,7 +120,7 @@ function SetupWebhookContent(props: Props): JSX.Element {
         try {
             const values: Store = await form.validateFields();
             let notificationConfig = {
-                message: 'Webhook has been successfully updated',
+                message: 'Webhook 更新成功',
                 className: 'cvat-notification-update-webhook-success',
             };
             if (webhook) {
@@ -147,7 +147,7 @@ function SetupWebhookContent(props: Props): JSX.Element {
                     type: projectId ? WebhookSourceType.PROJECT : WebhookSourceType.ORGANIZATION,
                 };
                 notificationConfig = {
-                    message: 'Webhook has been successfully added',
+                    message: 'Webhook 添加成功',
                     className: 'cvat-notification-create-webhook-success',
                 };
                 await dispatch(createWebhookAsync(rawWebhookData));
@@ -170,7 +170,7 @@ function SetupWebhookContent(props: Props): JSX.Element {
     return (
         <Row justify='start' align='middle' className='cvat-setup-webhook-content'>
             <Col span={24}>
-                <Text className='cvat-title'>Setup a webhook</Text>
+                <Text className='cvat-title'>配置 Webhook</Text>
             </Col>
             <Col span={24}>
                 <Form
@@ -186,11 +186,11 @@ function SetupWebhookContent(props: Props): JSX.Element {
                     <Form.Item
                         hasFeedback
                         name='targetURL'
-                        label='Target URL'
+                        label='目标 URL'
                         rules={[
                             {
                                 required: true,
-                                message: 'Target URL cannot be empty',
+                                message: '目标 URL 不能为空',
                             },
                         ]}
                     >
@@ -198,8 +198,8 @@ function SetupWebhookContent(props: Props): JSX.Element {
                     </Form.Item>
                     <Form.Item
                         hasFeedback
-                        name='description'
-                        label='Description'
+                        name='描述'
+                        label='描述'
                     >
                         <Input />
                     </Form.Item>
@@ -207,7 +207,7 @@ function SetupWebhookContent(props: Props): JSX.Element {
                         !webhook && (
                             <Row className='ant-form-item'>
                                 <Col className='ant-form-item-label' span={24}>
-                                    <Text className='cvat-text-color'>Project</Text>
+                                    <Text className='cvat-text-color'>项目</Text>
                                 </Col>
                                 <Col span={24}>
                                     <ProjectSearchField
@@ -222,11 +222,11 @@ function SetupWebhookContent(props: Props): JSX.Element {
                     <Form.Item
                         hasFeedback
                         name='contentType'
-                        label='Content type'
+                        label='内容类型'
                         rules={[{ required: true }]}
                     >
                         <Select
-                            placeholder='Select an option and change input text above'
+                            placeholder='选择一个选项并修改上方输入文本'
                         >
                             <Select.Option value={WebhookContentType.APPLICATION_JSON}>
                                 {WebhookContentType.APPLICATION_JSON}
@@ -235,7 +235,7 @@ function SetupWebhookContent(props: Props): JSX.Element {
                     </Form.Item>
                     <Form.Item
                         name='secret'
-                        label='Secret'
+                        label='密钥'
                     >
                         <Input />
                     </Form.Item>
@@ -254,23 +254,23 @@ function SetupWebhookContent(props: Props): JSX.Element {
                         valuePropName='checked'
                     >
                         <Checkbox>
-                            <Text className='cvat-text-color'>Active</Text>
+                            <Text className='cvat-text-color'>活跃</Text>
                         </Checkbox>
                     </Form.Item>
                     <Form.Item
                         name='eventsMethod'
                         rules={[{
                             required: true,
-                            message: 'The field is required',
+                            message: '此字段为必填项',
                         }]}
                     >
                         <Radio.Group onChange={onEventsMethodChange}>
                             <Radio value={EventsMethod.SEND_EVERYTHING} key={EventsMethod.SEND_EVERYTHING}>
-                                <Text>Send </Text>
-                                <Text strong>everything</Text>
+                                <Text>发送</Text>
+                                <Text strong>所有事件</Text>
                             </Radio>
                             <Radio value={EventsMethod.SELECT_INDIVIDUAL} key={EventsMethod.SELECT_INDIVIDUAL}>
-                                Select individual events
+                                选择特定事件
                             </Radio>
                         </Radio.Group>
                     </Form.Item>
@@ -299,7 +299,7 @@ function SetupWebhookContent(props: Props): JSX.Element {
                 <Row justify='end'>
                     <Col>
                         <Button className='cvat-submit-webhook-button' type='primary' onClick={handleSubmit}>
-                            Submit
+                            提交
                         </Button>
                     </Col>
                 </Row>

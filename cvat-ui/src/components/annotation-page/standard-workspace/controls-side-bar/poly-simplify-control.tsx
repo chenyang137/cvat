@@ -166,7 +166,7 @@ function PolySimplifyControl(props: Props): React.ReactPortal | null {
                     onClick={handleCancel}
                 />
             </Col>
-            <CVATTooltip title='Lower values create simpler shapes with fewer points. Higher values preserve more detail and points.'>
+            <CVATTooltip title='较低的值会创建更简单的形状，点数更少。较高的值会保留更多细节和点。'>
                 <Text type='secondary'>threshold</Text>
             </CVATTooltip>
         </Row>,

@@ -33,7 +33,7 @@ function CreateJobPage(): JSX.Element {
                 }).catch((error: Error) => {
                     if (isMounted()) {
                         notification.error({
-                            message: 'Could not fetch requested task from the server',
+                            message: '无法从服务器获取请求的任务',
                             description: error.toString(),
                         });
                     }
@@ -44,7 +44,7 @@ function CreateJobPage(): JSX.Element {
                 });
         } else {
             notification.error({
-                message: 'Could not receive the requested task from the server',
+                message: '无法从服务器获取请求的任务',
                 description: `Requested task id "${id}" is not valid`,
             });
             setFetchingTask(false);
@@ -63,7 +63,7 @@ function CreateJobPage(): JSX.Element {
         <div className='cvat-create-job-page'>
             <Row justify='center' align='middle'>
                 <Col>
-                    <Text className='cvat-title'>Add a new job</Text>
+                    <Text className='cvat-title'>添加新作业</Text>
                 </Col>
             </Row>
             <Row justify='center' align='top'>

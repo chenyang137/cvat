@@ -95,7 +95,7 @@ function AllocationTable(props: Readonly<Props>): JSX.Element | null {
 
     const columns = [
         {
-            title: 'Frame',
+            title: '帧',
             dataIndex: 'frame',
             key: 'frame',
             align: 'center' as const,
@@ -116,7 +116,7 @@ function AllocationTable(props: Readonly<Props>): JSX.Element | null {
             ),
         },
         {
-            title: 'Name',
+            title: '名称',
             dataIndex: 'name',
             key: 'name',
             align: 'center' as const,
@@ -143,11 +143,11 @@ function AllocationTable(props: Readonly<Props>): JSX.Element | null {
             },
         },
         {
-            title: 'Actions',
+            title: '操作',
             dataIndex: 'active',
             key: 'actions',
             filters: [
-                { text: 'Active', value: true },
+                { text: '活跃', value: true },
                 { text: 'Excluded', value: false },
             ],
             align: 'center' as const,
@@ -172,7 +172,7 @@ function AllocationTable(props: Readonly<Props>): JSX.Element | null {
 
     return (
         <CVATTable
-            tableTitle='Frames'
+            tableTitle='帧'
             searchDataIndex={['name']}
             csvExport={{ filename: `allocation-table-task_${task.id}.csv` }}
             className='cvat-frame-allocation-table'

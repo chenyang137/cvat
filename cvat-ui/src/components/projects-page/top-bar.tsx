@@ -69,7 +69,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                             }}
                             defaultValue={query.search ?? ''}
                             className='cvat-projects-page-search-bar'
-                            placeholder='Search ...'
+                            placeholder='搜索...'
                         />
                         <ResourceSelectionInfo selectedCount={selectedCount} onSelectAll={onSelectAll} />
                     </div>
@@ -80,7 +80,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                                 setVisibility({ ...defaultVisibility, sorting: visible })
                             )}
                             defaultFields={query.sort?.split(',') || ['-ID']}
-                            sortingFields={['ID', 'Assignee', 'Owner', 'Status', 'Name', 'Updated date']}
+                            sortingFields={['ID', '被指派人', '拥有者', '状态', '名称', '更新日期']}
                             onApplySorting={onApplySorting}
                         />
                         <FilteringComponent
@@ -116,7 +116,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                                     onClick={(): void => history.push('/projects/create')}
                                     icon={<PlusOutlined />}
                                 >
-                                    Create a new project
+                                    创建新项目
                                 </Button>
                                 <Button
                                     className='cvat-import-project-button'
@@ -125,7 +125,7 @@ function TopBarComponent(props: Readonly<Props>): JSX.Element {
                                     icon={importing ? <LoadingOutlined /> : <UploadOutlined />}
                                     onClick={() => dispatch(importActions.openImportBackupModal('project'))}
                                 >
-                                    Create from backup
+                                    从备份创建
                                 </Button>
                             </div>
                         )}

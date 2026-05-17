@@ -15,8 +15,8 @@ import { subKeyMap } from 'utils/component-subkeymap';
 
 const componentShortcuts = {
     TOGGLE_ANNOTATION_PAGE: {
-        name: 'Toggle layout grid',
-        description: 'The grid is used to UI development',
+        name: '切换布局网格',
+        description: '此网格用于 UI 开发',
         sequences: ['ctrl+alt+enter'],
         scope: ShortcutScope.GENERAL,
     },

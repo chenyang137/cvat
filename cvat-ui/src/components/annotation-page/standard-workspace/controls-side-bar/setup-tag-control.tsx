@@ -26,7 +26,7 @@ function SetupTagControl(props: Props): JSX.Element {
         <Icon className='cvat-setup-tag-control cvat-disabled-canvas-control' component={TagIcon} />
     ) : (
         <CustomPopover placement='right' content={<SetupTagPopoverContainer />}>
-            <CVATTooltip title='Create a tag' placement='right'>
+            <CVATTooltip title='创建标签' placement='right'>
                 <Icon className='cvat-setup-tag-control' component={TagIcon} />
             </CVATTooltip>
         </CustomPopover>

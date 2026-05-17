@@ -84,7 +84,7 @@ function ItemAttributesComponent(props: Props): JSX.Element | null {
 
     const scoreTag = withScore ? (
         <Tooltip
-            title='Consensus score'
+            title='共识分数'
             align={{
                 ...baseTooltipAlign,
                 targetOffset: ['25%', '40%'],
@@ -97,7 +97,7 @@ function ItemAttributesComponent(props: Props): JSX.Element | null {
     ) : null;
     const votesTag = withVotes ? (
         <Tooltip
-            title='Number of votes'
+            title='投票数'
             align={{
                 ...baseTooltipAlign,
                 targetOffset: ['40%', '40%'],

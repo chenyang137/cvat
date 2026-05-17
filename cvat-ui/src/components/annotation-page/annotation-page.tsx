@@ -84,7 +84,7 @@ export default function AnnotationPageComponent(props: Props): JSX.Element {
                 const notificationKey = `cvat-notification-continue-job-${job.id}`;
                 notification.info({
                     key: notificationKey,
-                    message: `You finished working on frame ${latestFrame}`,
+                    message: `您已完成帧 ${latestFrame} 的工作`,
                     description: (
                         <span>
                             Press
@@ -110,14 +110,14 @@ export default function AnnotationPageComponent(props: Props): JSX.Element {
 
             if (!job.labels.length) {
                 notification.warning({
-                    message: 'No labels',
+                    message: '无标签',
                     description: (
                         <span>
-                            {`${job.projectId ? 'Project' : 'Task'} ${
+                            {`${job.projectId ? '项目' : '任务'} ${
                                 job.projectId || job.taskId
                             } does not contain any labels. `}
                             <a href={`/${job.projectId ? 'projects' : 'tasks'}/${job.projectId || job.taskId}/`}>
-                                Add
+                                添加
                             </a>
                             {' the first one for editing annotation.'}
                         </span>

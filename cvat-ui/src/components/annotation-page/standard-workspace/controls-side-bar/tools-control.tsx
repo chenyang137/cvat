@@ -193,8 +193,8 @@ function trackedRectangleMapper(shape: MinimalShape): MinimalShape {
 function registerPlugin(): (callback: null | (() => void)) => void {
     let onTrigger: null | (() => void) = null;
     const listener = {
-        name: 'Remove annotations listener',
-        description: 'Tracker needs to know when annotations is reset in the job',
+        name: '移除标注监听器',
+        description: '跟踪器需要知道作业中的标注何时被重置',
         cvat: {
             classes: {
                 Job: {
@@ -414,7 +414,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
 
         try {
             this.interaction.closeFetchingMessage = message.loading({
-                content: `Waiting for a response from ${activeInteractor?.name}`,
+                content: `正在等待${activeInteractor?.name}的响应`,
                 duration: 0,
                 className: 'cvat-tracking-notice',
             });
@@ -474,7 +474,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
         } catch (error: any) {
             notification.error({
                 description: <CVATMarkdown>{error.message}</CVATMarkdown>,
-                message: 'Interaction error occurred',
+                message: '交互错误',
                 duration: null,
             });
         }
@@ -563,7 +563,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
         } catch (error: any) {
             notification.error({
                 description: <CVATMarkdown>{error.message}</CVATMarkdown>,
-                message: 'Tracking error occurred',
+                message: '跟踪错误',
                 duration: null,
             });
         }
@@ -639,8 +639,8 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
 
         if (interactor.version < MIN_SUPPORTED_INTERACTOR_VERSION) {
             notification.warning({
-                message: 'Interactor API is outdated',
-                description: 'Probably, you should consider updating the serverless function',
+                message: '交互器 API 已过时',
+                description: '您可能需要考虑更新无服务器函数',
             });
         }
 
@@ -678,7 +678,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
         if (!shapesToBeDrawn.length) {
             if (!this.interaction.noShapesMessage) {
                 this.interaction.noShapesMessage = message.info({
-                    content: 'No shapes to display',
+                    content: '没有可显示的形状',
                     duration: 0,
                 });
             }
@@ -886,7 +886,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                         trackingData.stateless.delete(trackerID);
                     } catch (error: any) {
                         notification.error({
-                            message: 'Tracker initialization error',
+                            message: '跟踪器初始化错误',
                             description: <CVATMarkdown>{error.message}</CVATMarkdown>,
                             duration: null,
                         });
@@ -939,7 +939,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                         }
                     } catch (error: any) {
                         notification.error({
-                            message: 'Tracking error',
+                            message: '跟踪错误',
                             description: <CVATMarkdown>{error.message}</CVATMarkdown>,
                             duration: null,
                         });
@@ -1011,7 +1011,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                 await openCVWrapper.initialize(() => {});
             } catch (error: any) {
                 notification.error({
-                    message: 'Could not initialize contour utilities',
+                    message: '无法初始化轮廓工具',
                     description: <CVATMarkdown>{error.message}</CVATMarkdown>,
                     duration: null,
                 });
@@ -1023,7 +1023,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
 
     private receivePointsFromMask(mask: Int32Array): [number, number][] {
         if (!openCVWrapper.isInitialized) {
-            throw new Error('OpenCV was not initialized');
+            throw new Error('OpenCV 未初始化');
         }
 
         if (mask.length < 6) {
@@ -1041,7 +1041,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
 
     private approximateResponsePoints(points: [number, number][]): [number, number][] {
         if (!openCVWrapper.isInitialized) {
-            throw new Error('OpenCV was not initialized');
+            throw new Error('OpenCV 未初始化');
         }
 
         const { approxPolyAccuracy } = this.state;
@@ -1060,7 +1060,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
             <>
                 <Row justify='start'>
                     <Col>
-                        <Text className='cvat-text-color'>Label</Text>
+                        <Text className='cvat-text-color'>标签</Text>
                     </Col>
                 </Row>
                 <Row justify='center'>
@@ -1090,7 +1090,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                 <Row justify='center' align='middle' style={{ marginTop: '5px' }}>
                     <Col>
                         <Text type='warning' className='cvat-text-color'>
-                            No available trackers found
+                            未找到可用的跟踪器
                         </Text>
                     </Col>
                 </Row>
@@ -1101,7 +1101,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
             <>
                 <Row justify='start'>
                     <Col>
-                        <Text className='cvat-text-color'>Tracker</Text>
+                        <Text className='cvat-text-color'>跟踪器</Text>
                     </Col>
                 </Row>
                 <Row align='middle' justify='center'>
@@ -1140,7 +1140,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                                 }
                             }}
                         >
-                            Track
+                            轨迹
                         </Button>
                     </Col>
                 </Row>
@@ -1182,7 +1182,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
             <>
                 <Row justify='start'>
                     <Col>
-                        <Text className='cvat-text-color'>Interactor</Text>
+                        <Text className='cvat-text-color'>交互器</Text>
                     </Col>
                 </Row>
                 <Row align='middle' justify='space-between'>
@@ -1228,7 +1228,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                                 this.setState({ convertMasksToPolygons: checked });
                             }}
                         />
-                        <Text>Convert masks to polygons</Text>
+                        <Text>将掩码转换为多边形</Text>
                     </div>
 
                     {renderStartWithBox && (
@@ -1240,7 +1240,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                                     this.setState({ startInteractingWithBox: value });
                                 }}
                             />
-                            <Text>Start with a bounding box</Text>
+                            <Text>从边界框开始</Text>
                         </div>
                     )}
                 </div>
@@ -1377,7 +1377,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                     } catch (error: any) {
                         notification.error({
                             description: <CVATMarkdown>{error.message}</CVATMarkdown>,
-                            message: 'Detection error occurred',
+                            message: '检测错误',
                             duration: null,
                         });
                     } finally {
@@ -1394,7 +1394,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                 <Row justify='start'>
                     <Col>
                         <Text className='cvat-text-color' strong>
-                            AI Tools
+                            AI 工具
                         </Text>
                     </Col>
                 </Row>
@@ -1403,7 +1403,7 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                     tabBarGutter={8}
                     items={[{
                         key: 'interactors',
-                        label: 'Interactors',
+                        label: '交互器',
                         children: (
                             <>
                                 {this.renderLabelBlock()}
@@ -1412,11 +1412,11 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
                         ),
                     }, {
                         key: 'detectors',
-                        label: 'Detectors',
+                        label: '检测器',
                         children: this.renderDetectorBlock(),
                     }, {
                         key: 'trackers',
-                        label: 'Trackers',
+                        label: '跟踪器',
                         children: (
                             <>
                                 {this.renderLabelBlock()}
@@ -1487,14 +1487,14 @@ export class ToolsControlComponent extends React.PureComponent<Props, State> {
 
         const detectionContent: JSX.Element | null = showDetectionContent ? (
             <Modal
-                title='Making a server request'
+                title='正在发送服务器请求'
                 zIndex={Number.MAX_SAFE_INTEGER}
                 open
                 destroyOnClose
                 closable={false}
                 footer={[]}
             >
-                <Text>Waiting for a server response..</Text>
+                <Text>等待服务器响应...</Text>
                 <LoadingOutlined style={{ marginLeft: '10px' }} />
             </Modal>
         ) : null;

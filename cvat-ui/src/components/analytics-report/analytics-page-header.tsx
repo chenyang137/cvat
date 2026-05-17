@@ -39,7 +39,7 @@ function AnaylyticsPageHeader(props: Props): JSX.Element {
             </Col>
             <Col>
                 <DatePicker.RangePicker
-                    placeholder={['UTC start date', 'UTC end date']}
+                    placeholder={['UTC开始日期', 'UTC结束日期']}
                     className='cvat-analytics-date-picker'
                     onChange={(value) => {
                         if (value) {

@@ -194,7 +194,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                     `Bulk ${resource.toLowerCase()} export was started. ` +
                     'You can check progress and download the file [here](/requests).';
                 Notification.info({
-                    message: `Bulk ${resource.toLowerCase()} export started`,
+                    message: `批量${resource.toLowerCase()}导出已开始`,
                     description: (
                         <CVATMarkdown history={history}>{description}</CVATMarkdown>
                     ),
@@ -221,7 +221,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
             const description = `${resource} export was started for ${instanceType}. ` +
             'You can check progress and download the file [here](/requests).';
             Notification.info({
-                message: `${resource} export started`,
+                message: `${resource} 导出已开始`,
                 description: (
                     <CVATMarkdown history={history}>{description}</CVATMarkdown>
                 ),
@@ -272,7 +272,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
             destroyOnClose
         >
             <Form
-                name='Export dataset'
+                name='导出数据集'
                 form={form}
                 layout='vertical'
                 initialValues={initialValues}
@@ -280,10 +280,10 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
             >
                 <Form.Item
                     name='selectedFormat'
-                    label={<Text strong>Export format</Text>}
-                    rules={[{ required: true, message: 'Format must be selected' }]}
+                    label={<Text strong>导出格式</Text>}
+                    rules={[{ required: true, message: '必须选择格式' }]}
                 >
-                    <Select virtual={false} placeholder='Select dataset format' className='cvat-modal-export-select'>
+                    <Select virtual={false} placeholder='选择数据集格式' className='cvat-modal-export-select'>
                         {sortedDumpers
                             .filter(
                                 (dumper: Dumper): boolean => dumper.dimension === instance?.dimension ||
@@ -311,10 +311,10 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                     >
                         <Switch className='cvat-modal-export-save-images' />
                     </Form.Item>
-                    <Text strong>Save images</Text>
+                    <Text strong>保存图像</Text>
                 </Space>
                 {isBulkMode ? (
-                    <Form.Item label={<Text strong>Name template</Text>} required>
+                    <Form.Item label={<Text strong>名称模板</Text>} required>
                         <Input
                             value={nameTemplate}
                             onChange={(e) => setNameTemplate(e.target.value)}
@@ -337,9 +337,9 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                         </Text>
                     </Form.Item>
                 ) : (
-                    <Form.Item label={<Text strong>Custom name</Text>} name='customName'>
+                    <Form.Item label={<Text strong>自定义名称</Text>} name='customName'>
                         <Input
-                            placeholder='Custom name for a dataset'
+                            placeholder='数据集的自定义名称'
                             suffix='.zip'
                             className='cvat-modal-export-filename-input'
                         />
@@ -347,7 +347,7 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
                 )}
                 <TargetStorageField
                     instanceId={instance ? instance.id : null}
-                    switchDescription='Use default settings'
+                    switchDescription='使用默认设置'
                     switchHelpMessage={helpMessage}
                     useDefaultStorage={isBulkMode ? false : useDefaultTargetStorage}
                     storageDescription='Specify target storage for export dataset'

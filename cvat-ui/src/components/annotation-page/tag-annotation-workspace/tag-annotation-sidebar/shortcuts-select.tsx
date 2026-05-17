@@ -30,8 +30,8 @@ const componentShortcuts: Record<string, KeyMapItem> = {};
 
 for (const idx of [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) {
     componentShortcuts[`SETUP_${idx}_TAG`] = {
-        name: 'Create a new tag',
-        description: 'Create a new tag with corresponding class. The class may be setup in tag annotation sidebar',
+        name: '创建新标签',
+        description: '使用对应类别创建新标签。可在标签标注侧边栏中设置类别',
         sequences: [`${idx}`],
         nonActive: true,
         scope: ShortcutScope.TAG_ANNOTATION_WORKSPACE,
@@ -88,8 +88,8 @@ function ShortcutsSelect(props: Props): JSX.Element {
                 updatedComponentShortcuts[key] = {
                     ...updatedComponentShortcuts[key],
                     nonActive: false,
-                    name: `Create a new tag "${label.name}"`,
-                    description: `Create a new tag having class "${label.name}"`,
+                    name: `创建新标签"${label.name}"`,
+                    description: `创建类别为"${label.name}"的新标签`,
                 };
             }
         }
@@ -122,7 +122,7 @@ function ShortcutsSelect(props: Props): JSX.Element {
             <GlobalHotKeys keyMap={subKeyMap(componentShortcuts, keyMap)} handlers={handlers} />
             <Row>
                 <Col>
-                    <Text strong>Shortcuts for labels:</Text>
+                    <Text strong>标签快捷键：</Text>
                 </Col>
             </Row>
             {shift(Object.keys(shortcutLabelMap), 1)
@@ -144,7 +144,7 @@ function ShortcutsSelect(props: Props): JSX.Element {
                                 className='cvat-tag-annotation-label-select'
                             >
                                 <Select.Option value=''>
-                                    <Text type='secondary'>None</Text>
+                                    <Text type='secondary'>无</Text>
                                 </Select.Option>
                                 {(labels as any[]).map((label: any) => (
                                     <Select.Option key={label.id} value={`${label.id}`}>

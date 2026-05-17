@@ -51,74 +51,74 @@ const cvat = getCore();
 
 const componentShortcuts = {
     TILT_UP: {
-        name: 'Camera Roll Angle Up',
-        description: 'Increases camera roll angle',
+        name: '相机上翻滚',
+        description: '增大相机翻滚角',
         sequences: ['shift+up'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     TILT_DOWN: {
-        name: 'Camera Roll Angle Down',
-        description: 'Decreases camera roll angle',
+        name: '相机下翻滚',
+        description: '减小相机翻滚角',
         sequences: ['shift+down'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     ROTATE_LEFT: {
-        name: 'Camera Pitch Angle Left',
-        description: 'Decreases camera pitch angle',
+        name: '相机左俯仰',
+        description: '减小相机俯仰角',
         sequences: ['shift+left'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     ROTATE_RIGHT: {
-        name: 'Camera Pitch Angle Right',
-        description: 'Increases camera pitch angle',
+        name: '相机右俯仰',
+        description: '增大相机俯仰角',
         sequences: ['shift+right'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     MOVE_UP: {
-        name: 'Camera Move Up',
-        description: 'Move the camera up',
+        name: '相机上移',
+        description: '向上移动相机',
         sequences: ['alt+u'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     MOVE_DOWN: {
-        name: 'Camera Move Down',
-        description: 'Move the camera down',
+        name: '相机下移',
+        description: '向下移动相机',
         sequences: ['alt+o'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     MOVE_LEFT: {
-        name: 'Camera Move Left',
-        description: 'Move the camera left',
+        name: '相机左移',
+        description: '向左移动相机',
         sequences: ['alt+j'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     MOVE_RIGHT: {
-        name: 'Camera Move Right',
-        description: 'Move the camera right',
+        name: '相机右移',
+        description: '向右移动相机',
         sequences: ['alt+l'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     ZOOM_IN: {
-        name: 'Camera Zoom In',
-        description: 'Performs zoom in',
+        name: '相机放大',
+        description: '放大',
         sequences: ['alt+i'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     ZOOM_OUT: {
-        name: 'Camera Zoom Out',
-        description: 'Performs zoom out',
+        name: '相机缩小',
+        description: '缩小',
         sequences: ['alt+k'],
         scope: ShortcutScope['3D_ANNOTATION_WORKSPACE'],
     },
     NEXT_OBJECT: {
-        name: 'Next object',
-        description: 'Go to the next object and center it on the canvas',
+        name: '下一个对象',
+        description: '转到下一个对象并将其居中显示在画布上',
         sequences: ['tab'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
     PREVIOUS_OBJECT: {
-        name: 'Previous object',
-        description: 'Go to the previous object and center it on the canvas',
+        name: '上一个对象',
+        description: '转到上一个对象并将其居中显示在画布上',
         sequences: ['shift+tab'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
@@ -516,7 +516,7 @@ export const TopViewComponent = React.memo(
         return (
             <div className='cvat-canvas3d-orthographic-view cvat-canvas3d-topview'>
                 {!canvasIsReady && <Spinner />}
-                <div className='cvat-canvas3d-header'>Top</div>
+                <div className='cvat-canvas3d-header'>顶视图</div>
                 <div
                     className='cvat-canvas3d-fullsize'
                     ref={ref}
@@ -543,7 +543,7 @@ export const SideViewComponent = React.memo(
         return (
             <div className='cvat-canvas3d-orthographic-view cvat-canvas3d-sideview'>
                 {!canvasIsReady && <Spinner />}
-                <div className='cvat-canvas3d-header'>Side</div>
+                <div className='cvat-canvas3d-header'>侧视图</div>
                 <div
                     className='cvat-canvas3d-fullsize'
                     ref={ref}
@@ -570,7 +570,7 @@ export const FrontViewComponent = React.memo(
         return (
             <div className='cvat-canvas3d-orthographic-view cvat-canvas3d-frontview'>
                 {!canvasIsReady && <Spinner />}
-                <div className='cvat-canvas3d-header'>Front</div>
+                <div className='cvat-canvas3d-header'>前视图</div>
                 <div
                     className='cvat-canvas3d-fullsize'
                     ref={ref}

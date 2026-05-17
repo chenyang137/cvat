@@ -58,7 +58,7 @@ function ContextImage(props: Props): JSX.Element {
             if (!unmounted) {
                 setHasError(true);
                 notification.error({
-                    message: `Could not fetch context images. Frame: ${frameIndex}`,
+                    message: `无法获取上下文图像。帧：${frameIndex}`,
                     description: error.toString(),
                 });
             }
@@ -107,7 +107,7 @@ function ContextImage(props: Props): JSX.Element {
                 </div>
             </div>
             { (hasError ||
-                (!fetching && contextImageOffset >= Object.keys(contextImageData).length)) && <Text> No data </Text>}
+                (!fetching && contextImageOffset >= Object.keys(contextImageData).length)) && <Text> 暂无数据 </Text>}
             { fetching && <Spin size='small' /> }
             {
                 contextImageOffset < Object.keys(contextImageData).length &&

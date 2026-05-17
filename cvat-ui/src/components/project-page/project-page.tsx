@@ -103,7 +103,7 @@ export default function ProjectPageComponent(): JSX.Element {
                 }).catch((error: Error) => {
                     if (mounted.current) {
                         notification.error({
-                            message: 'Could not receive the requested project from the server',
+                            message: '无法从服务器获取请求的项目',
                             description: error.toString(),
                         });
                     }
@@ -114,7 +114,7 @@ export default function ProjectPageComponent(): JSX.Element {
                 });
         } else {
             notification.error({
-                message: 'Could not receive the requested project from the server',
+                message: '无法从服务器获取请求的项目',
                 description: `Requested project id "${id}" is not valid`,
             });
             setFetchingProject(false);
@@ -239,7 +239,7 @@ export default function ProjectPageComponent(): JSX.Element {
             )}
         </BulkWrapper>
     ) : (
-        <Empty description='No tasks found' />
+        <Empty description='未找到任务' />
     );
 
     return (
@@ -276,7 +276,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                     }}
                                     defaultValue={tasksQuery.search ?? ''}
                                     className='cvat-project-page-tasks-search-bar'
-                                    placeholder='Search ...'
+                                    placeholder='搜索...'
                                 />
                                 <ResourceSelectionInfo
                                     selectedCount={selectedCount}
@@ -290,7 +290,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                         setVisibility({ ...defaultVisibility, sorting: visible })
                                     )}
                                     defaultFields={tasksQuery.sort?.split(',') || ['-ID']}
-                                    sortingFields={['ID', 'Owner', 'Status', 'Assignee', 'Updated date', 'Subset', 'Mode', 'Dimension', 'Name']}
+                                    sortingFields={['ID', '拥有者', '状态', '被指派人', '更新日期', '子集', '模式', '维度', '名称']}
                                     onApplySorting={(sorting: string | null) => {
                                         dispatch(getProjectTasksAsync({
                                             ...tasksQuery,
@@ -342,7 +342,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                         className='cvat-create-task-button'
                                         onClick={() => history.push(`/tasks/create?projectId=${id}`)}
                                     >
-                                        Create a new task
+                                        创建新任务
                                     </Button>
                                     <Button
                                         type='primary'
@@ -350,7 +350,7 @@ export default function ProjectPageComponent(): JSX.Element {
                                         className='cvat-create-multi-tasks-button'
                                         onClick={() => history.push(`/tasks/create?projectId=${id}&many=true`)}
                                     >
-                                        Create multi tasks
+                                        批量创建任务
                                     </Button>
                                 </CvatDropdownMenuPaper>
                             )}

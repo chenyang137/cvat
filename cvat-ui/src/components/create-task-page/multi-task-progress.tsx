@@ -66,7 +66,7 @@ export default function MultiTasksProgress(props: Props): JSX.Element {
                     {percent === 100 ? (
                         <Row className='cvat-create-multi-tasks-state'>
                             <Col>
-                                Finished
+                                已完成
                             </Col>
                         </Row>
                     ) : null}
@@ -105,7 +105,7 @@ export default function MultiTasksProgress(props: Props): JSX.Element {
                                 }}
                                 items={[{
                                     key: 'appearance',
-                                    label: <Text strong> Failed files </Text>,
+                                    label: <Text strong> 失败的文件 </Text>,
                                     children: (
                                         <List
                                             size='small'
@@ -127,7 +127,7 @@ export default function MultiTasksProgress(props: Props): JSX.Element {
                                             disabled={!countFailed}
                                             onClick={onRetryFailedTasks}
                                         >
-                                            Retry failed tasks
+                                            重试失败的任务
                                         </Button>
                                     </Col>
                                     {

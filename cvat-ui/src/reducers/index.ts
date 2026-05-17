@@ -782,11 +782,11 @@ export enum ActiveControl {
 }
 
 export enum StatesOrdering {
-    ID_DESCENT = 'ID - descent',
-    ID_ASCENT = 'ID - ascent',
-    UPDATED = 'Updated time',
-    Z_ORDER = 'Z Order',
-    LABEL_NAME = 'Label name',
+    ID_DESCENT = 'ID - 降序',
+    ID_ASCENT = 'ID - 升序',
+    UPDATED = '更新时间',
+    Z_ORDER = 'Z 序',
+    LABEL_NAME = '标签名称',
 }
 
 export enum ContextMenuType {
@@ -801,7 +801,7 @@ export enum Rotation {
 
 export enum NavigationType {
     REGULAR = 'regular',
-    FILTERED = 'filtered',
+    FILTERED = '已筛选',
     EMPTY = 'empty',
     CHAPTER = 'chapter',
 }
@@ -944,12 +944,12 @@ export interface AnnotationState {
 }
 
 export enum Workspace {
-    STANDARD3D = 'Standard 3D',
-    STANDARD = 'Standard',
-    ATTRIBUTES = 'Attribute annotation',
-    SINGLE_SHAPE = 'Single shape',
-    TAGS = 'Tag annotation',
-    REVIEW = 'Review',
+    STANDARD3D = '标准 3D',
+    STANDARD = '标准',
+    ATTRIBUTES = '属性标注',
+    SINGLE_SHAPE = '单形状',
+    TAGS = '标签标注',
+    REVIEW = '审核',
 }
 
 export enum GridColor {
@@ -970,9 +970,9 @@ export enum FrameSpeed {
 }
 
 export enum ColorBy {
-    INSTANCE = 'Instance',
+    INSTANCE = '实例',
     GROUP = 'Group',
-    LABEL = 'Label',
+    LABEL = '标签',
 }
 
 export interface PlayerSettingsState {

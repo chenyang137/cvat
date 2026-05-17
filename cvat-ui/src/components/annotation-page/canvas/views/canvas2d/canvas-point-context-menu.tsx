@@ -109,7 +109,7 @@ function CanvasPointContextMenu(props: Props): React.ReactPortal | null {
                     (contextMenuFor.shapeType === ShapeType.POLYLINE && contextMenuFor.points.length > 4) ||
                     (contextMenuFor.shapeType === ShapeType.POINTS && contextMenuFor.points.length > 2)) &&
                 (
-                    <CVATTooltip title='Delete point [Alt + dblclick]'>
+                    <CVATTooltip title='删除点 [Alt + 双击]'>
                         <Button
                             type='link'
                             icon={<DeleteOutlined />}

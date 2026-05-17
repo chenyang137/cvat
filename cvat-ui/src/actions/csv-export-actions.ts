@@ -63,7 +63,7 @@ export function exportToCSVAsync<T>(options: CSVExportOptions<T>) {
 
                 const loadedCount = (page - 1) * pageSize + response.results.length;
                 dispatch(bulkActions.updateBulkActionStatus({
-                    message: `Exporting ${resourceName}: ${loadedCount} of ${totalCount}`,
+                    message: `正在导出 ${resourceName}：${loadedCount}/${totalCount}`,
                     percent: Math.round((page / totalPages) * 100),
                 }));
             }

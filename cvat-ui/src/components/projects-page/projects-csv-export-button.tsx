@@ -11,12 +11,12 @@ const cvat = getCore();
 
 const columns: CSVColumn<Project>[] = [
     { header: 'ID', accessor: (project) => project.id },
-    { header: 'Name', accessor: (project) => project.name },
-    { header: 'Project URL', accessor: (project) => `${window.location.origin}/projects/${project.id}` },
-    { header: 'Owner', accessor: (project) => project.owner?.username ?? '' },
-    { header: 'Assignee', accessor: (project) => project.assignee?.username ?? '' },
-    { header: 'Status', accessor: (project) => project.status },
-    { header: 'Dimension', accessor: (project) => project.dimension },
+    { header: '名称', accessor: (project) => project.name },
+    { header: '项目 URL', accessor: (project) => `${window.location.origin}/projects/${project.id}` },
+    { header: '拥有者', accessor: (project) => project.owner?.username ?? '' },
+    { header: '被指派人', accessor: (project) => project.assignee?.username ?? '' },
+    { header: '状态', accessor: (project) => project.status },
+    { header: '维度', accessor: (project) => project.dimension },
     {
         header: 'Task Subsets',
         accessor: (project) => (
@@ -26,14 +26,14 @@ const columns: CSVColumn<Project>[] = [
         ),
     },
     {
-        header: 'Created Date',
+        header: '创建日期',
         accessor: (project) => project.createdDate,
     },
     {
-        header: 'Updated Date',
+        header: '更新日期',
         accessor: (project) => project.updatedDate,
     },
-    { header: 'Bug Tracker', accessor: (project) => project.bugTracker ?? '' },
+    { header: '缺陷追踪器', accessor: (project) => project.bugTracker ?? '' },
 ];
 
 const ProjectsCSVExportButton = createCSVExportButton<Project, ProjectsQuery>({

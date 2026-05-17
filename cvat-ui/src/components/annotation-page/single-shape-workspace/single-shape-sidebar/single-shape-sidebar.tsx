@@ -67,9 +67,9 @@ function makeMessage(label: Label, labelType: State['labelType'], pointsCount: n
 
     return (
         <>
-            <Text>Annotate</Text>
+            <Text>在图像上标注</Text>
             <Text strong>{` ${label.name} `}</Text>
-            <Text>on the image, using</Text>
+            <Text>，使用</Text>
             <Text strong>{` ${readableShape} `}</Text>
         </>
     );
@@ -174,27 +174,27 @@ const reducer = (state: State, action: ActionUnion<typeof actionCreators>): Stat
 
 const componentShortcuts = {
     SWITCH_DRAW_MODE_SINGLE_SHAPE: {
-        name: 'Draw mode',
+        name: '绘制模式',
         description:
-            'Repeat the latest procedure of drawing with the same parameters',
+            '使用相同参数重复最近的绘制操作',
         sequences: ['n'],
         scope: ShortcutScope.SINGLE_SHAPE_ANNOTATION_WORKSPACE,
     },
     CANCEL_SINGLE_SHAPE: {
-        name: 'Cancel',
-        description: 'Cancel any active canvas mode',
+        name: '取消',
+        description: '取消任何活动的画布模式',
         sequences: ['esc'],
         scope: ShortcutScope.SINGLE_SHAPE_ANNOTATION_WORKSPACE,
     },
     DELETE_OBJECT_SINGLE_SHAPE: {
-        name: 'Delete object',
-        description: 'Delete an active object. Use shift to force delete of locked objects',
+        name: '删除对象',
+        description: '删除活动对象。使用 Shift 强制删除锁定对象',
         sequences: ['del', 'shift+del'],
         scope: ShortcutScope.SINGLE_SHAPE_ANNOTATION_WORKSPACE,
     },
     HIDE_MASK_SINGLE_SHAPE: {
-        name: 'Hide mask',
-        description: 'Hide currently edited mask',
+        name: '隐藏掩码',
+        description: '隐藏当前编辑的掩码',
         sequences: ['h'],
         scope: ShortcutScope.SINGLE_SHAPE_ANNOTATION_WORKSPACE,
     },
@@ -308,7 +308,7 @@ function SingleShapeSidebar(): JSX.Element {
                 message.open({
                     duration: 1,
                     type: 'success',
-                    content: 'You tagged the job as completed',
+                    content: '您已将作业标记为已完成',
                     className: 'cvat-annotation-job-finished-success',
                 });
             })).finally(() => {
@@ -430,7 +430,7 @@ function SingleShapeSidebar(): JSX.Element {
         return (
             <Layout.Sider {...siderProps}>
                 <div className='cvat-single-shape-annotation-sidebar-not-found-wrapper'>
-                    <Text strong>No available labels found</Text>
+                    <Text strong>没有可用的标签</Text>
                 </div>
             </Layout.Sider>
         );
@@ -550,7 +550,7 @@ function SingleShapeSidebar(): JSX.Element {
                 <>
                     <Row justify='start' className='cvat-single-shape-annotation-sidebar-label'>
                         <Col>
-                            <Text strong>Label selector</Text>
+                            <Text strong>标签选择器</Text>
                         </Col>
                     </Row>
                     <Row justify='start' className='cvat-single-shape-annotation-sidebar-label-select'>
@@ -568,7 +568,7 @@ function SingleShapeSidebar(): JSX.Element {
                 <>
                     <Row justify='start' className='cvat-single-shape-annotation-sidebar-label-type'>
                         <Col>
-                            <Text strong>Label type selector</Text>
+                            <Text strong>标签类型选择器</Text>
                         </Col>
                     </Row>
                     <Row justify='start' className='cvat-single-shape-annotation-sidebar-label-type-selector'>
@@ -600,7 +600,7 @@ function SingleShapeSidebar(): JSX.Element {
                             dispatch(actionCreators.switchAutoNextFrame(!state.autoNextFrame));
                         }}
                     >
-                        Automatically go to the next frame
+                        自动跳转到下一帧
                     </Checkbox>
                 </Col>
             </Row>
@@ -613,7 +613,7 @@ function SingleShapeSidebar(): JSX.Element {
                             dispatch(actionCreators.switchAutoSaveOnFinish());
                         }}
                     >
-                        Automatically save when finish
+                        完成时自动保存
                     </Checkbox>
                 </Col>
             </Row>
@@ -653,7 +653,7 @@ function SingleShapeSidebar(): JSX.Element {
                 <>
                     <Row justify='start' className='cvat-single-shape-annotation-sidebar-points-count'>
                         <Col>
-                            <Text strong>Number of points</Text>
+                            <Text strong>点的数量</Text>
                         </Col>
                     </Row>
                     <Row justify='start' className='cvat-single-shape-annotation-sidebar-points-count-input'>

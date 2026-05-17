@@ -62,11 +62,11 @@ function JobCardComponent(props: Readonly<Props>): JSX.Element {
 
     let tag = null;
     if (job.type === JobType.GROUND_TRUTH) {
-        tag = 'Ground truth';
+        tag = '真值';
     } else if (job.replicasCount > 0) {
         tag = 'Parent';
     } else if (job.parentJobId !== null) {
-        tag = 'Replica';
+        tag = '副本';
     }
 
     const cardClassName = `cvat-job-page-list-item${selected ? ' cvat-item-selected' : ''}`;
@@ -100,12 +100,14 @@ function JobCardComponent(props: Readonly<Props>): JSX.Element {
             onContextMenuCapture={handleContextMenuCapture}
         >
             <Descriptions column={1} size='small'>
-                <Descriptions.Item label='Stage and state'>{`${job.stage} ${job.state}`}</Descriptions.Item>
-                <Descriptions.Item label='Frames'>{job.stopFrame - job.startFrame + 1}</Descriptions.Item>
+                <Descriptions.Item label='阶段和状态'>
+                    {`${job.stage === 'annotation' ? '标注' : job.stage === 'validation' ? '审核' : job.stage === 'acceptance' ? '验收' : job.stage} ${job.state === 'new' ? '新建' : job.state === 'in progress' ? '进行中' : job.state === 'rejected' ? '已拒绝' : job.state === 'completed' ? '已完成' : job.state}`}
+                </Descriptions.Item>
+                <Descriptions.Item label='帧'>{job.stopFrame - job.startFrame + 1}</Descriptions.Item>
                 {job.assignee ? (
-                    <Descriptions.Item label='Assignee'>{job.assignee.username}</Descriptions.Item>
+                    <Descriptions.Item label='被指派人'>{job.assignee.username}</Descriptions.Item>
                 ) : (
-                    <Descriptions.Item label='Assignee'> </Descriptions.Item>
+                    <Descriptions.Item label='被指派人'> </Descriptions.Item>
                 )}
             </Descriptions>
             <div

@@ -171,7 +171,7 @@ function ExportBackupModal(): JSX.Element {
                 const description =
                     'Bulk backup export was started. You can check progress [here](/requests).';
                 Notification.info({
-                    message: 'Bulk backup export started',
+                    message: '批量备份导出已开始',
                     description: (
                         <CVATMarkdown history={history}>{description}</CVATMarkdown>
                     ),
@@ -200,10 +200,10 @@ function ExportBackupModal(): JSX.Element {
                 closeModal();
 
                 const description = isBulkMode ?
-                    'Bulk backup export was started. You can check progress [here](/requests).' :
-                    'Backup export was started. You can check progress [here](/requests).';
+                    '批量备份导出已开始。您可以[在此](/requests)查看进度。' :
+                    '备份导出已开始。您可以[在此](/requests)查看进度。';
                 Notification.info({
-                    message: isBulkMode ? 'Bulk backup export started' : 'Backup export started',
+                    message: isBulkMode ? '批量备份导出已开始' : '备份导出已开始',
                     description: (
                         <CVATMarkdown history={history}>{description}</CVATMarkdown>
                     ),
@@ -254,7 +254,7 @@ function ExportBackupModal(): JSX.Element {
                 onFinish={handleExport}
             >
                 {isBulkMode ? (
-                    <Form.Item label={<Text strong>Name template</Text>} required>
+                    <Form.Item label={<Text strong>名称模板</Text>} required>
                         <Input
                             value={nameTemplate}
                             onChange={(e) => setNameTemplate(e.target.value)}
@@ -277,9 +277,9 @@ function ExportBackupModal(): JSX.Element {
                         </Text>
                     </Form.Item>
                 ) : (
-                    <Form.Item label={<Text strong>Custom name</Text>} name='customName'>
+                    <Form.Item label={<Text strong>自定义名称</Text>} name='customName'>
                         <Input
-                            placeholder='Custom name for a backup file'
+                            placeholder='备份文件的自定义名称'
                             suffix='.zip'
                             className='cvat-modal-export-filename-input'
                         />
@@ -287,7 +287,7 @@ function ExportBackupModal(): JSX.Element {
                 )}
                 <TargetStorageField
                     instanceId={instance ? instance.id : null}
-                    switchDescription='Use default settings'
+                    switchDescription='使用默认设置'
                     switchHelpMessage={helpMessage}
                     useDefaultStorage={isBulkMode ? false : useDefaultStorage}
                     storageDescription={`Specify target storage for export ${instanceType}`}
@@ -304,8 +304,8 @@ function ExportBackupModal(): JSX.Element {
                             checked={lightweight}
                             onChange={setLightweight}
                         />
-                        <Text strong>Use lightweight backup whenever possible</Text>
-                        <Tooltip title='If a task uses media from a cloud storage, its possible to make a backup without including media. The task restored from a lightweight backup has to be manually connected to the cloud storage.'>
+                        <Text strong>尽可能使用轻量级备份</Text>
+                        <Tooltip title='如果任务使用来自云存储的媒体，可以在备份中不包含媒体。从轻量级备份恢复的任务需要手动连接到云存储。'>
                             <QuestionCircleOutlined />
                         </Tooltip>
                     </Space>

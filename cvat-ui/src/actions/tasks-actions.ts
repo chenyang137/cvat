@@ -309,7 +309,7 @@ ThunkAction {
                         } else if (status === RQStatus.FINISHED) {
                             message = 'Task creation finished';
                         } else {
-                            message = 'Unknown status received';
+                            message = '收到未知状态';
                         }
                     }
                     onProgress?.(`${message}${progress ? ` ${Math.floor(progress * 100)}%` : ''}. ${helperMessage}`);

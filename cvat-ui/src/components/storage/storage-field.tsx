@@ -33,7 +33,7 @@ export default function StorageField(props: Props): JSX.Element {
     const [storageType, setStorageType] = useState('');
 
     useEffect(() => {
-        setStorageType(locationName[0].replace('Storage', '-storage'));
+        setStorageType(locationName[0].replace('存储', '-storage'));
     }, [locationName]);
 
     function renderCloudStorage(): JSX.Element {
@@ -91,7 +91,7 @@ export default function StorageField(props: Props): JSX.Element {
                         key={`${storageType}-${StorageLocation.CLOUD_STORAGE.toLowerCase()}`}
                         className={`cvat-select-${storageType}-location`}
                     >
-                        Cloud storage
+                        云存储
                     </Option>
                 </Select>
             </Form.Item>

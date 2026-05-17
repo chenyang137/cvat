@@ -27,7 +27,7 @@ async function searchCloudStorages(filter: Record<string, string>): Promise<Clou
         return data;
     } catch (error) {
         notification.error({
-            message: 'Could not fetch a list of cloud storages',
+            message: '无法获取云存储列表',
             description: error.toString(),
         });
     }
@@ -94,16 +94,16 @@ function SelectCloudStorage(props: Props): JSX.Element {
 
     return (
         <Form.Item
-            label={label || 'Select cloud storage'}
+            label={label || '选择云存储'}
             name={name || 'cloudStorageSelect'}
-            rules={[{ required: true, message: 'Please, specify a cloud storage' }]}
+            rules={[{ required: true, message: '请选择云存储' }]}
             valuePropName='label'
             colon={false}
         >
             <AutoComplete
                 onBlur={onBlur}
                 value={searchPhrase}
-                placeholder='Search...'
+                placeholder='搜索...'
                 showSearch
                 onSearch={(phrase: string) => {
                     setSearchPhrase(phrase);
@@ -137,7 +137,7 @@ function SelectCloudStorage(props: Props): JSX.Element {
                     }
                 }}
                 allowClear
-                className={`cvat-search${!name ? '-' : `-${name[0].replace('Storage', '-storage')}-`}cloud-storage-field`}
+                className={`cvat-search${!name ? '-' : `-${name[0].replace('存储', '-storage')}-`}cloud-storage-field`}
             >
                 <Input />
             </AutoComplete>

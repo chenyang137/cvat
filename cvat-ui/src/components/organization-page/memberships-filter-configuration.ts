@@ -8,7 +8,7 @@ import asyncFetchUsers from 'components/resource-sorting-filtering/request-users
 export const config: Partial<Config> = {
     fields: {
         user: {
-            label: 'User',
+            label: '用户',
             type: 'select',
             valueSources: ['value'],
             operators: ['select_equals'],
@@ -19,16 +19,16 @@ export const config: Partial<Config> = {
             },
         },
         role: {
-            label: 'Role',
+            label: '角色',
             type: 'select',
             operators: ['select_equals'],
             valueSources: ['value'],
             fieldSettings: {
                 listValues: [
-                    { value: 'worker', title: 'Worker' },
-                    { value: 'supervisor', title: 'Supervisor' },
-                    { value: 'maintainer', title: 'Maintainer' },
-                    { value: 'owner', title: 'Owner' },
+                    { value: 'worker', title: '工作人员' },
+                    { value: 'supervisor', title: '监督员' },
+                    { value: 'maintainer', title: '维护者' },
+                    { value: 'owner', title: '拥有者' },
                 ],
             },
         },

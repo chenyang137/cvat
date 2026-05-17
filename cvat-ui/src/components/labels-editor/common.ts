@@ -20,15 +20,15 @@ let id = 0;
 
 function validateParsedAttribute(attr: SerializedAttribute): void {
     if (typeof attr !== 'object' || attr === null) {
-        throw new Error('Attribute must be a JSON object');
+        throw new Error('属性必须为 JSON 对象');
     }
 
     if (typeof attr.name !== 'string') {
-        throw new Error('Attribute name must be a string');
+        throw new Error('属性名称必须为字符串');
     }
 
     if (attr.name.trim().length === 0) {
-        throw new Error('Attribute name must not be empty');
+        throw new Error('属性名称不能为空');
     }
 
     if (typeof attr.id !== 'undefined' && !Number.isInteger(attr.id)) {
@@ -69,15 +69,15 @@ function validateParsedAttribute(attr: SerializedAttribute): void {
 
 export function validateParsedLabel(label: SerializedLabel): void {
     if (typeof label !== 'object' || label === null) {
-        throw new Error('Label must be a JSON object');
+        throw new Error('标签必须为 JSON 对象');
     }
 
     if (typeof label.name !== 'string') {
-        throw new Error('Label name must be a string');
+        throw new Error('标签名称必须为字符串');
     }
 
     if (label.name.trim().length === 0) {
-        throw new Error('Label name must not be empty');
+        throw new Error('标签名称不能为空');
     }
 
     if (typeof label.id !== 'undefined' && !Number.isInteger(label.id)) {
@@ -162,13 +162,13 @@ export function toSVGCoord(svg: SVGSVGElement, coord: number[], raiseError = fal
     const ctm = svg.getScreenCTM();
 
     if (!ctm) {
-        if (raiseError) throw new Error('Screen CTM is null');
+        if (raiseError) throw new Error('屏幕 CTM 为空');
         return coord;
     }
 
     const inversed = ctm.inverse();
     if (!inversed) {
-        if (raiseError) throw new Error('Inversed screen CTM is null');
+        if (raiseError) throw new Error('反向屏幕 CTM 为空');
         return coord;
     }
 
@@ -187,7 +187,7 @@ export function fromSVGCoord(svg: SVGSVGElement, coord: number[], raiseError = f
     const result = [];
     const ctm = svg.getScreenCTM();
     if (!ctm) {
-        if (raiseError) throw new Error('Inversed screen CTM is null');
+        if (raiseError) throw new Error('反向屏幕 CTM 为空');
         return coord;
     }
 

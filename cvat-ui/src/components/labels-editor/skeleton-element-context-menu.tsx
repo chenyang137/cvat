@@ -61,14 +61,14 @@ function SkeletonElementContextMenu(props: ContextMenuProps): JSX.Element {
 
     const targetPoint = container.querySelector(`[data-element-id="${elementID}"]`);
     if (!targetPoint) {
-        throw new Error('Target SVG point was not found');
+        throw new Error('未找到目标 SVG 点');
     }
 
     const cx = targetPoint.getAttribute('cx');
     const cy = targetPoint.getAttribute('cy');
 
     if (!cx || !cy) {
-        throw new Error('Circle attributes "cx", "cy" are not defined');
+        throw new Error('圆的属性 "cx"、"cy" 未定义');
     }
 
     const [x, y] = fromSVGCoord(container, [+cx, +cy]);
@@ -105,7 +105,7 @@ function SkeletonElementContextMenu(props: ContextMenuProps): JSX.Element {
                         icon={<DeleteOutlined />}
                         key='delete'
                     >
-                        Delete
+                        删除
                     </Button>
                 </div>
             )}

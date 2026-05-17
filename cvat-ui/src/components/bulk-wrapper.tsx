@@ -61,8 +61,8 @@ function BulkWrapper(props: Readonly<BulkWrapperProps>): JSX.Element {
 
     const keyMap: KeyMap = {
         SELECT_ALL: {
-            name: 'Select all',
-            description: 'Select all resources',
+            name: '全选',
+            description: '全选资源',
             sequences: ['ctrl+a', 'command+a'],
             scope: ShortcutScope.GENERAL,
         },

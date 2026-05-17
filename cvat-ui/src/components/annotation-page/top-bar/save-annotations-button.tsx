@@ -19,8 +19,8 @@ import { SaveIcon } from 'icons';
 
 const componentShortcuts = {
     SAVE_JOB: {
-        name: 'Save the job',
-        description: 'Submit unsaved changes of annotations to the server',
+        name: '保存任务',
+        description: '将未保存的标注更改提交到服务器',
         sequences: ['ctrl+s'],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
@@ -56,7 +56,7 @@ function SaveAnnotationsButton() {
                         'cvat-annotation-header-save-button cvat-annotation-header-button'}
                 >
                     <Icon component={SaveIcon} />
-                    {isSaving ? 'Saving...' : 'Save'}
+                    {isSaving ? 'Saving...' : '保存'}
                 </Button>
             </CVATTooltip>
         </>

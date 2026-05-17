@@ -21,7 +21,7 @@ export function getObjectStateColor(state: ObjectState, colorBy: ColorBy): {
         }
 
         if (!/^([0-9a-f]{6})$/i.test(color)) {
-            throw new Error('Invalid hex color format');
+            throw new Error('无效的十六进制颜色格式');
         }
     } catch (_: unknown) {
         // fallback

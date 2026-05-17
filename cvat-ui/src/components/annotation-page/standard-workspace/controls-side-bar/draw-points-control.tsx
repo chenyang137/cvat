@@ -47,7 +47,7 @@ function DrawPointsControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.POINTS} />}
         >
-            <CVATTooltip title='Draw points' placement='right'>
+            <CVATTooltip title='绘制点' placement='right'>
                 <Icon {...dynamicIconProps} component={PointIcon} />
             </CVATTooltip>
         </CustomPopover>

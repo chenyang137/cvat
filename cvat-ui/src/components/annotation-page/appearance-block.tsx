@@ -35,8 +35,8 @@ import { subKeyMap } from 'utils/component-subkeymap';
 
 const componentShortcuts = {
     SWITCH_COLOR_BY_APPEARANCE: {
-        name: 'Switch objects appearance setting "Color by"',
-        description: 'Objects color mode may be by object, label, or group',
+        name: '切换对象着色模式',
+        description: '对象着色模式可按对象、标签或分组',
         sequences: [],
         scope: ShortcutScope.ANNOTATION_PAGE,
     },
@@ -179,14 +179,14 @@ function AppearanceBlock(props: Props): JSX.Element {
             items={[{
                 label: (
                     <Text strong className='cvat-objects-appearance-collapse-header'>
-                            Appearance
+                            外观
                     </Text>
                 ),
                 key: 'appearance',
                 children: (
                     <div className='cvat-objects-appearance-content cvat-appearance-block'>
                         <GlobalHotKeys keyMap={subKeyMap(componentShortcuts, keyMap)} handlers={handlers} />
-                        <Text type='secondary'>Color by</Text>
+                        <Text type='secondary'>着色方式</Text>
                         <Radio.Group
                             className='cvat-appearance-color-by-radio-group'
                             value={colorBy}
@@ -196,7 +196,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                                 <Radio.Button value={val} key={val}>{val}</Radio.Button>
                             ))}
                         </Radio.Group>
-                        <Text type='secondary'>Opacity</Text>
+                        <Text type='secondary'>透明度</Text>
                         <Slider
                             className='cvat-appearance-opacity-slider'
                             onChange={changeShapesOpacity}
@@ -204,7 +204,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                             min={0}
                             max={100}
                         />
-                        <Text type='secondary'>Selected opacity</Text>
+                        <Text type='secondary'>选中透明度</Text>
                         <Slider
                             className='cvat-appearance-selected-opacity-slider'
                             onChange={changeSelectedShapesOpacity}
@@ -219,7 +219,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                             }}
                             checked={outlined}
                         >
-                            Outlined borders
+                            显示边框
                             <ColorPicker
                                 onChange={(color) => changeShapesOutlinedBorders(outlined, color)}
                                 value={outlineColor}
@@ -243,7 +243,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                                         });
                                     }}
                                 >
-                                    Cuboid orientation
+                                    立方体朝向
                                 </Checkbox>
                             </div>
                         )}
@@ -253,7 +253,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                                 onChange={changeShowBitmap}
                                 checked={showBitmap}
                             >
-                                Show bitmap
+                                显示位图
                             </Checkbox>
                         )}
                         {is2D && (
@@ -262,7 +262,7 @@ function AppearanceBlock(props: Props): JSX.Element {
                                 onChange={changeShowProjections}
                                 checked={showProjections}
                             >
-                                Show projections
+                                显示投影
                             </Checkbox>
                         )}
                     </div>

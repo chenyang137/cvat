@@ -47,7 +47,7 @@ function DrawPolylineControl(props: Props): JSX.Element {
             placement='right'
             content={<DrawShapePopoverContainer shapeType={ShapeType.POLYLINE} />}
         >
-            <CVATTooltip title='Draw a polyline' placement='right'>
+            <CVATTooltip title='绘制折线' placement='right'>
                 <Icon {...dynamicIconProps} component={PolylineIcon} />
             </CVATTooltip>
         </CustomPopover>

@@ -74,7 +74,7 @@ function CreateURLItem(props: ItemProps): JSX.Element {
             icon={<LinkOutlined />}
             onClick={createURL}
         >
-            Create object URL
+            创建对象链接
         </Button>
     );
 }
@@ -90,7 +90,7 @@ function MakeCopyItem(props: ItemProps): JSX.Element {
                 icon={<CopyOutlined />}
                 onClick={copy}
             >
-                Make a copy
+                创建副本
             </Button>
         </CVATTooltip>
     );
@@ -100,14 +100,14 @@ function EditMaskItem(props: ItemProps): JSX.Element {
     const { toolProps } = props;
     const { edit } = toolProps;
     return (
-        <CVATTooltip title='Shift + Double click'>
+        <CVATTooltip title='Shift + 双击'>
             <Button
                 type='link'
                 icon={<EditOutlined />}
                 onClick={edit}
                 className='cvat-object-item-menu-edit-object'
             >
-                Edit
+                编辑
             </Button>
         </CVATTooltip>
     );
@@ -124,7 +124,7 @@ function SliceItem(props: ItemProps): JSX.Element {
                 onClick={slice}
                 className='cvat-object-item-menu-slice-object'
             >
-                Slice
+                切片
             </Button>
         </CVATTooltip>
     );
@@ -134,14 +134,14 @@ function SimplifyItem(props: ItemProps): JSX.Element {
     const { toolProps } = props;
     const { simplify } = toolProps;
     return (
-        <CVATTooltip title='Reduce the number of polygon points'>
+        <CVATTooltip title='减少多边形顶点数'>
             <Button
                 type='link'
                 icon={<Icon component={SimplifyIcon} />}
                 onClick={simplify}
                 className='cvat-object-item-menu-simplify-object'
             >
-                Simplify
+                简化
             </Button>
         </CVATTooltip>
     );
@@ -158,7 +158,7 @@ function PropagateItem(props: ItemProps): JSX.Element {
                 onClick={propagate}
                 className='cvat-object-item-menu-propagate-item'
             >
-                Propagate
+                传播
             </Button>
         </CVATTooltip>
     );
@@ -174,7 +174,7 @@ function SwitchOrientationItem(props: ItemProps): JSX.Element {
             onClick={switchOrientation}
             className='cvat-object-item-menu-switch-orientation'
         >
-            Switch orientation
+            切换方向
         </Button>
     );
 }
@@ -205,7 +205,7 @@ function ToBackgroundItem(props: ItemProps): JSX.Element {
                 className='cvat-object-item-menu-to-layer-background'
             >
                 <Icon component={BackgroundIcon} />
-                To background
+                置于底层
             </Button>
         </CVATTooltip>
     );
@@ -222,7 +222,7 @@ function ToForegroundItem(props: ItemProps): JSX.Element {
                 className='cvat-object-item-menu-to-layer-foreground'
             >
                 <Icon component={ForegroundIcon} />
-                To foreground
+                置于顶层
             </Button>
         </CVATTooltip>
     );
@@ -239,7 +239,7 @@ function ToOneLayerBackwardItem(props: Readonly<ItemProps>): JSX.Element {
                 className='cvat-object-item-menu-to-one-layer-backward'
             >
                 <Icon component={OneLayerBackwardIcon} />
-                To one layer backward
+                后移一层
             </Button>
         </CVATTooltip>
     );
@@ -256,7 +256,7 @@ function ToOneLayerForwardItem(props: Readonly<ItemProps>): JSX.Element {
                 className='cvat-object-item-menu-to-one-layer-forward'
             >
                 <Icon component={OneLayerForwardIcon} />
-                To one layer forward
+                前移一层
             </Button>
         </CVATTooltip>
     );
@@ -270,7 +270,7 @@ function SwitchColorItem(props: ItemProps): JSX.Element {
         <CVATTooltip title={`${changeColorShortcut}`}>
             <Button onClick={() => setColorPickerVisible(true)} type='link' className='cvat-object-item-menu-change-color'>
                 <Icon component={ColorizeIcon} />
-                {`Change ${colorBy.toLowerCase()} color`}
+                {`更改${colorBy === 'LABEL' ? '标签' : colorBy === 'INSTANCE' ? '实例' : '组'}颜色`}
             </Button>
         </CVATTooltip>
     );
@@ -287,7 +287,7 @@ function RemoveItem(props: ItemProps): JSX.Element {
                 onClick={remove}
                 className='cvat-object-item-menu-remove-object'
             >
-                Remove
+                移除
             </Button>
         </CVATTooltip>
     );
@@ -304,7 +304,7 @@ function RunAnnotationActionItem(props: ItemProps): JSX.Element {
                 onClick={runAnnotationAction}
                 className='cvat-object-item-menu-remove-object'
             >
-                Run annotation action
+                运行标注操作
             </Button>
         </CVATTooltip>
     );

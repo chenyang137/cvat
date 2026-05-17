@@ -35,7 +35,7 @@ export default function RemoveConfirmComponent(): JSX.Element | null {
     useEffect(() => {
         const newVisible = (!!objectState && !force && objectState.lock) ||
             (objectState?.objectType === ObjectType.TRACK && !force);
-        setTitle(objectState?.lock ? 'Object is locked' : 'Remove object');
+        setTitle(objectState?.lock ? '对象已锁定' : 'Remove object');
         let descriptionMessage: string | JSX.Element = 'Are you sure you want to remove it?';
 
         if (objectState?.objectType === ObjectType.TRACK && !force) {
@@ -67,8 +67,8 @@ export default function RemoveConfirmComponent(): JSX.Element | null {
     return (
         <Modal
             okType='primary'
-            okText='Yes'
-            cancelText='Cancel'
+            okText='是'
+            cancelText='取消'
             title={title}
             open={visible}
             cancelButtonProps={{

@@ -18,7 +18,7 @@ interface Props {
     onSelectRegion: any;
     internalCommonProps: any;
 
-    label: 'Location' | 'Region';
+    label: '位置' | '区域';
     name: 'location' | 'region';
     values: string[][];
     href: string;
@@ -39,12 +39,12 @@ export default function Location(props: Props): JSX.Element {
     const handleAddingRegion = (): void => {
         if (!newRegionKey || !newRegionName) {
             notification.warning({
-                message: 'Incorrect region',
+                message: '区域不正确',
                 className: 'cvat-incorrect-add-region-notification',
             });
         } else if (locations[newRegionKey]) {
             notification.warning({
-                message: 'This region already exists',
+                message: '该区域已存在',
                 className: 'cvat-incorrect-add-region-notification',
             });
         } else {
@@ -62,7 +62,7 @@ export default function Location(props: Props): JSX.Element {
             label={(
                 <>
                     {label}
-                    <Tooltip title='More information'>
+                    <Tooltip title='更多信息'>
                         <Button
                             className='cvat-cloud-storage-help-button'
                             type='link'
