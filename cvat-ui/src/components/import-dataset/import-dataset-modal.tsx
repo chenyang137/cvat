@@ -352,8 +352,8 @@ function ImportDatasetModal(props: StateToProps): JSX.Element {
 
     useEffect(() => {
         dispatch(reducerActions.setHelpMessage(
-            `Import from ${(defaultStorageLocation) ? defaultStorageLocation.split('_')[0] : 'local'} ` +
-            `storage ${(defaultStorageCloudId) ? `№${defaultStorageCloudId}` : ''}`,
+            `从${(defaultStorageLocation) ? (defaultStorageLocation.split('_')[0] === 'local' ? '本地' : defaultStorageLocation.split('_')[0]) : '本地'}存储导入` +
+            ` ${(defaultStorageCloudId) ? `№${defaultStorageCloudId}` : ''}`,
         ));
     }, [defaultStorageLocation, defaultStorageCloudId]);
 
@@ -467,11 +467,12 @@ function ImportDatasetModal(props: StateToProps): JSX.Element {
                     uploadParams.file || uploadParams.fileName as string,
                     uploadParams.convMaskToPoly,
                 ));
-            const resToPrint = uploadParams.resource.charAt(0).toUpperCase() + uploadParams.resource.slice(1);
-            const description = `${resToPrint} import was started for ${instanceType}.` +
-            ' You can check progress [here](/requests).';
+            const resLabel = uploadParams.resource === 'dataset' ? '数据集' : '标注';
+            const instLabel = instanceType === 'project' ? '项目' : '任务';
+            const description = `${instLabel}的${resLabel}导入已开始。` +
+            ' 您可以[在此处](/requests)查看进度。';
             Notification.info({
-                message: `${resToPrint} 导入已开始`,
+                message: `${resLabel} 导入已开始`,
                 description: (
                     <CVATMarkdown history={history}>{description}</CVATMarkdown>
                 ),
@@ -518,15 +519,15 @@ function ImportDatasetModal(props: StateToProps): JSX.Element {
             title={(
                 <>
                     <Text strong>
-                        {`Import ${resource} to ${instanceType}`}
+                        {`导入${resource === 'dataset' ? '数据集' : '标注'}到${instanceType === 'project' ? '项目' : '任务'}`}
                     </Text>
                     {
                         instance instanceof core.classes.Project && (
                             <CVATTooltip
                                 title={
                                     instance && !instance.labels.length ?
-                                        'Labels will be imported from dataset' :
-                                        'Labels from project will be used'
+                                        '标签将从数据集中导入' :
+                                        '将使用项目中的标签'
                                 }
                             >
                                 <QuestionCircleOutlined className='cvat-modal-import-header-question-icon' />

@@ -633,7 +633,7 @@ class CVATApplication extends React.PureComponent<CVATAppProps & RouteComponentP
             return (
                 <Space align='center' direction='vertical' className='cvat-spinner'>
                     <DisconnectOutlined className='cvat-disconnected' />
-                    Cannot connect to the server.
+                    无法连接到服务器。
                 </Space>
             );
         }

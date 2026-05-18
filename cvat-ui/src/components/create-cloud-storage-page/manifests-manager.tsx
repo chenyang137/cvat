@@ -138,7 +138,7 @@ export default function ManifestsManager(props: Props): JSX.Element {
                         <Alert
                             showIcon
                             type='info'
-                            message='We highly recommend attaching a manifest file to reduce the number of requests to the bucket'
+                            message='强烈建议附加清单文件以减少对存储桶的请求次数'
                         />
                     </Col>
                 </Row>

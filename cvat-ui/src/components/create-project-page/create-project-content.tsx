@@ -86,7 +86,7 @@ function AdvancedConfigurationForm(props: AdvancedConfigurationProps): JSX.Eleme
             <Form.Item
                 name='bug_tracker'
                 label='问题追踪器'
-                extra='Attach issue tracker where the project is described'
+                extra='附加描述项目的问题追踪器链接'
                 hasFeedback
                 rules={[
                     {

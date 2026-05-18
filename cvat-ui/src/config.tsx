@@ -25,7 +25,7 @@ const NEW_LABEL_COLOR = '#b3b3b3';
 const LATEST_COMMENTS_SHOWN_QUICK_ISSUE = 3;
 const QUICK_ISSUE_INCORRECT_POSITION_TEXT = 'Wrong position';
 const QUICK_ISSUE_INCORRECT_ATTRIBUTE_TEXT = 'Wrong attribute';
-const DEFAULT_PROJECT_SUBSETS = ['Train', 'Test', '验证'];
+const DEFAULT_PROJECT_SUBSETS = ['训练', '测试', '验证'];
 const CANVAS_WORKSPACE_ROWS = 12;
 const CANVAS_WORKSPACE_COLS = 12;
 const CANVAS_WORKSPACE_MARGIN = 8;
@@ -54,18 +54,16 @@ const DEFAULT_AWS_REGIONS: string[][] = [
 
 const SERVER_UNAVAILABLE_COMPONENT = (
     <>
-        Make sure the CVAT backend and all necessary services
-        (Database, Redis and Open Policy Agent) are running and available.
-        If you upgraded from version 2.2.0 or earlier, manual actions may be needed,
-        see the&nbsp;
+        请确保 CVAT 后端及所有必要服务（数据库、Redis 和 Open Policy Agent）正在运行且可用。
+        如果您从 2.2.0 或更早版本升级，可能需要手动操作，请参阅&nbsp;
         <a
             target='_blank'
             rel='noopener noreferrer'
             href={UPGRADE_GUIDE_URL}
         >
-            Upgrade Guide
+            升级指南
         </a>
-        .
+        。
     </>
 );
 

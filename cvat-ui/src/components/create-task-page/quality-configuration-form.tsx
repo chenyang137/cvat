@@ -209,7 +209,7 @@ export default class QualityConfigurationForm extends React.PureComponent<Props>
                             无
                         </Radio.Button>
                         <Radio.Button value={ValidationMode.GT} key={ValidationMode.GT}>
-                            Ground Truth
+                            基准真值
                         </Radio.Button>
                         <Radio.Button value={ValidationMode.HONEYPOTS} key={ValidationMode.HONEYPOTS}>
                             蜜罐

@@ -194,7 +194,7 @@ class AdvancedConfigurationForm extends React.PureComponent<Props> {
     private renderCopyDataCheckbox(): JSX.Element {
         return (
             <Form.Item
-                help='If you have a low data transfer rate over the network you can copy data into CVAT to speed up work'
+                help='如果网络传输速率较低，您可以将数据复制到CVAT中以加快工作速度'
                 name='copyData'
                 valuePropName='checked'
             >
@@ -218,7 +218,7 @@ class AdvancedConfigurationForm extends React.PureComponent<Props> {
                         message: '此字段为必填项。',
                     },
                 ]}
-                help='Specify how to sort images. It is not relevant for videos.'
+                help='指定图像的排序方式。对视频不适用。'
             >
                 <Radio.Group buttonStyle='solid' onChange={(e) => onChangeSortingMethod(e.target.value)}>
                     <Radio.Button value={SortingMethod.LEXICOGRAPHICAL} key={SortingMethod.LEXICOGRAPHICAL}>
@@ -314,7 +314,7 @@ class AdvancedConfigurationForm extends React.PureComponent<Props> {
                 hasFeedback
                 name='bugTracker'
                 label='问题追踪器'
-                extra='Attach issue tracker where the task is described'
+                extra='附加描述任务的问题追踪器链接'
                 rules={[{ validator: validateURL }]}
             >
                 <Input size='large' />
@@ -423,7 +423,7 @@ class AdvancedConfigurationForm extends React.PureComponent<Props> {
             <SourceStorageField
                 instanceId={projectId}
                 locationValue={sourceStorageLocation}
-                switchDescription='Use project source storage'
+                switchDescription='使用项目源存储'
                 storageDescription='指定用于导入标注、备份等资源的源存储'
                 useDefaultStorage={useProjectSourceStorage}
                 onChangeUseDefaultStorage={onChangeUseProjectSourceStorage}
@@ -444,8 +444,8 @@ class AdvancedConfigurationForm extends React.PureComponent<Props> {
             <TargetStorageField
                 instanceId={projectId}
                 locationValue={targetStorageLocation}
-                switchDescription='Use project target storage'
-                storageDescription='Specify target storage for export resources like annotation, backups                '
+                switchDescription='使用项目目标存储'
+                storageDescription='指定用于导出标注、备份等资源的目标存储'
                 useDefaultStorage={useProjectTargetStorage}
                 onChangeUseDefaultStorage={onChangeUseProjectTargetStorage}
                 onChangeLocationValue={onChangeTargetStorageLocation}

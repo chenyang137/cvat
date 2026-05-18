@@ -17,8 +17,8 @@ interface Props {
 
 export default function LocalFiles(props: Props): JSX.Element {
     const { files, onUpload, many } = props;
-    const hintText = many ? 'You can upload one or more videos' :
-        'You can upload an archive with images, a video, or multiple images';
+    const hintText = many ? '您可以上传一个或多个视频' :
+        '您可以上传包含图像的压缩包、视频或多张图像';
 
     return (
         <>

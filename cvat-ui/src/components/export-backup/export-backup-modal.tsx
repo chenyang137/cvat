@@ -126,7 +126,7 @@ function ExportBackupModal(): JSX.Element {
     useEffect(() => {
         const loc = defaultStorageLocation ? defaultStorageLocation.split('_')[0] : 'local';
         const cloudId = defaultStorageCloudId !== undefined && defaultStorageCloudId !== null ? `№${defaultStorageCloudId}` : '';
-        setHelpMessage(`Export backup to ${loc} storage ${cloudId}`);
+        setHelpMessage(`导出备份到${loc === 'local' ? '本地' : loc}存储 ${cloudId}`);
     }, [defaultStorageLocation, defaultStorageCloudId]);
 
     const closeModal = (): void => {
@@ -164,12 +164,12 @@ function ExportBackupModal(): JSX.Element {
                         );
                     },
                     (inst: Exclude<ProjectOrTaskOrJob, Job>, idx: number, total: number) => (
-                        `Exporting backup for ${instanceType}#${inst.id} [${idx + 1}/${total}]`
+                        `正在导出${instanceType === 'project' ? '项目' : '任务'}#${inst.id}的备份 [${idx + 1}/${total}]`
                     ),
                 ));
                 closeModal();
                 const description =
-                    'Bulk backup export was started. You can check progress [here](/requests).';
+                    '批量备份导出已开始。您可以[在此](/requests)查看进度。';
                 Notification.info({
                     message: '批量备份导出已开始',
                     description: (
@@ -235,10 +235,10 @@ function ExportBackupModal(): JSX.Element {
             title={
                 isBulkMode ? (
                     <Text strong>
-                        {`Export ${selectedInstances.length} ${instanceType}s`}
+                        {`导出 ${selectedInstances.length} 个${instanceType === 'project' ? '项目' : '任务'}`}
                     </Text>
                 ) : (
-                    <Text strong>{`Export ${instanceType} #${instance?.id}`}</Text>
+                    <Text strong>{`导出${instanceType === 'project' ? '项目' : '任务'} #${instance?.id}`}</Text>
                 )
             }
             open={!!instance}

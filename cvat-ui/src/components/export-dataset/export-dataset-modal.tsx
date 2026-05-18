@@ -146,8 +146,9 @@ function ExportDatasetModal(props: Readonly<StateToProps>): JSX.Element {
 
     useEffect(() => {
         const loc = defaultStorageLocation ? defaultStorageLocation.split('_')[0] : 'local';
+        const locLabel = loc === 'local' ? '本地' : loc;
         const cloudId = defaultStorageCloudId !== undefined && defaultStorageCloudId !== null ? `№${defaultStorageCloudId}` : '';
-        setHelpMessage(`Export to ${loc} storage ${cloudId}`);
+        setHelpMessage(`导出到${locLabel}存储 ${cloudId}`);
     }, [defaultStorageLocation, defaultStorageCloudId]);
 
     const closeModal = (): void => {
