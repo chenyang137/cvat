@@ -111,7 +111,7 @@ function NavigateFirstKeyframe(props: Props): JSX.Element {
 function NavigatePrevKeyframe(props: Props): JSX.Element {
     const { prevKeyFrameShortcut, navigatePrevKeyframe } = props;
     return navigatePrevKeyframe ? (
-        <CVATTooltip title={`Go to previous keyframe ${prevKeyFrameShortcut}`}>
+        <CVATTooltip title={`转到上一关键帧 ${prevKeyFrameShortcut}`}>
             <Icon {...classes.prevKeyFrame} component={PreviousIcon} onClick={navigatePrevKeyframe} />
         </CVATTooltip>
     ) : (
@@ -122,7 +122,7 @@ function NavigatePrevKeyframe(props: Props): JSX.Element {
 function NavigateNextKeyframe(props: Props): JSX.Element {
     const { navigateNextKeyframe, nextKeyFrameShortcut } = props;
     return navigateNextKeyframe ? (
-        <CVATTooltip title={`Go to next keyframe ${nextKeyFrameShortcut}`}>
+        <CVATTooltip title={`转到下一关键帧 ${nextKeyFrameShortcut}`}>
             <Icon {...classes.nextKeyFrame} component={NextIcon} onClick={navigateNextKeyframe} />
         </CVATTooltip>
     ) : (
@@ -236,7 +236,7 @@ function SwitchOutside(props: Props): JSX.Element {
 
     const style = outsideDisabled || locked ? disabledStyle : {};
     return (
-        <CVATTooltip title={`Switch outside property ${switchOutsideShortcut}`}>
+        <CVATTooltip title={`切换外部属性 ${switchOutsideShortcut}`}>
             {outside ? (
                 <Icon
                     {...classes.outside.enabled}
@@ -262,7 +262,7 @@ function SwitchKeyframe(props: Props): JSX.Element {
 
     const style = keyframeDisabled || locked ? disabledStyle : {};
     return (
-        <CVATTooltip title={`Switch keyframe property ${switchKeyFrameShortcut}`}>
+        <CVATTooltip title={`切换关键帧属性 ${switchKeyFrameShortcut}`}>
             {keyframe ? (
                 <StarFilled
                     style={style}

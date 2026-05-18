@@ -18,7 +18,7 @@ const columns: CSVColumn<Project>[] = [
     { header: '状态', accessor: (project) => project.status },
     { header: '维度', accessor: (project) => project.dimension },
     {
-        header: 'Task Subsets',
+        header: '任务子集',
         accessor: (project) => (
             project.subsets && project.subsets.length > 0 ?
                 project.subsets.join(', ') :
@@ -39,7 +39,7 @@ const columns: CSVColumn<Project>[] = [
 const ProjectsCSVExportButton = createCSVExportButton<Project, ProjectsQuery>({
     resourceName: 'projects',
     className: 'cvat-projects-export-csv-button',
-    tooltipTitle: 'Export projects to CSV',
+    tooltipTitle: '将项目导出为CSV',
     columns,
     uniqueKey: 'id',
     fetchPage: async (query) => {

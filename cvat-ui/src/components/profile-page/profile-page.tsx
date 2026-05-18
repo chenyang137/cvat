@@ -42,7 +42,7 @@ function ProfilePageComponent(): JSX.Element {
         {
             key: 'security',
             icon: <LockOutlined />,
-            label: <Text className='cvat-profile-page-menu-item-security'>Security</Text>,
+            label: <Text className='cvat-profile-page-menu-item-security'>安全</Text>,
         },
     ];
 
@@ -76,7 +76,7 @@ function ProfilePageComponent(): JSX.Element {
             <Row justify='center' align='middle'>
                 <Col {...dimensions}>
                     <Title level={1} className='cvat-profile-page-welcome'>
-                        {`Welcome, ${user?.username}`}
+                        {`欢迎，${user?.username}`}
                     </Title>
                 </Col>
             </Row>

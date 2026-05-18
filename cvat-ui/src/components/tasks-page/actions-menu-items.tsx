@@ -114,7 +114,7 @@ export default function TaskActionsItems(menuItemsData: MenuItemsData, taskMenuP
     if (isConsensusEnabled) {
         menuItems.push([{
             key: 'consensus_management',
-            label: withCount('Consensus management', 'consensus_management', `/tasks/${taskId}/consensus`),
+            label: withCount('共识管理', 'consensus_management', `/tasks/${taskId}/consensus`),
             disabled: isDisabled('consensus_management'),
         }, 75]);
     }
@@ -141,7 +141,7 @@ export default function TaskActionsItems(menuItemsData: MenuItemsData, taskMenuP
 
         menuItems.push([{
             key: 'edit_organization',
-            onClick: () => startEditField('组织'),
+            onClick: () => startEditField('organization'),
             label: (
                 <CVATMenuEditLabel>
                     {withCount('组织', 'edit_organization')}

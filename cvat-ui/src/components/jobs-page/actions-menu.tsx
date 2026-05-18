@@ -119,7 +119,7 @@ function JobActionsComponent(
                                 await dispatch(deleteJobAsync(job));
                             }
                         },
-                        (job, idx, total) => `Deleting job #${job.id} (${idx + 1}/${total})`,
+                        (job, idx, total) => `正在删除作业 #${job.id} (${idx + 1}/${total})`,
                     ));
                 }, 0);
             },
@@ -181,7 +181,7 @@ function JobActionsComponent(
             async (job) => {
                 await dispatch(updateJobAsync(job, fields));
             },
-            (job, idx, total) => `Updating job #${job.id} (${idx + 1}/${total})`,
+            (job, idx, total) => `正在更新作业 #${job.id} (${idx + 1}/${total})`,
         ));
     }, [jobsToAct, dispatch, stopEditField]);
 

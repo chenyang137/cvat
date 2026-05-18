@@ -11,9 +11,9 @@ const cvat = getCore();
 
 const columns: CSVColumn<Job>[] = [
     { header: 'ID', accessor: (job) => job.id },
-    { header: 'Job URL', accessor: (job) => `${window.location.origin}/tasks/${job.taskId}/jobs/${job.id}` },
+    { header: '作业 URL', accessor: (job) => `${window.location.origin}/tasks/${job.taskId}/jobs/${job.id}` },
     { header: '任务 ID', accessor: (job) => job.taskId },
-    { header: 'Task Name', accessor: (job) => job.taskName ?? '' },
+    { header: '任务名称', accessor: (job) => job.taskName ?? '' },
     { header: '任务 URL', accessor: (job) => `${window.location.origin}/tasks/${job.taskId}` },
     { header: '项目 ID', accessor: (job) => job.projectId },
     { header: '项目名称', accessor: (job) => job.projectName ?? '' },
@@ -22,9 +22,9 @@ const columns: CSVColumn<Job>[] = [
     { header: '阶段', accessor: (job) => job.stage },
     { header: '状态', accessor: (job) => job.state },
     { header: '类型', accessor: (job) => job.type },
-    { header: 'Start Frame', accessor: (job) => job.startFrame },
-    { header: 'Stop Frame', accessor: (job) => job.stopFrame },
-    { header: 'Frame Count', accessor: (job) => job.stopFrame - job.startFrame + 1 },
+    { header: '起始帧', accessor: (job) => job.startFrame },
+    { header: '结束帧', accessor: (job) => job.stopFrame },
+    { header: '帧数', accessor: (job) => job.stopFrame - job.startFrame + 1 },
     {
         header: '创建日期',
         accessor: (job) => job.createdDate,

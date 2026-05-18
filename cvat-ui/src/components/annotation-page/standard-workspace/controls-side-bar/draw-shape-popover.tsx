@@ -72,8 +72,8 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
     const is2D = jobInstance.dimension === DimensionType.DIMENSION_2D;
     const simplifyDisabled = typeof numberOfPoints !== 'undefined';
     const simplifyTooltip = simplifyDisabled ?
-        'Simplification is unavailable when a predefined number of points is set' :
-        'Automatically start polygon/polyline simplification after shape is drawn';
+        '设置了预定点数时无法使用简化功能' :
+        '绘制形状后自动开始多边形/折线简化';
 
     return (
         <div className='cvat-draw-shape-popover-content'>
@@ -101,7 +101,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                 <>
                     <Row>
                         <Col>
-                            <Text className='cvat-text-color'> Drawing method </Text>
+                            <Text className='cvat-text-color'> 绘制方法 </Text>
                         </Col>
                     </Row>
                     <Row justify='space-around'>
@@ -112,10 +112,10 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                                 onChange={onChangeRectDrawingMethod}
                             >
                                 <Radio value={RectDrawingMethod.CLASSIC} style={{ width: 'auto' }}>
-                                    By 2 Points
+                                    通过2个点
                                 </Radio>
                                 <Radio value={RectDrawingMethod.EXTREME_POINTS} style={{ width: 'auto' }}>
-                                    By 4 Points
+                                    通过4个点
                                 </Radio>
                             </Radio.Group>
                         </Col>
@@ -126,7 +126,7 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                 <>
                     <Row>
                         <Col>
-                            <Text className='cvat-text-color'> Drawing method </Text>
+                            <Text className='cvat-text-color'> 绘制方法 </Text>
                         </Col>
                     </Row>
                     <Row justify='space-around'>
@@ -137,10 +137,10 @@ function DrawShapePopoverComponent(props: Props): JSX.Element {
                                 onChange={onChangeCuboidDrawingMethod}
                             >
                                 <Radio value={CuboidDrawingMethod.CLASSIC} style={{ width: 'auto' }}>
-                                    From rectangle
+                                    从矩形
                                 </Radio>
                                 <Radio value={CuboidDrawingMethod.CORNER_POINTS} style={{ width: 'auto' }}>
-                                    By 4 Points
+                                    通过4个点
                                 </Radio>
                             </Radio.Group>
                         </Col>

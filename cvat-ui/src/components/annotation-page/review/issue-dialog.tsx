@@ -152,7 +152,7 @@ export default function IssueDialog(props: Props): JSX.Element {
         >
             <Row className='cvat-issue-dialog-header' justify='space-between'>
                 <Col>
-                    <Text strong>{typeof id === 'number' ? `Issue #${id}` : '问题'}</Text>
+                    <Text strong>{typeof id === 'number' ? `问题 #${id}` : '问题'}</Text>
                 </Col>
                 <Col>
                     <CVATTooltip title='折叠聊天'>
@@ -202,7 +202,7 @@ export default function IssueDialog(props: Props): JSX.Element {
                                 setCurrentText('');
                             }}
                         >
-                            Comment
+                            评论
                         </Button>
                     ) : (
                         resolveButton

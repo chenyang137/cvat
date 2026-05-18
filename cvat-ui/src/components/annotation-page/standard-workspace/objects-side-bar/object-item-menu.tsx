@@ -117,7 +117,7 @@ function SliceItem(props: ItemProps): JSX.Element {
     const { toolProps } = props;
     const { slice, sliceShortcut } = toolProps;
     return (
-        <CVATTooltip title={`Cut the shape into two parts ${sliceShortcut}`}>
+        <CVATTooltip title={`将形状切成两部分 ${sliceShortcut}`}>
             <Button
                 type='link'
                 icon={<Icon component={SliceIcon} />}
@@ -189,7 +189,7 @@ function ResetPerspectiveItem(props: ItemProps): JSX.Element {
             className='cvat-object-item-menu-reset-perspective'
         >
             <Icon component={ResetPerspectiveIcon} />
-            Reset perspective
+            重置透视
         </Button>
     );
 }

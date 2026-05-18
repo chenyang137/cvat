@@ -1252,7 +1252,7 @@ class CanvasWrapperComponent extends React.PureComponent<Props> {
                         defaultValue={0}
                         onChange={(value: number): void => onSwitchZLayer(value as number)}
                     />
-                    <CVATTooltip title={`Add new layer ${maxZLayer + 1} and switch to it`}>
+                    <CVATTooltip title={`添加新图层 ${maxZLayer + 1} 并切换到它`}>
                         <PlusCircleOutlined onClick={onAddZLayer} />
                     </CVATTooltip>
                 </div>

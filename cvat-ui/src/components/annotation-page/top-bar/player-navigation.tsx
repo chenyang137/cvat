@@ -181,7 +181,7 @@ function PlayerNavigation(props: Props): JSX.Element {
     }, {});
 
     const deleteFrameIcon = !frameDeleted ? (
-        <CVATTooltip title={`Delete the frame ${deleteFrameShortcut}`}>
+        <CVATTooltip title={`删除帧 ${deleteFrameShortcut}`}>
             <DeleteOutlined
                 style={deleteFrameIconStyle}
                 className='cvat-player-delete-frame'
@@ -255,7 +255,7 @@ function PlayerNavigation(props: Props): JSX.Element {
                 </Row>
             </Col>
             <Col>
-                <CVATTooltip title={`Press ${focusFrameInputShortcut} to focus here`}>
+                <CVATTooltip title={`按 ${focusFrameInputShortcut} 聚焦此处`}>
                     <InputNumber
                         ref={inputFrameRef}
                         className='cvat-player-frame-selector'
@@ -283,7 +283,7 @@ function PlayerNavigation(props: Props): JSX.Element {
             <Col className='cvat-player-actions'>
                 {
                     showSearchFrameByName && (
-                        <CVATTooltip title={`Search frame by name ${searchFrameByNameShortcut}`}>
+                        <CVATTooltip title={`按名称搜索帧 ${searchFrameByNameShortcut}`}>
                             <SearchOutlined
                                 className='cvat-player-search-frame-name-icon'
                                 onClick={onSearchIconClick}

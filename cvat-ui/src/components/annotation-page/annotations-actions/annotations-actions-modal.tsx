@@ -424,7 +424,7 @@ function AnnotationsActionsModalContent(props: Props): JSX.Element {
                                     <hr />
                                 </Col>
                                 <Col span={24}>
-                                    <Text> Starting from frame </Text>
+                                    <Text> 起始帧 </Text>
                                     <InputNumber
                                         value={frameFrom}
                                         min={jobInstance.startFrame}
@@ -442,7 +442,7 @@ function AnnotationsActionsModalContent(props: Props): JSX.Element {
                                             }
                                         }}
                                     />
-                                    <Text> up to frame </Text>
+                                    <Text> 到帧 </Text>
                                     <InputNumber
                                         value={frameTo}
                                         min={frameFrom}
@@ -479,7 +479,7 @@ function AnnotationsActionsModalContent(props: Props): JSX.Element {
                                                     dispatch(reducerActions.updateFrameTo(current));
                                                 }}
                                             >
-                                                Current frame
+                                                当前帧
                                             </Button>
                                             <Button
                                                 onClick={() => {
@@ -487,7 +487,7 @@ function AnnotationsActionsModalContent(props: Props): JSX.Element {
                                                     dispatch(reducerActions.updateFrameTo(jobInstance.stopFrame));
                                                 }}
                                             >
-                                                All frames
+                                                所有帧
                                             </Button>
                                             <Button
                                                 onClick={() => {
@@ -496,7 +496,7 @@ function AnnotationsActionsModalContent(props: Props): JSX.Element {
                                                     dispatch(reducerActions.updateFrameTo(jobInstance.stopFrame));
                                                 }}
                                             >
-                                                From current
+                                                从当前帧开始
                                             </Button>
                                             <Button
                                                 onClick={() => {
@@ -505,7 +505,7 @@ function AnnotationsActionsModalContent(props: Props): JSX.Element {
                                                     dispatch(reducerActions.updateFrameTo(current));
                                                 }}
                                             >
-                                                Up to current
+                                                到当前帧
                                             </Button>
                                         </Col>
                                     </Row>

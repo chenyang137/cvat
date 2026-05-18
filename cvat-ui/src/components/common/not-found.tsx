@@ -52,7 +52,7 @@ export const ProjectNotFoundComponent = React.memo((): JSX.Element => {
             className='cvat-not-found'
             status='404'
             title='获取项目时出现问题'
-            subTitle='Please, be sure, that information you tried to get exist and you are eligible to access it'
+            subTitle='请确认您尝试获取的信息存在且您有权访问'
             extra={<Button type='primary' onClick={handleReturn}>返回上一页</Button>}
         />
     );

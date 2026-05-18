@@ -68,7 +68,7 @@ export default function StoragesTopBar(props: Readonly<Props>): JSX.Element {
                                 setVisibility({ ...defaultVisibility, sorting: visible })
                             )}
                             defaultFields={query.sort?.split(',') || ['-ID']}
-                            sortingFields={['ID', '服务商类型', '更新日期', '显示名称', 'Resource', '凭证类型', '拥有者', '描述']}
+                            sortingFields={['ID', '服务商类型', '更新日期', '显示名称', '资源', '凭证类型', '拥有者', '描述']}
                             onApplySorting={(sorting: string | null) => {
                                 onApplySorting(sorting);
                             }}

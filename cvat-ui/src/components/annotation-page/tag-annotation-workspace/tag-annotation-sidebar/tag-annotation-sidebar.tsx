@@ -260,7 +260,7 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
             </span>
             <Row justify='center' className='cvat-tag-annotation-sidebar-empty'>
                 <Col>
-                    <Text strong>Can&apos;t place tag on this frame.</Text>
+                    <Text strong>无法在此帧添加标签。</Text>
                 </Col>
             </Row>
         </Layout.Sider>
@@ -318,8 +318,8 @@ function TagAnnotationSidebar(props: StateToProps & DispatchToProps): JSX.Elemen
                 <Row justify='center' className='cvat-tag-annotation-sidebar-shortcut-help'>
                     <Col>
                         <Text>
-                            Use configured shortcuts to add a new tag.
-                            If a tag with such label is already exists on the frame, it will be removed.
+                            使用已配置的快捷键添加新标签。
+                            如果该帧上已存在具有此标签的标注，则将其移除。
                         </Text>
                     </Col>
                 </Row>

@@ -120,8 +120,8 @@ function PropagateConfirmComponent(): JSX.Element {
                             min={startFrame}
                             max={stopFrame}
                             marks={frameNumber !== targetFrame ? {
-                                [frameNumber]: 'FROM',
-                                [targetFrame]: 'TO',
+                                [frameNumber]: '从',
+                                [targetFrame]: '到',
                             } : undefined}
                             onChange={([value1, value2]: number[]) => {
                                 const value = value1 === frameNumber || value1 === targetFrame ? value2 : value1;

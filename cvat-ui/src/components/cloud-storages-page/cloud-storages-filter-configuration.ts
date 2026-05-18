@@ -84,7 +84,7 @@ export const localStorageRecentKeyword = 'recentlyAppliedCloudStoragesFilters';
 
 export const predefinedFilterValues = {
     '我所有': '{"and":[{"==":[{"var":"owner"},"<username>"]}]}',
-    'Amazon S3 storages': '{"and":[{"==":[{"var":"provider_type"},"AWS_S3_BUCKET"]}]}',
-    'Azure Blob storages': '{"and":[{"==":[{"var":"provider_type"},"AZURE_CONTAINER"]}]}',
-    'Google Cloud storages': '{"and":[{"==":[{"var":"provider_type"},"GOOGLE_CLOUD_STORAGE"]}]}',
+    'Amazon S3 存储': '{"and":[{"==":[{"var":"provider_type"},"AWS_S3_BUCKET"]}]}',
+    'Azure Blob 存储': '{"and":[{"==":[{"var":"provider_type"},"AZURE_CONTAINER"]}]}',
+    'Google 云存储': '{"and":[{"==":[{"var":"provider_type"},"GOOGLE_CLOUD_STORAGE"]}]}',
 };

@@ -56,13 +56,21 @@ function cancelCurrentCanvasOp(state: CombinedState): void {
 }
 
 function makeMessage(label: Label, labelType: State['labelType'], pointsCount: number): JSX.Element {
+    const shapeTypeLabels: Record<string, string> = {
+        [LabelType.RECTANGLE]: '一个矩形',
+        [LabelType.POLYGON]: '一个多边形',
+        [LabelType.POLYLINE]: '一条折线',
+        [LabelType.ELLIPSE]: '一个椭圆',
+        [LabelType.CUBOID]: '一个长方体',
+        [LabelType.MASK]: '一个掩码',
+    };
     let readableShape = '';
     if (labelType === LabelType.POINTS) {
-        readableShape = pointsCount === 1 ? 'one point' : `${pointsCount} points`;
+        readableShape = pointsCount === 1 ? '一个点' : `${pointsCount} 个点`;
     } else if (labelType === LabelType.ELLIPSE) {
-        readableShape = 'an ellipse';
+        readableShape = '一个椭圆';
     } else {
-        readableShape = `a ${labelType}`;
+        readableShape = shapeTypeLabels[labelType] || `一个 ${labelType}`;
     }
 
     return (
@@ -455,11 +463,11 @@ function SingleShapeSidebar(): JSX.Element {
                             <Col>
                                 {typeof state.nextFrame === 'number' ? (
                                     <Button size='large' onClick={() => finishOnThisFrame(false)}>
-                                        Skip
+                                        跳过
                                     </Button>
                                 ) : (
                                     <Button size='large' type='primary' onClick={() => finishOnThisFrame(true)}>
-                                        Submit Results
+                                        提交结果
                                     </Button>
                                 )}
                             </Col>
@@ -472,44 +480,44 @@ function SingleShapeSidebar(): JSX.Element {
                                     { typeof state.nextFrame === 'number' ? (
                                         <li>
                                             <Text>
-                                                Click
-                                                <Text strong>{' Skip '}</Text>
-                                                if there is nothing to annotate
+                                                点击
+                                                <Text strong>{' 跳过 '}</Text>
+                                                如果没有需要标注的内容
                                             </Text>
                                         </li>
                                     ) : (
                                         <li>
                                             <Text>
-                                                Click
-                                                <Text strong>{' Submit Results '}</Text>
-                                                to finish the job
+                                                点击
+                                                <Text strong>{' 提交结果 '}</Text>
+                                                完成作业
                                             </Text>
                                         </li>
                                     )}
                                     <li>
                                         <Text>
-                                            Hold
+                                            按住
                                             <Text strong>{' [Alt] '}</Text>
-                                            button to avoid drag the image and avoid drawing
+                                            键可避免拖动图像和绘制
                                         </Text>
                                     </li>
                                     <li>
                                         <Text>
-                                            Press
-                                            <Text strong>{` ${normalizedKeyMap.UNDO} `}</Text>
-                                            to undo a created object
+                                            按
+                                            <Text strong>{` ${normalizedKeyMap.UNDO ?? ''} `}</Text>
+                                            撤销已创建的对象
                                         </Text>
                                     </li>
                                     { (!isPolylabel || !state.pointsCountIsPredefined || state.pointsCount > 1) && (
                                         <li>
                                             <Text>
-                                                Press
+                                                按
                                                 <Text strong>
                                                     {` ${
-                                                        normalizedKeyMap.CANCEL_SINGLE_SHAPE
+                                                        normalizedKeyMap.CANCEL_SINGLE_SHAPE ?? ''
                                                     } `}
                                                 </Text>
-                                                to reset drawing process
+                                                重置绘制过程
                                             </Text>
                                         </li>
                                     ) }
@@ -517,26 +525,26 @@ function SingleShapeSidebar(): JSX.Element {
                                     { (isPolylabel && (!state.pointsCountIsPredefined || state.pointsCount > 1)) && (
                                         <li>
                                             <Text>
-                                                Press
+                                                按
                                                 <Text strong>
                                                     {` ${
-                                                        normalizedKeyMap.SWITCH_DRAW_MODE_SINGLE_SHAPE
+                                                        normalizedKeyMap.SWITCH_DRAW_MODE_SINGLE_SHAPE ?? ''
                                                     } `}
                                                 </Text>
-                                                to finish drawing process
+                                                完成绘制过程
                                             </Text>
                                         </li>
                                     ) }
                                     { activatedStateID !== null && (
                                         <li>
                                             <Text>
-                                                Press
+                                                按
                                                 <Text strong>
                                                     {` ${
-                                                        normalizedKeyMap.DELETE_OBJECT_SINGLE_SHAPE
+                                                        normalizedKeyMap.DELETE_OBJECT_SINGLE_SHAPE ?? ''
                                                     } `}
                                                 </Text>
-                                                to delete current object
+                                                删除当前对象
                                             </Text>
                                         </li>
                                     )}
@@ -579,13 +587,14 @@ function SingleShapeSidebar(): JSX.Element {
                                     actionCreators.setActiveLabel(state.label as Label, labelType),
                                 )}
                             >
-                                <Select.Option value={LabelType.RECTANGLE}>{LabelType.RECTANGLE}</Select.Option>
-                                <Select.Option value={LabelType.POLYGON}>{LabelType.POLYGON}</Select.Option>
-                                <Select.Option value={LabelType.POLYLINE}>{LabelType.POLYLINE}</Select.Option>
-                                <Select.Option value={LabelType.POINTS}>{LabelType.POINTS}</Select.Option>
-                                <Select.Option value={LabelType.ELLIPSE}>{LabelType.ELLIPSE}</Select.Option>
-                                <Select.Option value={LabelType.CUBOID}>{LabelType.CUBOID}</Select.Option>
-                                <Select.Option value={LabelType.MASK}>{LabelType.MASK}</Select.Option>
+                                <Select.Option value={LabelType.ANY}>任意</Select.Option>
+                                <Select.Option value={LabelType.RECTANGLE}>矩形</Select.Option>
+                                <Select.Option value={LabelType.POLYGON}>多边形</Select.Option>
+                                <Select.Option value={LabelType.POLYLINE}>折线</Select.Option>
+                                <Select.Option value={LabelType.POINTS}>点</Select.Option>
+                                <Select.Option value={LabelType.ELLIPSE}>椭圆</Select.Option>
+                                <Select.Option value={LabelType.CUBOID}>长方体</Select.Option>
+                                <Select.Option value={LabelType.MASK}>掩码</Select.Option>
                             </Select>
                         </Col>
                     </Row>
@@ -630,7 +639,7 @@ function SingleShapeSidebar(): JSX.Element {
                             }
                         }}
                     >
-                        Navigate only empty frames
+                        仅跳转到空白帧
                     </Checkbox>
                 </Col>
             </Row>
@@ -644,7 +653,7 @@ function SingleShapeSidebar(): JSX.Element {
                                 dispatch(actionCreators.switchCountOfPointsIsPredefined());
                             }}
                         >
-                            Predefined number of points
+                            预定义点数
                         </Checkbox>
                     </Col>
                 </Row>

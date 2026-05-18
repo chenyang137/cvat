@@ -85,7 +85,7 @@ function LoginFormComponent(props: Props): JSX.Element {
                         <Row>
                             <Col className='cvat-credentials-link'>
                                 <Text strong>
-                                    New user?&nbsp;
+                                    新用户？&nbsp;
                                     <Link to={{
                                         pathname: '/auth/register',
                                         search: authQuery ? new URLSearchParams(authQuery).toString() : '',

@@ -94,7 +94,7 @@ export default function ProjectActionsItems(
 
     menuItems.push([{
         key: 'edit_organization',
-        onClick: () => startEditField('组织'),
+        onClick: () => startEditField('organization'),
         label: <CVATMenuEditLabel>组织</CVATMenuEditLabel>,
     }, 70]);
 

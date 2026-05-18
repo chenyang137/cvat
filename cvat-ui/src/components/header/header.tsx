@@ -209,7 +209,7 @@ function HeaderComponent(props: Props): JSX.Element {
     aboutLinks.push([(
         <Col key='changelog'>
             <a href={CHANGELOG_URL} target='_blank' rel='noopener noreferrer'>
-                What&apos;s new?
+                更新日志
             </a>
         </Col>
     ), 0]);
@@ -365,7 +365,7 @@ function HeaderComponent(props: Props): JSX.Element {
         key: 'settings',
         icon: <SettingOutlined />,
         onClick: () => switchSettingsModalVisible(true),
-        title: `Press ${switchSettingsShortcut} to switch`,
+        title: `按 ${switchSettingsShortcut} 切换`,
         label: '设置',
     }, 30]);
 

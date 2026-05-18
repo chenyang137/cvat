@@ -78,7 +78,7 @@ function createCSVExportButton<T, Q>(
                     notification.success({
                         message: '导出完成',
                         description: (
-                            `Successfully exported ${totalCount} ${config.resourceName} to ${exportedFilename}`
+                            `成功导出 ${totalCount} 个${config.resourceName}到 ${exportedFilename}`
                         ),
                     });
                 },

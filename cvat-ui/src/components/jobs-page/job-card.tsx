@@ -64,7 +64,7 @@ function JobCardComponent(props: Readonly<Props>): JSX.Element {
     if (job.type === JobType.GROUND_TRUTH) {
         tag = '真值';
     } else if (job.replicasCount > 0) {
-        tag = 'Parent';
+        tag = '父级';
     } else if (job.parentJobId !== null) {
         tag = '副本';
     }

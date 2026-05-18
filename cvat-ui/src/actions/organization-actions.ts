@@ -213,7 +213,7 @@ export function inviteOrganizationMembersAsync(
         try {
             for (let i = 0; i < members.length; i++) {
                 const { email, role } = members[i];
-                组织
+                organization
                     .invite(email, role)
                     .then(() => {
                         dispatch(organizationActions.inviteOrganizationMemberSuccess(email));

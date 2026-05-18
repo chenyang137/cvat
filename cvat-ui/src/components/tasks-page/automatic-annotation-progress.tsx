@@ -42,7 +42,7 @@ function AutomaticAnnotationProgress(props: Props): JSX.Element | null {
                             if (activeInference.status === RQStatus.QUEUED) {
                                 return (
                                     <>
-                                        Automatic annotation request queued
+                                        自动标注请求已排队
                                         <LoadingOutlined />
                                     </>
                                 );
@@ -51,7 +51,7 @@ function AutomaticAnnotationProgress(props: Props): JSX.Element | null {
                             if (activeInference.status === RQStatus.STARTED) {
                                 return (
                                     <>
-                                        Automatic annotation is in progress
+                                        自动标注正在进行中
                                         <LoadingOutlined />
                                     </>
                                 );

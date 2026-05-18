@@ -275,7 +275,7 @@ function BrushTools(): React.ReactPortal | null {
                 keyMap={subKeyMap(componentShortcuts, keyMap)}
                 handlers={handlers}
             />
-            <CVATTooltip title={`Finish ${normalizedKeyMap.SWITCH_DRAW_MODE_STANDARD_CONTROLS}`}>
+            <CVATTooltip title={`完成 ${normalizedKeyMap.SWITCH_DRAW_MODE_STANDARD_CONTROLS}`}>
                 <Button
                     type='text'
                     className='cvat-brush-tools-finish'
@@ -292,7 +292,7 @@ function BrushTools(): React.ReactPortal | null {
                 />
             </CVATTooltip>
             {!editableState && (
-                <CVATTooltip title={`Continue ${normalizedKeyMap.SWITCH_REDRAW_MODE_STANDARD_CONTROLS}`}>
+                <CVATTooltip title={`继续 ${normalizedKeyMap.SWITCH_REDRAW_MODE_STANDARD_CONTROLS}`}>
                     <Button
                         type='text'
                         disabled={!!editableState}
@@ -315,7 +315,7 @@ function BrushTools(): React.ReactPortal | null {
                 </CVATTooltip>
             )}
             <hr />
-            <CVATTooltip title={`Brush tool ${normalizedKeyMap.ACTIVATE_BRUSH_TOOL_STANDARD_CONTROLS}`}>
+            <CVATTooltip title={`画笔工具 ${normalizedKeyMap.ACTIVATE_BRUSH_TOOL_STANDARD_CONTROLS}`}>
                 <Button
                     type='text'
                     className={['cvat-brush-tools-brush', ...(currentTool === 'brush' ? ['cvat-brush-tools-active-tool'] : [])].join(' ')}
@@ -323,7 +323,7 @@ function BrushTools(): React.ReactPortal | null {
                     onClick={setBrushTool}
                 />
             </CVATTooltip>
-            <CVATTooltip title={`Eraser tool ${normalizedKeyMap.ACTIVATE_ERASER_TOOL_STANDARD_CONTROLS}`}>
+            <CVATTooltip title={`橡皮擦工具 ${normalizedKeyMap.ACTIVATE_ERASER_TOOL_STANDARD_CONTROLS}`}>
                 <Button
                     type='text'
                     className={['cvat-brush-tools-eraser', ...(currentTool === 'eraser' ? ['cvat-brush-tools-active-tool'] : [])].join(' ')}
@@ -332,7 +332,7 @@ function BrushTools(): React.ReactPortal | null {
                     disabled={blockedTools.eraser}
                 />
             </CVATTooltip>
-            <CVATTooltip title={`Polygon tool ${normalizedKeyMap.ACTIVATE_POLYGON_TOOL_STANDARD_CONTROLS}`}>
+            <CVATTooltip title={`多边形工具 ${normalizedKeyMap.ACTIVATE_POLYGON_TOOL_STANDARD_CONTROLS}`}>
                 <Button
                     type='text'
                     className={['cvat-brush-tools-polygon-plus', ...(currentTool === 'polygon-plus' ? ['cvat-brush-tools-active-tool'] : [])].join(' ')}
@@ -341,7 +341,7 @@ function BrushTools(): React.ReactPortal | null {
                 />
             </CVATTooltip>
             <CVATTooltip
-                title={`Polygon remove tool ${normalizedKeyMap.ACTIVATE_POLYGON_REMOVE_TOOL_STANDARD_CONTROLS}`}
+                title={`多边形移除工具 ${normalizedKeyMap.ACTIVATE_POLYGON_REMOVE_TOOL_STANDARD_CONTROLS}`}
             >
                 <Button
                     type='text'
@@ -377,7 +377,7 @@ function BrushTools(): React.ReactPortal | null {
                 icon={<VerticalAlignBottomOutlined />}
                 onClick={() => setRemoveUnderlyingPixels(!removeUnderlyingPixels)}
             />
-            <CVATTooltip title={`Hide mask ${normalizedKeyMap.SWITCH_HIDDEN}`}>
+            <CVATTooltip title={`隐藏掩码 ${normalizedKeyMap.SWITCH_HIDDEN}`}>
                 <Button
                     type='text'
                     className={['cvat-brush-tools-hide', ...(activeObjectHidden ? ['cvat-brush-tools-active-tool'] : [])].join(' ')}

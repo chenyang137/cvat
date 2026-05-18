@@ -131,7 +131,7 @@ function ShortcutsSelect(props: Props): JSX.Element {
                     <Row key={id}>
                         <Col span={24}>
                             <Text code>
-                                {`Shortcut: ${keyMap[`SETUP_${id}_TAG`].sequences.join(', ')}`}
+                                {`快捷键：${keyMap[`SETUP_${id}_TAG`].sequences.join(', ')}`}
                             </Text>
                         </Col>
                         <Col>

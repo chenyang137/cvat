@@ -517,12 +517,12 @@ class OpenCVControlComponent extends React.PureComponent<Props & DispatchToProps
                         <Col>
                             {
                                 initializationProgress >= 0 ?
-                                    <Text>OpenCV is loading</Text> : (
+                                    <Text>OpenCV 正在加载</Text> : (
                                         <Button
                                             className='cvat-opencv-initialization-button'
                                             onClick={() => { this.initializeOpenCV(); }}
                                         >
-                                            Reload OpenCV
+                                            重新加载 OpenCV
                                         </Button>
                                     )
                             }

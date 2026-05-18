@@ -35,18 +35,15 @@ export default function RemoveConfirmComponent(): JSX.Element | null {
     useEffect(() => {
         const newVisible = (!!objectState && !force && objectState.lock) ||
             (objectState?.objectType === ObjectType.TRACK && !force);
-        setTitle(objectState?.lock ? '对象已锁定' : 'Remove object');
-        let descriptionMessage: string | JSX.Element = 'Are you sure you want to remove it?';
+        setTitle(objectState?.lock ? '对象已锁定' : '删除对象');
+        let descriptionMessage: string | JSX.Element = '确定要删除吗？';
 
         if (objectState?.objectType === ObjectType.TRACK && !force) {
             descriptionMessage = (
                 <>
                     <Text>
                         {
-                            `The object you are trying to remove is a track.
-                            If you continue, it removes many drawn objects on different frames.
-                            If you want to hide it only on this frame, use the outside feature instead.
-                            ${descriptionMessage}`
+                            `您正在尝试删除的对象是一个轨迹。如果继续，将删除不同帧上的许多已绘制对象。如果您只想在此帧上隐藏它，请使用外部功能。${descriptionMessage}`
                         }
                     </Text>
                     <div className='cvat-remove-object-confirm-wrapper'>

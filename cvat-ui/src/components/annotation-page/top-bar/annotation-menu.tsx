@@ -139,7 +139,7 @@ function AnnotationMenuComponent(): JSX.Element {
                                 label: <Text>选择范围</Text>,
                                 children: (
                                     <>
-                                        <Text>From: </Text>
+                                        <Text>从： </Text>
                                         <InputNumber
                                             min={0}
                                             max={stopFrame}
@@ -147,7 +147,7 @@ function AnnotationMenuComponent(): JSX.Element {
                                                 removeFrom = value ?? undefined;
                                             }}
                                         />
-                                        <Text>  To: </Text>
+                                        <Text>  到： </Text>
                                         <InputNumber
                                             min={0}
                                             max={stopFrame}
@@ -163,7 +163,7 @@ function AnnotationMenuComponent(): JSX.Element {
                                                     removeOnlyKeyframes = check.target.checked;
                                                 }}
                                             >
-                                                Delete only keyframes for tracks
+                                                仅删除轨迹的关键帧
                                             </Checkbox>
                                         </CVATTooltip>
                                     </>
@@ -263,7 +263,7 @@ function AnnotationMenuComponent(): JSX.Element {
         >
             <Button type='link' className='cvat-annotation-header-menu-button cvat-annotation-header-button'>
                 <Icon component={MainMenuIcon} />
-                Menu
+                菜单
             </Button>
         </Dropdown>
     );

@@ -183,13 +183,13 @@ function PlayerButtons(props: Props): JSX.Element {
         } : {}),
     };
 
-    const prevRegularText = 'Go back';
-    const prevFilteredText = 'Go back with a filter';
-    const prevEmptyText = 'Go back to an empty frame';
+    const prevRegularText = '后退';
+    const prevFilteredText = '带过滤器后退';
+    const prevEmptyText = '后退到空白帧';
     const prevChapterText = '转到上一章节';
-    const nextRegularText = 'Go next';
-    const nextFilteredText = 'Go next with a filter';
-    const nextEmptyText = 'Go next to an empty frame';
+    const nextRegularText = '前进';
+    const nextFilteredText = '带过滤器前进';
+    const nextEmptyText = '前进到空白帧';
     const nextChapterText = '转到下一章节';
 
     let prevButton = <Icon className='cvat-player-previous-button' component={PreviousIcon} onClick={onPrevFrame} />;
@@ -256,7 +256,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     onClick={onFirstFrame}
                 />
             </CVATTooltip>
-            <CVATTooltip title={`Go back with a step ${backwardShortcut}`}>
+            <CVATTooltip title={`步进后退 ${backwardShortcut}`}>
                 <Icon
                     style={navIconStyle}
                     className='cvat-player-backward-button'
@@ -306,7 +306,7 @@ function PlayerButtons(props: Props): JSX.Element {
             </Popover>
 
             {!playing ? (
-                <CVATTooltip title={`Play ${playPauseShortcut}`}>
+                <CVATTooltip title={`播放 ${playPauseShortcut}`}>
                     <Icon
                         style={navIconStyle}
                         className='cvat-player-play-button'
@@ -315,7 +315,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     />
                 </CVATTooltip>
             ) : (
-                <CVATTooltip title={`Pause ${playPauseShortcut}`}>
+                <CVATTooltip title={`暂停 ${playPauseShortcut}`}>
                     <Icon
                         style={navIconStyle}
                         className='cvat-player-pause-button'
@@ -365,7 +365,7 @@ function PlayerButtons(props: Props): JSX.Element {
                     {nextButton}
                 </CVATTooltip>
             </Popover>
-            <CVATTooltip title={`Go next with a step ${forwardShortcut}`}>
+            <CVATTooltip title={`步进前进 ${forwardShortcut}`}>
                 <Icon
                     style={navIconStyle}
                     className='cvat-player-forward-button'
