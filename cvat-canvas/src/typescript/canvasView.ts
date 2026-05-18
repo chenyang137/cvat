@@ -555,9 +555,9 @@ export class CanvasViewImpl implements CanvasView, Listener {
             if (selfIntersectingIndices.length > 0) {
                 const excludedIds = selfIntersectingIndices.map((idx) => objects[idx].clientID).join(', ');
                 this.onWarning(
-                    `${selfIntersectingIndices.length} self-intersecting polygon${selfIntersectingIndices.length > 1 ? 's' : ''} excluded from merge ` +
-                    `(IDs: ${excludedIds}).`,
-                    'Join operation',
+                    `${selfIntersectingIndices.length} 个自相交多边形已从合并中排除 ` +
+                    `(ID: ${excludedIds}).`,
+                    '合并操作',
                 );
             }
 
@@ -606,8 +606,8 @@ export class CanvasViewImpl implements CanvasView, Listener {
             // Show warning if merge resulted in multiple disjoint polygons
             if (processedResults.length > 1) {
                 this.onWarning(
-                    `Merge resulted in ${processedResults.length} separate polygons.`,
-                    'Join operation',
+                    `合并产生了 ${processedResults.length} 个独立的多边形。`,
+                    '合并操作',
                 );
             }
 
@@ -1247,7 +1247,7 @@ export class CanvasViewImpl implements CanvasView, Listener {
             }
 
             const title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-            title.textContent = 'Hold Shift to snap angle';
+            title.textContent = '按住 Shift 键吸附角度';
             rotationPoint.appendChild(title);
         }
 
@@ -2294,7 +2294,7 @@ export class CanvasViewImpl implements CanvasView, Listener {
                 this.onMessage([{
                     type: 'text',
                     icon: 'info',
-                    content: 'Click polygons or masks you would like to join together. To unselect click selected shape one more time',
+                    content: '点击要合并的多边形或掩码。再次点击已选中的形状可取消选择',
                 }], 'join');
 
                 this.groupHandler.group(data, {

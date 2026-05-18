@@ -217,11 +217,11 @@ export class InteractionHandlerImpl implements InteractionHandler {
         this.onMessage([{
             type: 'text',
             icon: 'info',
-            content: 'Draw rectangle prompts',
+            content: '绘制矩形提示',
         }, {
             type: 'list',
             content: [
-                'Hold <Mouse Wheel> to drag the image',
+                '按住<鼠标滚轮>拖动图像',
             ],
             className: 'cvat-canvas-notification-list-shortcuts',
         }], 'interaction');
@@ -236,15 +236,15 @@ export class InteractionHandlerImpl implements InteractionHandler {
         const textPrompts = [];
         if (pointsType === 'any') {
             textPrompts.push(
-                'Click <Left Button> to add a positive point',
-                'Click <Right Button> to add a negative point',
+                '点击<左键>添加正点',
+                '点击<右键>添加负点',
             );
         }
 
         this.onMessage([{
             type: 'text',
             icon: 'info',
-            content: 'Draw point prompts',
+            content: '绘制点提示',
         }, {
             type: 'list',
             content: [

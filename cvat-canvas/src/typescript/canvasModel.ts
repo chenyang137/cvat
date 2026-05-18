@@ -60,19 +60,19 @@ export interface HighlightedElements {
 }
 
 export enum RectDrawingMethod {
-    CLASSIC = 'By 2 points',
-    EXTREME_POINTS = 'By 4 points',
+    CLASSIC = '通过2个点',
+    EXTREME_POINTS = '通过4个点',
 }
 
 export enum CuboidDrawingMethod {
-    CLASSIC = 'From rectangle',
-    CORNER_POINTS = 'By 4 points',
+    CLASSIC = '从矩形',
+    CORNER_POINTS = '通过4个点',
 }
 
 export enum ColorBy {
-    INSTANCE = 'Instance',
-    GROUP = 'Group',
-    LABEL = 'Label',
+    INSTANCE = '实例',
+    GROUP = '组',
+    LABEL = '标签',
 }
 
 export interface Configuration {

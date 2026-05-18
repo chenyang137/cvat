@@ -1,4 +1,4 @@
-// Copyright (C) CVAT.ai Corporation
+﻿// Copyright (C) CVAT.ai Corporation
 //
 // SPDX-License-Identifier: MIT
 
@@ -140,12 +140,12 @@ export class SliceHandlerImpl implements SliceHandler {
         this.onMessage([{
             type: 'text',
             icon: 'info',
-            content: 'Set initial point on the shape contour',
+            content: '在形状轮廓上设置起始点',
         }, {
             type: 'list',
             content: [
-                'Slicing line must not intersect itself',
-                'Slicing line must not intersect contour more than twice',
+                '切片线不能自相交',
+                '切片线与轮廓的交点不能超过两个',
             ],
             className: 'cvat-canvas-notification-list-warning',
         }], 'slice');
@@ -182,6 +182,7 @@ export class SliceHandlerImpl implements SliceHandler {
                 // if intersection is too close to edge points
                 // it is an intersection in a point, ignore it
                 if (d1 < 2e-3 || d2 < 2e-3) {
+                    // eslint-disable-next-line no-param-reassign
                     delete intersections[key];
                 }
             }
@@ -221,12 +222,12 @@ export class SliceHandlerImpl implements SliceHandler {
                 this.onMessage([{
                     type: 'text',
                     icon: 'info',
-                    content: 'Set more points within the shape contour, if necessary. Intersect contour at another point to slice',
+                    content: '如有需要，在形状轮廓内设置更多点。在轮廓另一处交叉以切片',
                 }, {
                     type: 'list',
                     content: [
-                        'Hold <Shift> to enable slip mode',
-                        'Do <Right Click> to cancel the latest point',
+                        '按住<Shift>启用滑动模式',
+                        '<右键>取消最近的点',
                     ],
                     className: 'cvat-canvas-notification-list-shortcuts',
                 }], 'slice');
@@ -525,7 +526,7 @@ export class SliceHandlerImpl implements SliceHandler {
 
                 this.onMessage([{
                     type: 'text',
-                    content: 'Getting shape contour',
+                    content: '正在获取形状轮廓',
                     icon: 'loading',
                 }], 'force');
 
@@ -559,7 +560,7 @@ export class SliceHandlerImpl implements SliceHandler {
 
             this.onMessage([{
                 type: 'text',
-                content: 'Click a mask or polygon shape you would like to slice',
+                content: '点击要切片的掩码或多边形形状',
                 icon: 'info',
             }], 'slice');
 

@@ -549,11 +549,24 @@ export default class LabelForm extends React.Component<Props> {
                         >
                             骨架
                         </Select.Option>
-                    ) : types.map((type: string): JSX.Element => (
-                        <Select.Option className={`cvat-label-type-option-${type}`} key={type} value={type}>
-                            {`${type[0].toUpperCase()}${type.slice(1)}`}
-                        </Select.Option>
-                    ))}
+                    ) : types.map((type: string): JSX.Element => {
+                        const typeLabels: Record<string, string> = {
+                            any: '任意',
+                            rectangle: '矩形',
+                            polygon: '多边形',
+                            polyline: '折线',
+                            points: '点',
+                            ellipse: '椭圆',
+                            cuboid: '长方体',
+                            skeleton: '骨架',
+                            mask: '掩码',
+                        };
+                        return (
+                            <Select.Option className={`cvat-label-type-option-${type}`} key={type} value={type}>
+                                {typeLabels[type.toLowerCase()] || type}
+                            </Select.Option>
+                        );
+                    })}
                 </Select>
             </Form.Item>
         );
@@ -563,7 +576,7 @@ export default class LabelForm extends React.Component<Props> {
         return (
             <Form.Item>
                 <Button onClick={this.addAttribute} className='cvat-new-attribute-button'>
-                    Add an attribute
+                    添加属性
                     <PlusCircleOutlined />
                 </Button>
             </Form.Item>
