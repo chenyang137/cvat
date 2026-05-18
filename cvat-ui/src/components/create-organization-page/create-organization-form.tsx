@@ -75,10 +75,10 @@ function CreateOrganizationForm(): JSX.Element {
                 <Input.TextArea rows={3} />
             </Form.Item>
             <Form.Item hasFeedback name='email' label='邮箱' rules={[{ type: 'email', message: '输入的邮箱格式无效' }]}>
-                <Input autoComplete='email' placeholder='support@organization.com' />
+                <Input autoComplete='email' placeholder='email@example.com' />
             </Form.Item>
             <Form.Item hasFeedback name='phoneNumber' label='电话号码' rules={[{ ...validationPatterns.validatePhoneNumber }]}>
-                <Input autoComplete='phoneNumber' placeholder='+44 5555 555555' />
+                <Input autoComplete='phoneNumber' placeholder='+86 138 0000 0000' />
             </Form.Item>
             <Form.Item hasFeedback name='location' label='位置'>
                 <Input autoComplete='location' placeholder='国家、州/省、地址、邮政编码' />

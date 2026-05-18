@@ -38,7 +38,7 @@ export const config: Partial<Config> = {
 export const localStorageRecentCapacity = 10;
 export const localStorageRecentKeyword = 'recentlyAppliedMembershipsFilters';
 export const predefinedFilterValues = {
-    Workers: '{"and":[{"==":[{"var":"role"},"worker"]}]}',
-    Supervisors: '{"and":[{"==":[{"var":"role"},"supervisor"]}]}',
-    Maintainers: '{"and":[{"==":[{"var":"role"},"maintainer"]}]}',
+    工作人员: '{"and":[{"==":[{"var":"role"},"worker"]}]}',
+    监督员: '{"and":[{"==":[{"var":"role"},"supervisor"]}]}',
+    维护者: '{"and":[{"==":[{"var":"role"},"maintainer"]}]}',
 };

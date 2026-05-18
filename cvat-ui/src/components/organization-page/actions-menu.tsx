@@ -114,7 +114,7 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
             async (m) => {
                 await dispatch(resendInvitationAsync(organizationInstance, m.invitation.key));
             },
-            (m, idx, total) => `Resending invitation to ${m.user.username} (${idx + 1}/${total})`,
+            (m, idx, total) => `正在重新发送邀请给 ${m.user.username} (${idx + 1}/${total})`,
             fetchMembers,
         ));
     };
@@ -145,13 +145,13 @@ function MemberActionsMenu(props: Readonly<MemberActionsMenuProps>): JSX.Element
     } else {
         menuItems.push(
             ...(actionsApplicable[MenuKeys.RESEND_INVITATION].length > 0 ?
-                [{ key: MenuKeys.RESEND_INVITATION, label: withCount('Resend invitation', MenuKeys.RESEND_INVITATION) }] :
+                [{ key: MenuKeys.RESEND_INVITATION, label: withCount('重新发送邀请', MenuKeys.RESEND_INVITATION) }] :
                 []),
             ...(actionsApplicable[MenuKeys.DELETE_INVITATION].length > 0 ?
                 [{ key: 'divider', type: 'divider' } as ItemType] :
                 []),
             ...(actionsApplicable[MenuKeys.DELETE_INVITATION].length > 0 ?
-                [{ key: MenuKeys.DELETE_INVITATION, label: withCount('Remove invitation', MenuKeys.DELETE_INVITATION) }] :
+                [{ key: MenuKeys.DELETE_INVITATION, label: withCount('删除邀请', MenuKeys.DELETE_INVITATION) }] :
                 []),
             ...(actionsApplicable[MenuKeys.REMOVE_MEMBER].length > 0 ?
                 [{ key: MenuKeys.REMOVE_MEMBER, label: withCount('删除', MenuKeys.REMOVE_MEMBER) }] :

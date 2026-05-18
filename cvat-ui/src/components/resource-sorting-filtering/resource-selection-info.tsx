@@ -54,7 +54,7 @@ export function ResourceSelectionInfo(
             {actionButton}
             {selectedCount > 1 && (
                 <span className='cvat-resource-selection-count'>
-                    {`Selected: ${selectedCount}`}
+                    {`已选择：${selectedCount}`}
                 </span>
             )}
         </span>

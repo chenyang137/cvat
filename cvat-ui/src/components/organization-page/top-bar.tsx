@@ -169,7 +169,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                         <Row justify='space-between'>
                             <Col>
                                 <Text>
-                                    <Text className='cvat-title'>{`Organization: ${slug} `}</Text>
+                                    <Text className='cvat-title'>{`组织：${slug} `}</Text>
                                 </Text>
                             </Col>
                             <Col>
@@ -224,7 +224,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                         </Text>
                         {!editingDescription ? (
                             <span style={{ display: 'grid' }}>
-                                {(description || 'Add description').split('\n').map((val: string, idx: number) => (
+                                {(description || '添加描述').split('\n').map((val: string, idx: number) => (
                                     <Text key={idx} type='secondary'>
                                         {val}
                                         {idx === 0 ? <EditTwoTone onClick={() => setEditingDescription(true)} /> : null}
@@ -378,7 +378,7 @@ function OrganizationTopBar(props: Readonly<Props>): JSX.Element {
                             setVisibility({ ...defaultVisibility, sorting: visible })
                         )}
                         defaultFields={query.sort?.split(',') || ['-ID']}
-                        sortingFields={['User', '角色']}
+                        sortingFields={['用户', '角色']}
                         onApplySorting={onApplySorting}
                     />
                     <FilteringComponent

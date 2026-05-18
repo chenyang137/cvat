@@ -69,7 +69,7 @@ function MemberItem(props: Readonly<Props>): JSX.Element {
             async (m) => {
                 await dispatch(updateOrganizationMemberAsync(organizationInstance, m, newRole));
             },
-            (m, idx, total) => `Updating role for ${m.user.username} (${idx + 1}/${total})`,
+            (m, idx, total) => `正在更新 ${m.user.username} 的角色 (${idx + 1}/${total})`,
             fetchMembers,
         ));
     };
