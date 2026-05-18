@@ -22,13 +22,13 @@ jobs:
       run: docker build -f Dockerfile.ui -t cvat/ui:v2.64.0 .
     
     - name: Save image as tar
-      run: docker save cvat/ui:v2.64.0 | gzip > cvat-ui-v2.64.0.tar.gz
+      run: docker save cvat/ui:v2.64.0 > cvat_ui_v2.64.0.tar
     
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: cvat-ui-image
-        path: cvat-ui-v2.64.0.tar.gz
+        path: cvat_ui_v2.64.0.tar
         retention-days: 30
 
   release:
@@ -67,6 +67,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./cvat-ui-v2.64.0.tar.gz
-        asset_name: cvat-ui-v2.64.0.tar.gz
-        asset_content_type: application/gzip
+        asset_path: ./cvat_ui_v2.64.0.tar
+        asset_name: cvat_ui_v2.64.0.tar
+        asset_content_type: application/x-tar
