@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "v2.64.0" ]
+  pull_request:
+    branches: [ "v2.64.0" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build the Docker image
+      run: docker build -f Dockerfile.ui -t cvat/ui:v2.64.0 .
