@@ -1,5 +1,5 @@
 # 1. 替换 Node 基础镜像为加速器源
-FROM docker.gh-proxy.org/library/node:lts-slim AS cvat-ui
+FROM docker.gh-proxy.cn/library/node:lts-slim AS cvat-ui
 
 ENV TERM=xterm \
     LANG='C.UTF-8'  \
@@ -38,7 +38,7 @@ UI_APP_CONFIG="${UI_APP_CONFIG}" \
 SOURCE_MAPS_TOKEN="${SOURCE_MAPS_TOKEN}" yarn run build:cvat-ui
 
 # 2. 替换 Nginx 基础镜像为加速器源
-FROM docker.gh-proxy.org/nginxinc/nginx-unprivileged:1.29.5-alpine3.23-slim
+FROM docker.gh-proxy.cn/nginxinc/nginx-unprivileged:1.29.5-alpine3.23-slim
 
 # Replace default.conf configuration to remove unnecessary rules
 COPY cvat-ui/react_nginx.conf /etc/nginx/conf.d/default.conf
